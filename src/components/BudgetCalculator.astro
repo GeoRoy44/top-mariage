@@ -51,18 +51,25 @@
 
 <script>
   function initBudgetCalculator() {
-    const calculatorRoot = document.querySelector<HTMLElement>('.budget-calculator');
-    if (!calculatorRoot || calculatorRoot.dataset.initialized === 'true') return;
-    calculatorRoot.dataset.initialized = 'true';
+    const root = document.querySelector<HTMLElement>('.budget-calculator');
+    if (!root || root.dataset.initialized === 'true') return;
 
-    const guestsInput = calculatorRoot.querySelector<HTMLInputElement>('#budget-guests');
-    const guestsOutput = calculatorRoot.querySelector<HTMLOutputElement>('#budget-guests-output');
-    const totalOutput = calculatorRoot.querySelector<HTMLElement>('#budget-total');
-    const perGuestOutput = calculatorRoot.querySelector<HTMLElement>('#budget-per-guest');
-    const breakdown = calculatorRoot.querySelector<HTMLUListElement>('#budget-breakdown');
-    const optionInputs = calculatorRoot.querySelectorAll<HTMLInputElement>('input[name="budget-format"], input[type="checkbox"]');
+    const guestsInput = root.querySelector<HTMLInputElement>('#budget-guests');
+    const guestsOutput = root.querySelector<HTMLOutputElement>('#budget-guests-output');
+    const totalOutput = root.querySelector<HTMLElement>('#budget-total');
+    const perGuestOutput = root.querySelector<HTMLElement>('#budget-per-guest');
+    const breakdown = root.querySelector<HTMLUListElement>('#budget-breakdown');
+    const optionInputs = root.querySelectorAll<HTMLInputElement>('input[name="budget-format"], input[type="checkbox"]');
 
     if (!guestsInput || !guestsOutput || !totalOutput || !perGuestOutput || !breakdown) return;
+
+    const calculatorRoot: HTMLElement = root;
+    const guestsControl: HTMLInputElement = guestsInput;
+    const guestsValue: HTMLOutputElement = guestsOutput;
+    const totalValue: HTMLElement = totalOutput;
+    const perGuestValue: HTMLElement = perGuestOutput;
+    const breakdownList: HTMLUListElement = breakdown;
+    calculatorRoot.dataset.initialized = 'true';
 
     const formats: Record<string, { fixed: number; guest: number }> = {
       simple: { fixed: 5200, guest: 88 },
@@ -82,7 +89,7 @@
       const format = formats[selectedFormat.value];
       if (!format) return;
 
-      const guests = Number(guestsInput.value);
+      const guests = Number(guestsControl.value);
       let total = format.fixed + guests * format.guest;
       const rows: Array<{ label: string; amount: number }> = [
         { label: 'Organisation & prestations fixes', amount: format.fixed },
@@ -97,10 +104,10 @@
         rows.push({ label: extra.label, amount });
       });
 
-      guestsOutput.textContent = String(guests);
-      totalOutput.textContent = euro.format(total);
-      perGuestOutput.textContent = `${euro.format(Math.round(total / guests))} par invité`;
-      breakdown.replaceChildren(...rows.map((row) => {
+      guestsValue.textContent = String(guests);
+      totalValue.textContent = euro.format(total);
+      perGuestValue.textContent = `${euro.format(Math.round(total / guests))} par invité`;
+      breakdownList.replaceChildren(...rows.map((row) => {
         const item = document.createElement('li');
         const label = document.createElement('span');
         const amount = document.createElement('strong');
@@ -111,7 +118,7 @@
       }));
     }
 
-    guestsInput.addEventListener('input', updateBudget);
+    guestsControl.addEventListener('input', updateBudget);
     optionInputs.forEach((input) => input.addEventListener('change', updateBudget));
     updateBudget();
   }
