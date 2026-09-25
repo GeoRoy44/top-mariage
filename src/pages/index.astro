@@ -9,7 +9,7 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
   .slice(0, 3);
 ---
 
-<BaseLayout title="Top Mariage — Préparer un mariage avec méthode" description="Guides pratiques pour organiser votre mariage : budget, lieu, prestataires, tenues et planning.">
+<BaseLayout title="Top Mariage : Comparatif et calculateur budget mariage" description="Guides pratiques pour organiser votre mariage : budget, lieu, prestataires, tenues et planning.">
   <section class="home-calculator">
     <div class="container">
       <BudgetCalculator />
