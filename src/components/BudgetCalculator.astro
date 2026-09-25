@@ -50,16 +50,19 @@
 </section>
 
 <script>
-  const root = document.currentScript?.previousElementSibling;
+  function initBudgetCalculator() {
+    const calculatorRoot = document.querySelector<HTMLElement>('.budget-calculator');
+    if (!calculatorRoot || calculatorRoot.dataset.initialized === 'true') return;
+    calculatorRoot.dataset.initialized = 'true';
 
-  if (root instanceof HTMLElement) {
-    const calculatorRoot = root;
     const guestsInput = calculatorRoot.querySelector<HTMLInputElement>('#budget-guests');
     const guestsOutput = calculatorRoot.querySelector<HTMLOutputElement>('#budget-guests-output');
     const totalOutput = calculatorRoot.querySelector<HTMLElement>('#budget-total');
     const perGuestOutput = calculatorRoot.querySelector<HTMLElement>('#budget-per-guest');
     const breakdown = calculatorRoot.querySelector<HTMLUListElement>('#budget-breakdown');
     const optionInputs = calculatorRoot.querySelectorAll<HTMLInputElement>('input[name="budget-format"], input[type="checkbox"]');
+
+    if (!guestsInput || !guestsOutput || !totalOutput || !perGuestOutput || !breakdown) return;
 
     const formats: Record<string, { fixed: number; guest: number }> = {
       simple: { fixed: 5200, guest: 88 },
@@ -74,7 +77,6 @@
     const euro = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
 
     function updateBudget() {
-      if (!guestsInput || !guestsOutput || !totalOutput || !perGuestOutput || !breakdown) return;
       const selectedFormat = calculatorRoot.querySelector<HTMLInputElement>('input[name="budget-format"]:checked');
       if (!selectedFormat) return;
       const format = formats[selectedFormat.value];
@@ -109,9 +111,15 @@
       }));
     }
 
-    if (guestsInput) guestsInput.addEventListener('input', updateBudget);
+    guestsInput.addEventListener('input', updateBudget);
     optionInputs.forEach((input) => input.addEventListener('change', updateBudget));
     updateBudget();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBudgetCalculator, { once: true });
+  } else {
+    initBudgetCalculator();
   }
 </script>
 
