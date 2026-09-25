@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget mariage 200 personnes : combien prévoir ?</title>
+  <meta name="description" content="Budget mariage 200 personnes : réception, traiteur, lieu, logistique et coûts fixes pour construire une enveloppe réaliste.">
+</head>
+<body>
+  <!--
+  FICHE TECHNIQUE D’INTÉGRATION
+  Fichier Markdown cible : src/content/blog/budget-mariage-200-personnes.md
+  URL statique attendue : https://top-mariage.fr/blog/budget-mariage-200-personnes/
+  Catégorie : organisation-mariage
+
+  Le widget contient HTML, CSS et JavaScript.
+  Si les balises <script> sont neutralisées dans les articles Markdown Astro,
+  extraire le bloc WIDGET_BUDGET_MARIAGE et l’intégrer dans un composant Astro dédié.
+  -->
+
+  <!-- FRONTMATTER_YAML_START
+  ---
+  title: "Budget mariage 200 personnes : une grande fête, une vraie logistique"
+  description: "Budget mariage 200 personnes : réception, traiteur, lieu, logistique et coûts fixes pour construire une enveloppe réaliste."
+  pubDate: 2026-09-25
+  updatedDate: 2026-09-25
+  category: "organisation-mariage"
+  tags:
+    - budget mariage 200 personnes
+    - mariage 200 invités
+    - coût mariage 200 personnes
+    - prix mariage 200 personnes
+    - budget traiteur 200 personnes
+  draft: true
+  ---
+  FRONTMATTER_YAML_END -->
+
+  <!-- ARTICLE_HTML_START -->
+  <article>
+    <header>
+      <h1>Budget mariage 200 personnes : une grande fête, une vraie logistique</h1>
+    </header>
+
+    <section aria-label="En bref">
+      <p><strong>En bref</strong><br>Deux cents invités, ce n’est plus seulement une jolie liste de proches. C’est une réception qui doit circuler, manger, boire, danser et rentrer sans que tout se bloque au même endroit. Le budget suit ce mouvement… et il mérite mieux qu’un total lancé entre deux visites de lieu.</p>
+    </section>
+
+    <p>Un <strong>budget mariage 200 personnes</strong> commence souvent avec une impression assez simple : si la liste est grande, il suffit de multiplier les couverts. Puis le lieu impose une capacité, le traiteur parle de personnel, les boissons prennent leur place et les locations s’invitent dans la conversation. Pour garder une vue d’ensemble, <a href="/blog/budget-mariage-moyen/">construire votre budget mariage global</a> permet de replacer chaque poste dans l’enveloppe complète.</p>
+
+    <!-- WIDGET_BUDGET_MARIAGE_START -->
+    <section class="tm-budget-widget" id="tm-budget-widget" aria-labelledby="tm-budget-title">
+      <div class="tm-budget-widget__intro">
+        <p class="tm-budget-widget__eyebrow">Estimation personnalisable</p>
+        <h2 id="tm-budget-title">Calculez votre budget mariage estimatif</h2>
+        <p>Choisissez votre nombre d’invités et votre niveau de réception. Le résultat est un repère de préparation, à ajuster avec des devis comparables.</p>
+      </div>
+
+      <div class="tm-budget-widget__controls">
+        <label for="tm-guests">Nombre d’invités <output id="tm-guests-output" for="tm-guests">80</output></label>
+        <input id="tm-guests" type="range" min="20" max="200" step="5" value="80" aria-describedby="tm-guests-help">
+        <p id="tm-guests-help" class="tm-budget-widget__help">Le nombre de convives fait évoluer les postes liés au repas, aux boissons et à la papeterie.</p>
+
+        <fieldset>
+          <legend>Format de réception</legend>
+          <div class="tm-budget-widget__options">
+            <label class="tm-budget-widget__option">
+              <input type="radio" name="tm-format" value="simple">
+              <span><strong>Simple et resserré</strong><small>Priorités ciblées, format réduit</small></span>
+            </label>
+            <label class="tm-budget-widget__option">
+              <input type="radio" name="tm-format" value="equilibre" checked>
+              <span><strong>Équilibré</strong><small>Réception complète et arbitrages mesurés</small></span>
+            </label>
+            <label class="tm-budget-widget__option">
+              <input type="radio" name="tm-format" value="etendu">
+              <span><strong>Étendu</strong><small>Plus d’options, de durée ou de personnalisation</small></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Options à prendre en compte</legend>
+          <div class="tm-budget-widget__checks">
+            <label><input type="checkbox" value="video"> Vidéaste</label>
+            <label><input type="checkbox" value="brunch"> Brunch du lendemain</label>
+            <label><input type="checkbox" value="coordination"> Coordination du jour J</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="tm-budget-widget__result" aria-live="polite">
+        <p class="tm-budget-widget__result-label">Estimation de votre enveloppe</p>
+        <p class="tm-budget-widget__total" id="tm-total">—</p>
+        <p class="tm-budget-widget__per-guest" id="tm-per-guest">—</p>
+        <p class="tm-budget-widget__notice">Cette estimation n’est ni un devis ni une moyenne nationale. Les tarifs changent selon la région, la date, le lieu et les prestations incluses.</p>
+      </div>
+
+      <details class="tm-budget-widget__details">
+        <summary>Voir la répartition indicative</summary>
+        <ul id="tm-breakdown"></ul>
+      </details>
+
+      <p class="tm-budget-widget__footnote">Conseil : comparez toujours des devis portant sur le même nombre d’invités, la même durée et les mêmes inclusions.</p>
+    </section>
+
+    <style>
+      .tm-budget-widget {
+        --tm-ink: #1e2424;
+        --tm-green: #0c4023;
+        --tm-paper: #f1f3f3;
+        --tm-salmon: #eb5e55;
+        --tm-line: #d9dddd;
+        max-width: 860px;
+        margin: 2.5rem auto;
+        padding: clamp(1.25rem, 3vw, 2.25rem);
+        border: 1px solid var(--tm-line);
+        border-radius: 18px;
+        background: linear-gradient(145deg, #ffffff 0%, var(--tm-paper) 100%);
+        color: var(--tm-ink);
+        font-family: inherit;
+        box-shadow: 0 12px 34px rgba(30, 36, 36, 0.08);
+      }
+      .tm-budget-widget * { box-sizing: border-box; }
+      .tm-budget-widget__eyebrow { margin: 0 0 .35rem; color: var(--tm-green); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+      .tm-budget-widget h2 { margin: 0 0 .65rem; color: var(--tm-green); font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; }
+      .tm-budget-widget__intro > p:last-child { max-width: 65ch; margin-bottom: 1.75rem; line-height: 1.55; }
+      .tm-budget-widget__controls { display: grid; gap: 1.5rem; }
+      .tm-budget-widget label, .tm-budget-widget legend { font-weight: 650; }
+      .tm-budget-widget output { float: right; min-width: 3rem; padding: .2rem .5rem; border-radius: 999px; background: var(--tm-green); color: #fff; text-align: center; }
+      .tm-budget-widget input[type="range"] { width: 100%; margin: 1rem 0 .25rem; accent-color: var(--tm-salmon); }
+      .tm-budget-widget__help, .tm-budget-widget__notice, .tm-budget-widget__footnote { margin: 0; color: #526060; font-size: .92rem; line-height: 1.45; }
+      .tm-budget-widget fieldset { margin: 0; padding: 1rem; border: 1px solid var(--tm-line); border-radius: 12px; }
+      .tm-budget-widget legend { padding: 0 .35rem; }
+      .tm-budget-widget__options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+      .tm-budget-widget__option { display: flex; gap: .55rem; align-items: flex-start; min-height: 100%; padding: .9rem; border: 1px solid var(--tm-line); border-radius: 10px; background: #fff; cursor: pointer; }
+      .tm-budget-widget__option:has(input:checked) { border-color: var(--tm-green); outline: 2px solid rgba(12, 64, 35, .12); }
+      .tm-budget-widget__option input { margin-top: .25rem; accent-color: var(--tm-green); }
+      .tm-budget-widget__option strong, .tm-budget-widget__option small { display: block; }
+      .tm-budget-widget__option small { margin-top: .25rem; color: #526060; font-size: .8rem; line-height: 1.3; }
+      .tm-budget-widget__checks { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; }
+      .tm-budget-widget__checks label { font-weight: 500; }
+      .tm-budget-widget__checks input { accent-color: var(--tm-green); }
+      .tm-budget-widget__result { margin-top: 1.5rem; padding: 1.25rem; border-radius: 12px; background: var(--tm-green); color: #fff; }
+      .tm-budget-widget__result-label { margin: 0; font-size: .9rem; opacity: .85; }
+      .tm-budget-widget__total { margin: .25rem 0; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.03em; }
+      .tm-budget-widget__per-guest { margin: 0 0 .75rem; font-size: 1rem; font-weight: 650; }
+      .tm-budget-widget__notice { color: rgba(255, 255, 255, .88); }
+      .tm-budget-widget__details { margin-top: 1rem; padding: 1rem; border-radius: 12px; background: #fff; }
+      .tm-budget-widget__details summary { cursor: pointer; color: var(--tm-green); font-weight: 700; }
+      .tm-budget-widget__details ul { margin: 1rem 0 0; padding-left: 1.2rem; }
+      .tm-budget-widget__details li { display: flex; justify-content: space-between; gap: 1rem; margin: .45rem 0; }
+      .tm-budget-widget__footnote { margin-top: 1rem; }
+      @media (max-width: 680px) {
+        .tm-budget-widget__options { grid-template-columns: 1fr; }
+        .tm-budget-widget__details li { flex-direction: column; gap: .1rem; }
+      }
+    </style>
+
+    <script>
+      (() => {
+        const root = document.getElementById('tm-budget-widget');
+        if (!root) return;
+
+        const guestsInput = root.querySelector('#tm-guests');
+        const guestsOutput = root.querySelector('#tm-guests-output');
+        const totalOutput = root.querySelector('#tm-total');
+        const perGuestOutput = root.querySelector('#tm-per-guest');
+        const breakdown = root.querySelector('#tm-breakdown');
+        const optionInputs = root.querySelectorAll('input[name="tm-format"], input[type="checkbox"]');
+
+        const formats = {
+          simple: { fixed: 5200, guest: 88, label: 'Simple et resserré' },
+          equilibre: { fixed: 8800, guest: 145, label: 'Équilibré' },
+          etendu: { fixed: 15500, guest: 235, label: 'Étendu' }
+        };
+
+        const extras = {
+          video: { amount: 2200, label: 'Vidéaste' },
+          brunch: { amountPerGuest: 24, label: 'Brunch du lendemain' },
+          coordination: { amount: 1250, label: 'Coordination du jour J' }
+        };
+
+        const euro = new Intl.NumberFormat('fr-FR', {
+          style: 'currency',
+          currency: 'EUR',
+          maximumFractionDigits: 0
+        });
+
+        function selectedFormat() {
+          return root.querySelector('input[name="tm-format"]:checked').value;
+        }
+
+        function update() {
+          const guests = Number(guestsInput.value);
+          const formatKey = selectedFormat();
+          const format = formats[formatKey];
+          let total = format.fixed + (guests * format.guest);
+          const rows = [
+            { label: 'Base de réception et prestations fixes', amount: format.fixed },
+            { label: 'Part estimative liée aux invités', amount: guests * format.guest }
+          ];
+
+          root.querySelectorAll('input[type="checkbox"]:checked').forEach((input) => {
+            const extra = extras[input.value];
+            const amount = extra.amount ?? extra.amountPerGuest * guests;
+            total += amount;
+            rows.push({ label: extra.label, amount });
+          });
+
+          guestsOutput.textContent = guests;
+          totalOutput.textContent = euro.format(total);
+          perGuestOutput.textContent = `Environ ${euro.format(Math.round(total / guests))} par invité, tous postes confondus`;
+          breakdown.innerHTML = rows.map((row) => `<li><span>${row.label}</span><strong>${euro.format(row.amount)}</strong></li>`).join('');
+        }
+
+        guestsInput.addEventListener('input', update);
+        optionInputs.forEach((input) => input.addEventListener('change', update));
+        update();
+      })();
+    </script>
+    <!-- WIDGET_BUDGET_MARIAGE_END -->
+
+    <h2>Deux cents personnes : le nombre devient une organisation</h2>
+
+    <p>Le <strong>mariage 200 invités</strong> change l’échelle de la journée. Le repas ne concerne plus seulement un menu et des couverts. Il appelle une salle capable d’accueillir, une cuisine adaptée, du personnel, une circulation fluide et parfois des navettes, des hébergements ou un plan de stationnement. La réception devient une petite ville pour une soirée…</p>
+
+    <p>Dans les retours d’expérience fournis, le même phénomène revient : un lieu, une cérémonie, la nourriture et l’alcool peuvent absorber presque tout le budget initial. Puis arrivent les fleurs, la photographie, l’animation et les locations. Ce sont des témoignages internationaux, pas des tarifs français. Ils illustrent néanmoins une question utile : à quel moment le <strong>budget de départ</strong> cesse-t-il de couvrir le niveau d’événement imaginé ?</p>
+
+    <ul>
+      <li>La capacité réelle de la salle, pas seulement sa capacité annoncée</li>
+      <li>Le repas, le vin d’honneur, les boissons et le personnel</li>
+      <li>Le mobilier, la vaisselle, le linge et les éclairages</li>
+      <li>Les déplacements, hébergements et accès pour les invités</li>
+      <li>La coordination nécessaire au déroulé de la journée</li>
+    </ul>
+
+    <p>Un grand mariage ne devient pas automatiquement luxueux. Il devient surtout <strong>plus sensible aux détails</strong>. Une ligne oubliée à 200 personnes ne reste rarement une petite ligne !</p>
+
+    <h2>Le lieu, le repas et les boissons : le noyau du budget</h2>
+
+    <p>Pour une réception de cette taille, le <strong>budget traiteur 200 personnes</strong> devient souvent l’un des premiers sujets. Les sources professionnelles et les plateformes de devis affichent des niveaux très différents selon la formule. Elles distinguent cocktail, buffet, repas assis, boissons, service et location de vaisselle. Cette diversité rend les comparaisons rapides assez fragiles.</p>
+
+    <p>Mariée.fr indique, à titre de repère éditorial, des tarifs de repas assis hors boissons entre 60 € et 150 € par personne, ainsi qu’une enveloppe traiteur moyenne de 10 000 € pour 200 personnes. D’autres sources évoquent des fourchettes beaucoup plus hautes dès que le service, les boissons ou une formule complète entrent dans le périmètre. Ces chiffres ne racontent pas la même prestation. [<a href="https://www.mariee.fr/budget-mariage/200-personnes/">Mariée.fr</a>]</p>
+
+    <p>Le <strong>prix mariage 200 personnes</strong> dépend alors moins du seul nombre d’assiettes que de l’expérience recherchée : dîner assis, cocktail prolongé, bar, brunch, menu sur mesure, groupe de musique ou réception sur plusieurs jours. [<a href="/blog/traiteur-mariage-prix-choix/">Évaluer le prix d’un traiteur de mariage</a>] permet de regarder ces inclusions plus finement.</p>
+
+    <table>
+      <thead>
+        <tr><th>Poste</th><th>Ce qui fait varier l’enveloppe</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lieu de réception</td><td>Capacité, région, exclusivité, durée, hébergements, mobilier</td></tr>
+        <tr><td>Repas et boissons</td><td>Formule, service, alcool, vin d’honneur, brunch, personnel</td></tr>
+        <tr><td>Location et logistique</td><td>Vaisselle, tables, linge, éclairage, sanitaires, transport</td></tr>
+        <tr><td>Animation</td><td>DJ, groupe, matériel, durée, sonorisation de cérémonie</td></tr>
+        <tr><td>Décoration et fleurs</td><td>Nombre de tables, installation, scénographie, saison</td></tr>
+      </tbody>
+    </table>
+
+    <p>La taille du lieu mérite aussi son propre examen. [<a href="/blog/prix-salle-mariage/">Analyser le prix d’une salle de mariage</a>] aide à repérer les horaires, les frais annexes et les contraintes parfois cachées derrière une capacité de 200 personnes.</p>
+
+    <h2>Une grande liste d’invités, des choix qui doivent se répondre</h2>
+
+    <p>Deux cents personnes, ce sont souvent de grandes familles, plusieurs cercles d’amis, des collègues, des cousins que l’on voit rarement et cette difficulté très humaine de ne pas vouloir laisser quelqu’un de côté. Le <strong>coût mariage 200 personnes</strong> ne se réduit pas à une addition froide. Il raconte aussi la place que vous voulez donner aux autres dans votre journée.</p>
+
+    <p>Mais chaque ambition en appelle une autre. Un lieu très travaillé invite parfois à des fleurs, du mobilier ou une lumière qui lui correspondent. Un dîner gastronomique appelle souvent un service et une vaisselle du même niveau. Ce n’est pas une règle absolue. C’est une logique de cohérence qui mérite d’être regardée avant de signer…</p>
+
+    <blockquote>
+      <p><strong>À retenir avant tout devis :</strong> un poste haut de gamme n’oblige pas tous les autres à suivre. Il faut seulement savoir quels écarts sont assumés et lesquels risquent de créer une réception incohérente.</p>
+    </blockquote>
+
+    <p>La comparaison devient plus lisible lorsque chaque prestataire reçoit le même brief : date, nombre de convives, durée, lieu, format de repas, contraintes d’accès et prestations souhaitées. [<a href="/blog/comparer-devis-prestataires/">Comparer les devis de prestataires de mariage</a>] donne une méthode pour rapprocher les offres sans les confondre.</p>
+
+    <h2>Questions fréquentes</h2>
+
+    <h3>Quel budget mariage prévoir pour 200 personnes ?</h3>
+    <p>Un <strong>budget mariage 200 personnes</strong> varie fortement selon la région, le lieu, la restauration et le niveau de personnalisation. Une source éditoriale comme Mariée.fr évoque un total moyen de 22 300 €, tandis que d’autres estimations dépassent largement ce montant pour des prestations plus complètes. Ces écarts imposent de comparer les inclusions avant les totaux.</p>
+
+    <h3>Quel budget traiteur prévoir pour 200 personnes ?</h3>
+    <p>Le <strong>budget traiteur 200 personnes</strong> dépend du type de repas, du service, des boissons et des locations incluses. Mariée.fr indique un repère de 60 € à 150 € par invité pour un repas assis hors boissons. Ce n’est pas un devis : seule une proposition détaillée relie un tarif à une prestation précise.</p>
+
+    <h3>Peut-on organiser un mariage de 200 personnes avec un budget limité ?</h3>
+    <p>Un <strong>mariage 200 invités</strong> peut prendre des formes très différentes. Le lieu, la date, le repas et la durée de réception déplacent fortement le budget. Le format devient plus lisible lorsque les priorités sont posées avant les réservations.</p>
+
+    <h2>À retenir</h2>
+
+    <p>Un <strong>budget mariage 200 personnes</strong> ne se décide pas seulement autour d’un prix par convive. Le lieu, le repas, les boissons, le personnel et la logistique forment un ensemble. À cette échelle, chaque détail se répète deux cents fois…</p>
+
+    <p>Pour comparer ce format à une réception plus resserrée, [<a href="/blog/budget-mariage-50-personnes/">prévoir le budget d’un mariage de 50 invités</a>] montre la place des coûts fixes dans un petit comité. Deux cents voix dans une même salle, cela demande de la méthode. Et beaucoup d’air entre les tables.</p>
+  </article>
+  <!-- ARTICLE_HTML_END -->
+
+  <!--
+  SOURCES EXTERNES UTILISÉES
+  - https://www.mariee.fr/budget-mariage/200-personnes/
+
+  LIENS INTERNES PRÉVUS
+  - /blog/budget-mariage-moyen/
+  - /blog/traiteur-mariage-prix-choix/
+  - /blog/prix-salle-mariage/
+  - /blog/comparer-devis-prestataires/
+  - /blog/budget-mariage-50-personnes/
+  -->
+</body>
+</html>

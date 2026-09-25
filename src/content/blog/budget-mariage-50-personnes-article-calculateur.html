@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget mariage 50 personnes : combien prévoir ?</title>
+  <meta name="description" content="Budget mariage 50 personnes : estimez votre enveloppe, les coûts fixes et les postes qui font varier une réception intime.">
+</head>
+<body>
+  <!--
+  FICHE TECHNIQUE D’INTÉGRATION
+  Fichier Markdown cible : src/content/blog/budget-mariage-50-personnes.md
+  URL statique attendue : https://top-mariage.fr/blog/budget-mariage-50-personnes/
+  Catégorie : organisation-mariage
+
+  Le widget contient HTML, CSS et JavaScript.
+  Si les balises <script> sont neutralisées dans les articles Markdown Astro,
+  extraire le bloc WIDGET_BUDGET_MARIAGE et l’intégrer dans un composant Astro dédié.
+  -->
+
+  <!-- FRONTMATTER_YAML_START
+  ---
+  title: "Budget mariage 50 personnes : un petit comité, pas une petite addition"
+  description: "Budget mariage 50 personnes : estimez votre enveloppe, les coûts fixes et les postes qui font varier une réception intime."
+  pubDate: 2026-09-25
+  updatedDate: 2026-09-25
+  category: "organisation-mariage"
+  tags:
+    - budget mariage 50 personnes
+    - budget mariage 50 invités
+    - coût mariage 50 personnes
+    - budget mariage petit comité
+    - prix mariage 50 personnes
+  draft: true
+  ---
+  FRONTMATTER_YAML_END -->
+
+  <!-- ARTICLE_HTML_START -->
+  <article>
+    <header>
+      <h1>Budget mariage 50 personnes : un petit comité, pas une petite addition</h1>
+    </header>
+
+    <section aria-label="En bref">
+      <p><strong>En bref</strong><br>Un mariage de 50 personnes paraît plus simple. La table est plus courte, la liste d’invités plus nette et le repas semble plus facile à imaginer. Pourtant, les coûts fixes n’ont pas reçu le mémo… Un <strong>petit comité</strong> réduit plusieurs dépenses, mais il ne rend pas le lieu, la photo ou les alliances deux fois moins chers.</p>
+    </section>
+
+    <p>Un <strong>budget mariage 50 personnes</strong> permet souvent de privilégier la qualité au volume : un repas plus raffiné, une salle plus singulière ou une animation plus personnelle. Pour situer ce format dans l’ensemble du projet, <a href="/blog/budget-mariage-moyen/">construire votre budget mariage global</a> pose les postes qui composent une réception, quel que soit le nombre d’invités.</p>
+
+    <!-- WIDGET_BUDGET_MARIAGE_START -->
+    <section class="tm-budget-widget" id="tm-budget-widget" aria-labelledby="tm-budget-title">
+      <div class="tm-budget-widget__intro">
+        <p class="tm-budget-widget__eyebrow">Estimation personnalisable</p>
+        <h2 id="tm-budget-title">Calculez votre budget mariage estimatif</h2>
+        <p>Choisissez votre nombre d’invités et votre niveau de réception. Le résultat est un repère de préparation, à ajuster avec des devis comparables.</p>
+      </div>
+
+      <div class="tm-budget-widget__controls">
+        <label for="tm-guests">Nombre d’invités <output id="tm-guests-output" for="tm-guests">80</output></label>
+        <input id="tm-guests" type="range" min="20" max="200" step="5" value="80" aria-describedby="tm-guests-help">
+        <p id="tm-guests-help" class="tm-budget-widget__help">Le nombre de convives fait évoluer les postes liés au repas, aux boissons et à la papeterie.</p>
+
+        <fieldset>
+          <legend>Format de réception</legend>
+          <div class="tm-budget-widget__options">
+            <label class="tm-budget-widget__option">
+              <input type="radio" name="tm-format" value="simple">
+              <span><strong>Simple et resserré</strong><small>Priorités ciblées, format réduit</small></span>
+            </label>
+            <label class="tm-budget-widget__option">
+              <input type="radio" name="tm-format" value="equilibre" checked>
+              <span><strong>Équilibré</strong><small>Réception complète et arbitrages mesurés</small></span>
+            </label>
+            <label class="tm-budget-widget__option">
+              <input type="radio" name="tm-format" value="etendu">
+              <span><strong>Étendu</strong><small>Plus d’options, de durée ou de personnalisation</small></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Options à prendre en compte</legend>
+          <div class="tm-budget-widget__checks">
+            <label><input type="checkbox" value="video"> Vidéaste</label>
+            <label><input type="checkbox" value="brunch"> Brunch du lendemain</label>
+            <label><input type="checkbox" value="coordination"> Coordination du jour J</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="tm-budget-widget__result" aria-live="polite">
+        <p class="tm-budget-widget__result-label">Estimation de votre enveloppe</p>
+        <p class="tm-budget-widget__total" id="tm-total">—</p>
+        <p class="tm-budget-widget__per-guest" id="tm-per-guest">—</p>
+        <p class="tm-budget-widget__notice">Cette estimation n’est ni un devis ni une moyenne nationale. Les tarifs changent selon la région, la date, le lieu et les prestations incluses.</p>
+      </div>
+
+      <details class="tm-budget-widget__details">
+        <summary>Voir la répartition indicative</summary>
+        <ul id="tm-breakdown"></ul>
+      </details>
+
+      <p class="tm-budget-widget__footnote">Conseil : comparez toujours des devis portant sur le même nombre d’invités, la même durée et les mêmes inclusions.</p>
+    </section>
+
+    <style>
+      .tm-budget-widget {
+        --tm-ink: #1e2424;
+        --tm-green: #0c4023;
+        --tm-paper: #f1f3f3;
+        --tm-salmon: #eb5e55;
+        --tm-line: #d9dddd;
+        max-width: 860px;
+        margin: 2.5rem auto;
+        padding: clamp(1.25rem, 3vw, 2.25rem);
+        border: 1px solid var(--tm-line);
+        border-radius: 18px;
+        background: linear-gradient(145deg, #ffffff 0%, var(--tm-paper) 100%);
+        color: var(--tm-ink);
+        font-family: inherit;
+        box-shadow: 0 12px 34px rgba(30, 36, 36, 0.08);
+      }
+      .tm-budget-widget * { box-sizing: border-box; }
+      .tm-budget-widget__eyebrow { margin: 0 0 .35rem; color: var(--tm-green); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+      .tm-budget-widget h2 { margin: 0 0 .65rem; color: var(--tm-green); font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; }
+      .tm-budget-widget__intro > p:last-child { max-width: 65ch; margin-bottom: 1.75rem; line-height: 1.55; }
+      .tm-budget-widget__controls { display: grid; gap: 1.5rem; }
+      .tm-budget-widget label, .tm-budget-widget legend { font-weight: 650; }
+      .tm-budget-widget output { float: right; min-width: 3rem; padding: .2rem .5rem; border-radius: 999px; background: var(--tm-green); color: #fff; text-align: center; }
+      .tm-budget-widget input[type="range"] { width: 100%; margin: 1rem 0 .25rem; accent-color: var(--tm-salmon); }
+      .tm-budget-widget__help, .tm-budget-widget__notice, .tm-budget-widget__footnote { margin: 0; color: #526060; font-size: .92rem; line-height: 1.45; }
+      .tm-budget-widget fieldset { margin: 0; padding: 1rem; border: 1px solid var(--tm-line); border-radius: 12px; }
+      .tm-budget-widget legend { padding: 0 .35rem; }
+      .tm-budget-widget__options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+      .tm-budget-widget__option { display: flex; gap: .55rem; align-items: flex-start; min-height: 100%; padding: .9rem; border: 1px solid var(--tm-line); border-radius: 10px; background: #fff; cursor: pointer; }
+      .tm-budget-widget__option:has(input:checked) { border-color: var(--tm-green); outline: 2px solid rgba(12, 64, 35, .12); }
+      .tm-budget-widget__option input { margin-top: .25rem; accent-color: var(--tm-green); }
+      .tm-budget-widget__option strong, .tm-budget-widget__option small { display: block; }
+      .tm-budget-widget__option small { margin-top: .25rem; color: #526060; font-size: .8rem; line-height: 1.3; }
+      .tm-budget-widget__checks { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; }
+      .tm-budget-widget__checks label { font-weight: 500; }
+      .tm-budget-widget__checks input { accent-color: var(--tm-green); }
+      .tm-budget-widget__result { margin-top: 1.5rem; padding: 1.25rem; border-radius: 12px; background: var(--tm-green); color: #fff; }
+      .tm-budget-widget__result-label { margin: 0; font-size: .9rem; opacity: .85; }
+      .tm-budget-widget__total { margin: .25rem 0; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.03em; }
+      .tm-budget-widget__per-guest { margin: 0 0 .75rem; font-size: 1rem; font-weight: 650; }
+      .tm-budget-widget__notice { color: rgba(255, 255, 255, .88); }
+      .tm-budget-widget__details { margin-top: 1rem; padding: 1rem; border-radius: 12px; background: #fff; }
+      .tm-budget-widget__details summary { cursor: pointer; color: var(--tm-green); font-weight: 700; }
+      .tm-budget-widget__details ul { margin: 1rem 0 0; padding-left: 1.2rem; }
+      .tm-budget-widget__details li { display: flex; justify-content: space-between; gap: 1rem; margin: .45rem 0; }
+      .tm-budget-widget__footnote { margin-top: 1rem; }
+      @media (max-width: 680px) {
+        .tm-budget-widget__options { grid-template-columns: 1fr; }
+        .tm-budget-widget__details li { flex-direction: column; gap: .1rem; }
+      }
+    </style>
+
+    <script>
+      (() => {
+        const root = document.getElementById('tm-budget-widget');
+        if (!root) return;
+
+        const guestsInput = root.querySelector('#tm-guests');
+        const guestsOutput = root.querySelector('#tm-guests-output');
+        const totalOutput = root.querySelector('#tm-total');
+        const perGuestOutput = root.querySelector('#tm-per-guest');
+        const breakdown = root.querySelector('#tm-breakdown');
+        const optionInputs = root.querySelectorAll('input[name="tm-format"], input[type="checkbox"]');
+
+        const formats = {
+          simple: { fixed: 5200, guest: 88, label: 'Simple et resserré' },
+          equilibre: { fixed: 8800, guest: 145, label: 'Équilibré' },
+          etendu: { fixed: 15500, guest: 235, label: 'Étendu' }
+        };
+
+        const extras = {
+          video: { amount: 2200, label: 'Vidéaste' },
+          brunch: { amountPerGuest: 24, label: 'Brunch du lendemain' },
+          coordination: { amount: 1250, label: 'Coordination du jour J' }
+        };
+
+        const euro = new Intl.NumberFormat('fr-FR', {
+          style: 'currency',
+          currency: 'EUR',
+          maximumFractionDigits: 0
+        });
+
+        function selectedFormat() {
+          return root.querySelector('input[name="tm-format"]:checked').value;
+        }
+
+        function update() {
+          const guests = Number(guestsInput.value);
+          const formatKey = selectedFormat();
+          const format = formats[formatKey];
+          let total = format.fixed + (guests * format.guest);
+          const rows = [
+            { label: 'Base de réception et prestations fixes', amount: format.fixed },
+            { label: 'Part estimative liée aux invités', amount: guests * format.guest }
+          ];
+
+          root.querySelectorAll('input[type="checkbox"]:checked').forEach((input) => {
+            const extra = extras[input.value];
+            const amount = extra.amount ?? extra.amountPerGuest * guests;
+            total += amount;
+            rows.push({ label: extra.label, amount });
+          });
+
+          guestsOutput.textContent = guests;
+          totalOutput.textContent = euro.format(total);
+          perGuestOutput.textContent = `Environ ${euro.format(Math.round(total / guests))} par invité, tous postes confondus`;
+          breakdown.innerHTML = rows.map((row) => `<li><span>${row.label}</span><strong>${euro.format(row.amount)}</strong></li>`).join('');
+        }
+
+        guestsInput.addEventListener('input', update);
+        optionInputs.forEach((input) => input.addEventListener('change', update));
+        update();
+      })();
+    </script>
+    <!-- WIDGET_BUDGET_MARIAGE_END -->
+
+    <h2>Pourquoi 50 invités ne divisent pas tout par deux</h2>
+
+    <p>Le <strong>budget repas mariage 50 personnes</strong> suit assez logiquement le nombre de couverts. Le traiteur, le vin d’honneur, les boissons, les cadeaux invités, les faire-part et une partie du mobilier évoluent avec la liste des convives. C’est là que le mariage de 50 invités devient plus léger… au moins sur le papier.</p>
+
+    <p>Les <strong>coûts fixes</strong> suivent une autre logique. Un photographe facture surtout une présence, un savoir-faire et du temps de post-production. Une robe de mariée, un costume, des alliances, un DJ ou une prestation de coiffure ne dépendent pas vraiment du nombre de chaises occupées. Le coût mariage 50 personnes peut donc grimper par invité, alors même que le total baisse.</p>
+
+    <ul>
+      <li>Le lieu et son éventuel minimum de location</li>
+      <li>Le photographe, le vidéaste et la durée de présence</li>
+      <li>Les tenues, alliances et préparatifs beauté</li>
+      <li>Le DJ, la sonorisation et les horaires de fin</li>
+      <li>Les frais de livraison, ménage ou repas prestataires</li>
+    </ul>
+
+    <p>Je ne vous propose pas de hack ultime. Je vous propose de regarder ce qui reste <strong>presque incompressible</strong>. C’est moins spectaculaire, mais beaucoup plus utile lorsqu’un devis arrive avec une belle couverture et quelques lignes très discrètes.</p>
+
+    <h2>Une estimation pour 50 invités</h2>
+
+    <p>Le barème Top Mariage situe un <strong>prix mariage 50 personnes</strong> entre 16 658 € et 23 720 €. Son point médian atteint 20 150 €, soit environ 403 € par convive. Ce n’est pas une moyenne nationale officielle. C’est une estimation construite à partir d’un scénario de réception et de ses douze postes.</p>
+
+    <p>Le bas de la fourchette correspond à la campagne, à la hors-saison et à un jour autre que le samedi. Le haut se rapproche d’une réception en Île-de-France, un samedi de pleine saison. La région, la date et le niveau de prestation déplacent rapidement l’enveloppe !</p>
+
+    <table>
+      <thead>
+        <tr><th>Poste</th><th>Repère médian du barème</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lieu de réception</td><td>2 500 €</td></tr>
+        <tr><td>Traiteur et boissons</td><td>4 500 €</td></tr>
+        <tr><td>Photographe</td><td>1 800 €</td></tr>
+        <tr><td>Vidéaste</td><td>1 500 €</td></tr>
+        <tr><td>DJ ou animation</td><td>1 200 €</td></tr>
+        <tr><td>Tenues, beauté, fleurs et papeterie</td><td>Variables selon le projet</td></tr>
+        <tr><td>Alliances et voyage de noces</td><td>À isoler selon vos choix</td></tr>
+      </tbody>
+    </table>
+
+    <p>Ces montants ne s’additionnent pas mécaniquement. Certains postes sont facultatifs. D’autres se recoupent selon les formules. Le <strong>prix d’un mariage de 50 personnes</strong> dépend du périmètre réel, pas d’un tableau lu trop vite.</p>
+
+    <h2>Lieu, repas et vin d’honneur</h2>
+
+    <p>Pour 50 personnes, une salle proportionnée au groupe évite parfois un espace trop grand ou un minimum de facturation difficile à absorber. Le nombre de convives compte, mais la durée de location, le mobilier, le nettoyage, les horaires et l’exclusivité du lieu pèsent aussi dans la balance. <a href="/blog/prix-salle-mariage/">Analyser le prix d’une salle de mariage</a> permet d’ouvrir ce poste ligne par ligne.</p>
+
+    <p>Le <strong>budget mariage 50 personnes avec traiteur</strong> varie selon le repas, le vin d’honneur, les boissons, le service, le dessert et le brunch éventuel. Une formule restaurant, un repas familial ou un format sans traiteur peuvent convenir à certains projets. L’important reste le périmètre comparé. <a href="/blog/traiteur-mariage-prix-choix/">Évaluer le prix d’un traiteur de mariage</a> aide à distinguer une offre complète d’un tarif qui appelle plusieurs suppléments.</p>
+
+    <blockquote>
+      <p><strong>À vérifier dans chaque devis :</strong> minimum de couverts, droit de bouchon, service, mobilier, nettoyage, repas prestataires, heures supplémentaires et conditions de report.</p>
+    </blockquote>
+
+    <p>L’information sur le prix et les caractéristiques d’une prestation doit précéder l’engagement du client. Le devis sert précisément à sécuriser cette comparaison avant que les deux parties ne s’engagent. <a href="https://sites.service-information-publique.fr/vias/guide-professionnels/F31144.html">Service-Public</a>.</p>
+
+    <h2>Petit budget, champêtre ou chic</h2>
+
+    <p>Un <strong>budget mariage 50 personnes petit budget</strong> n’efface pas la beauté d’une réception. Il resserre le périmètre : moins d’options, une durée différente ou une décoration plus ciblée. Le détail qui compte vraiment garde alors sa place, sans que tout le reste réclame son heure de gloire.</p>
+
+    <p>Un <strong>budget mariage champêtre 50 personnes</strong> peut réunir fleurs, bois, longues tablées et lumière du soir. Il appelle aussi quelques questions très terrestres : plan B météo, éclairage, accès, sanitaires, mobilier et transport. La poésie et la logistique finissent toujours par s’asseoir à la même table…</p>
+
+    <p>Un <strong>budget mariage 50 personnes chic</strong> ou luxe peut inclure une privatisation, un repas à plusieurs temps, des hébergements, une scénographie ou une coordination étendue. Le petit comité devient alors plus exclusif, pas forcément plus abordable. Le mot « luxe » ne garantit d’ailleurs rien sur l’émotion de la journée.</p>
+
+    <h2>Questions fréquentes</h2>
+
+    <h3>Quel budget mariage prévoir pour 50 personnes ?</h3>
+    <p>Le barème Top Mariage retient une fourchette de <strong>16 658 € à 23 720 €</strong>. Elle dépend du lieu, de la région, de la date, du repas et des options retenues.</p>
+
+    <h3>Un mariage de 50 personnes coûte-t-il deux fois moins cher ?</h3>
+    <p>Non. Les repas et boissons diminuent avec la liste d’invités. Les prestations fixes, elles, restent souvent proches : photo, DJ, tenues, alliances ou location.</p>
+
+    <h3>Comment suivre les dépenses mariage 50 personnes ?</h3>
+    <p>Un tableau Google Sheets ou Excel rend visibles les <strong>devis, acomptes et soldes</strong>. Deux offres comparables racontent toujours plus qu’un seul total affiché.</p>
+
+    <h3>Quel budget traiteur 50 personnes retenir ?</h3>
+    <p>Le <strong>budget traiteur 50 personnes</strong> dépend du format retenu : cocktail, buffet, repas assis, boissons, service et brunch. Mariages.net, Zankyou ou WeddingWire peuvent aider à repérer des professionnels. Les devis restent le vrai point de comparaison.</p>
+
+    <h2>À retenir</h2>
+
+    <p>Un <strong>budget mariage petit comité</strong> peut être intime, raffiné et parfois ambitieux. Le repas et les boissons diminuent avec 50 invités. Les frais fixes, eux, gardent leur place dans l’addition.</p>
+
+    <p>Pour mettre cette réception en perspective, la future page <a href="/blog/budget-mariage-100-personnes/">prévoir le budget d’un mariage de 100 invités</a> prolongera la comparaison. Cinquante chaises bien placées peuvent déjà contenir beaucoup de lumière…</p>
+  </article>
+  <!-- ARTICLE_HTML_END -->
+
+  <!--
+  SOURCES EXTERNES UTILISÉES
+  - https://sites.service-information-publique.fr/vias/guide-professionnels/F31144.html
+
+  LIENS INTERNES PRÉVUS
+  - /blog/budget-mariage-moyen/
+  - /blog/prix-salle-mariage/
+  - /blog/traiteur-mariage-prix-choix/
+  - /blog/budget-mariage-100-personnes/
+  -->
+</body>
+</html>

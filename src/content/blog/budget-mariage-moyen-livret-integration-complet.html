@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget mariage moyen : prix et répartition par poste</title>
+  <meta name="description" content="Budget mariage : estimez vos dépenses par poste, comparez les devis et construisez une enveloppe réaliste selon vos invités et vos priorités.">
+</head>
+<body>
+  <!--
+  LIVRET D’INTÉGRATION — TOP-MARIAGE.FR
+
+  Fichier éditorial cible : src/content/blog/budget-mariage-moyen.md
+  URL attendue : https://top-mariage.fr/blog/budget-mariage-moyen/
+  Catégorie Astro : organisation-mariage
+
+  Les deux blocs suivants doivent être séparés à l’intégration :
+  1. Le frontmatter + le contenu article doivent aller dans le fichier Markdown.
+  2. Le widget doit être intégré via un composant Astro si le rendu Markdown interdit les scripts.
+  -->
+
+  <!-- FRONTMATTER_YAML_START
+  ---
+  title: "Budget mariage : comment prévoir vos dépenses sans mauvaise surprise"
+  description: "Budget mariage : estimez vos dépenses par poste, comparez les devis et construisez une enveloppe réaliste selon vos invités et vos priorités."
+  pubDate: 2026-09-25
+  updatedDate: 2026-09-25
+  category: "organisation-mariage"
+  tags:
+    - budget mariage
+    - budget mariage moyen
+    - budget mariage 100 personnes
+    - budget mariage par poste
+    - prix mariage
+  draft: false
+  ---
+  FRONTMATTER_YAML_END -->
+
+  <!-- WIDGET_BUDGET_MARIAGE_START -->
+  <section class="tm-budget-widget" id="tm-budget-widget" aria-labelledby="tm-budget-title">
+    <div class="tm-budget-widget__intro">
+      <p class="tm-budget-widget__eyebrow">Estimation personnalisable</p>
+      <h2 id="tm-budget-title">Calculez votre budget mariage estimatif</h2>
+      <p>Choisissez votre nombre d’invités et votre niveau de réception. Le résultat est un repère de préparation, à ajuster avec des devis comparables.</p>
+    </div>
+
+    <div class="tm-budget-widget__controls">
+      <label for="tm-guests">Nombre d’invités <output id="tm-guests-output" for="tm-guests">80</output></label>
+      <input id="tm-guests" type="range" min="20" max="200" step="5" value="80" aria-describedby="tm-guests-help">
+      <p id="tm-guests-help" class="tm-budget-widget__help">Le nombre de convives fait évoluer les postes liés au repas, aux boissons et à la papeterie.</p>
+
+      <fieldset>
+        <legend>Format de réception</legend>
+        <div class="tm-budget-widget__options">
+          <label class="tm-budget-widget__option">
+            <input type="radio" name="tm-format" value="simple">
+            <span><strong>Simple et resserré</strong><small>Priorités ciblées, format réduit</small></span>
+          </label>
+          <label class="tm-budget-widget__option">
+            <input type="radio" name="tm-format" value="equilibre" checked>
+            <span><strong>Équilibré</strong><small>Réception complète et arbitrages mesurés</small></span>
+          </label>
+          <label class="tm-budget-widget__option">
+            <input type="radio" name="tm-format" value="etendu">
+            <span><strong>Étendu</strong><small>Plus d’options, de durée ou de personnalisation</small></span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Options à prendre en compte</legend>
+        <div class="tm-budget-widget__checks">
+          <label><input type="checkbox" value="video"> Vidéaste</label>
+          <label><input type="checkbox" value="brunch"> Brunch du lendemain</label>
+          <label><input type="checkbox" value="coordination"> Coordination du jour J</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tm-budget-widget__result" aria-live="polite">
+      <p class="tm-budget-widget__result-label">Estimation de votre enveloppe</p>
+      <p class="tm-budget-widget__total" id="tm-total">—</p>
+      <p class="tm-budget-widget__per-guest" id="tm-per-guest">—</p>
+      <p class="tm-budget-widget__notice">Cette estimation n’est ni un devis ni une moyenne nationale. Les tarifs changent selon la région, la date, le lieu et les prestations incluses.</p>
+    </div>
+
+    <details class="tm-budget-widget__details">
+      <summary>Voir la répartition indicative</summary>
+      <ul id="tm-breakdown"></ul>
+    </details>
+
+    <p class="tm-budget-widget__footnote">Conseil : comparez toujours des devis portant sur le même nombre d’invités, la même durée et les mêmes inclusions.</p>
+  </section>
+
+  <style>
+    .tm-budget-widget {
+      --tm-ink: #1e2424;
+      --tm-green: #0c4023;
+      --tm-paper: #f1f3f3;
+      --tm-salmon: #eb5e55;
+      --tm-line: #d9dddd;
+      max-width: 860px;
+      margin: 2.5rem auto;
+      padding: clamp(1.25rem, 3vw, 2.25rem);
+      border: 1px solid var(--tm-line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, #ffffff 0%, var(--tm-paper) 100%);
+      color: var(--tm-ink);
+      font-family: inherit;
+      box-shadow: 0 12px 34px rgba(30, 36, 36, 0.08);
+    }
+    .tm-budget-widget * { box-sizing: border-box; }
+    .tm-budget-widget__eyebrow { margin: 0 0 .35rem; color: var(--tm-green); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .tm-budget-widget h2 { margin: 0 0 .65rem; color: var(--tm-green); font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; }
+    .tm-budget-widget__intro > p:last-child { max-width: 65ch; margin-bottom: 1.75rem; line-height: 1.55; }
+    .tm-budget-widget__controls { display: grid; gap: 1.5rem; }
+    .tm-budget-widget label, .tm-budget-widget legend { font-weight: 650; }
+    .tm-budget-widget output { float: right; min-width: 3rem; padding: .2rem .5rem; border-radius: 999px; background: var(--tm-green); color: #fff; text-align: center; }
+    .tm-budget-widget input[type="range"] { width: 100%; margin: 1rem 0 .25rem; accent-color: var(--tm-salmon); }
+    .tm-budget-widget__help, .tm-budget-widget__notice, .tm-budget-widget__footnote { margin: 0; color: #526060; font-size: .92rem; line-height: 1.45; }
+    .tm-budget-widget fieldset { margin: 0; padding: 1rem; border: 1px solid var(--tm-line); border-radius: 12px; }
+    .tm-budget-widget legend { padding: 0 .35rem; }
+    .tm-budget-widget__options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+    .tm-budget-widget__option { display: flex; gap: .55rem; align-items: flex-start; min-height: 100%; padding: .9rem; border: 1px solid var(--tm-line); border-radius: 10px; background: #fff; cursor: pointer; }
+    .tm-budget-widget__option:has(input:checked) { border-color: var(--tm-green); outline: 2px solid rgba(12, 64, 35, .12); }
+    .tm-budget-widget__option input { margin-top: .25rem; accent-color: var(--tm-green); }
+    .tm-budget-widget__option strong, .tm-budget-widget__option small { display: block; }
+    .tm-budget-widget__option small { margin-top: .25rem; color: #526060; font-size: .8rem; line-height: 1.3; }
+    .tm-budget-widget__checks { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; }
+    .tm-budget-widget__checks label { font-weight: 500; }
+    .tm-budget-widget__checks input { accent-color: var(--tm-green); }
+    .tm-budget-widget__result { margin-top: 1.5rem; padding: 1.25rem; border-radius: 12px; background: var(--tm-green); color: #fff; }
+    .tm-budget-widget__result-label { margin: 0; font-size: .9rem; opacity: .85; }
+    .tm-budget-widget__total { margin: .25rem 0; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.03em; }
+    .tm-budget-widget__per-guest { margin: 0 0 .75rem; font-size: 1rem; font-weight: 650; }
+    .tm-budget-widget__notice { color: rgba(255, 255, 255, .88); }
+    .tm-budget-widget__details { margin-top: 1rem; padding: 1rem; border-radius: 12px; background: #fff; }
+    .tm-budget-widget__details summary { cursor: pointer; color: var(--tm-green); font-weight: 700; }
+    .tm-budget-widget__details ul { margin: 1rem 0 0; padding-left: 1.2rem; }
+    .tm-budget-widget__details li { display: flex; justify-content: space-between; gap: 1rem; margin: .45rem 0; }
+    .tm-budget-widget__footnote { margin-top: 1rem; }
+    @media (max-width: 680px) {
+      .tm-budget-widget__options { grid-template-columns: 1fr; }
+      .tm-budget-widget__details li { flex-direction: column; gap: .1rem; }
+    }
+  </style>
+
+  <script>
+    (() => {
+      const root = document.getElementById('tm-budget-widget');
+      if (!root) return;
+      const guestsInput = root.querySelector('#tm-guests');
+      const guestsOutput = root.querySelector('#tm-guests-output');
+      const totalOutput = root.querySelector('#tm-total');
+      const perGuestOutput = root.querySelector('#tm-per-guest');
+      const breakdown = root.querySelector('#tm-breakdown');
+      const optionInputs = root.querySelectorAll('input[name="tm-format"], input[type="checkbox"]');
+      const formats = {
+        simple: { fixed: 5200, guest: 88 },
+        equilibre: { fixed: 8800, guest: 145 },
+        etendu: { fixed: 15500, guest: 235 }
+      };
+      const extras = {
+        video: { amount: 2200, label: 'Vidéaste' },
+        brunch: { amountPerGuest: 24, label: 'Brunch du lendemain' },
+        coordination: { amount: 1250, label: 'Coordination du jour J' }
+      };
+      const euro = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+      function update() {
+        const guests = Number(guestsInput.value);
+        const format = formats[root.querySelector('input[name="tm-format"]:checked').value];
+        let total = format.fixed + (guests * format.guest);
+        const rows = [
+          { label: 'Base de réception et prestations fixes', amount: format.fixed },
+          { label: 'Part estimative liée aux invités', amount: guests * format.guest }
+        ];
+        root.querySelectorAll('input[type="checkbox"]:checked').forEach((input) => {
+          const extra = extras[input.value];
+          const amount = extra.amount ?? extra.amountPerGuest * guests;
+          total += amount;
+          rows.push({ label: extra.label, amount });
+        });
+        guestsOutput.textContent = guests;
+        totalOutput.textContent = euro.format(total);
+        perGuestOutput.textContent = `Environ ${euro.format(Math.round(total / guests))} par invité, tous postes confondus`;
+        breakdown.innerHTML = rows.map((row) => `<li><span>${row.label}</span><strong>${euro.format(row.amount)}</strong></li>`).join('');
+      }
+      guestsInput.addEventListener('input', update);
+      optionInputs.forEach((input) => input.addEventListener('change', update));
+      update();
+    })();
+  </script>
+  <!-- WIDGET_BUDGET_MARIAGE_END -->
+
+  <!-- ARTICLE_HTML_START -->
+  <article>
+    <header>
+      <h1>Budget mariage : comment prévoir vos dépenses sans mauvaise surprise</h1>
+    </header>
+
+    <section aria-label="En bref">
+      <p><strong>En bref</strong><br>Un budget mariage ne se résume pas à une moyenne trouvée en ligne. Il se construit avec vos invités, vos priorités et les devis qui correspondent vraiment à votre projet. Moi, je vous propose de mettre les chiffres à leur place, sans leur laisser décider de toute votre journée.</p>
+    </section>
+
+    <p>Un <strong>budget mariage</strong>, je trouve que c’est un peu comme une grande table posée trop tôt dans une salle encore vide. Vous avez vos envies, vos proches, votre idée du repas. Puis les chiffres arrivent : lieu, traiteur, robe, fleurs, photographe. Je vous le dis tout de suite : je ne vous propose pas de chiffre magique. Je vous propose de regarder votre projet en face, puis de <a href="/blog/organisation-mariage/">poser les bases de votre organisation de mariage</a> avant de réserver quoi que ce soit.</p>
+
+    <!-- Le widget doit être inséré ici dans le rendu article final, après ce premier paragraphe. -->
+
+    <h2>Construire votre budget prévisionnel mariage avant les devis</h2>
+    <p>Un <strong>budget mariage moyen</strong> peut aider à se situer. Il ne raconte pourtant pas grand-chose sur votre réception. Deux mariages de 100 invités peuvent ne presque rien avoir en commun. L’un se tient dans une salle des fêtes avec un buffet. L’autre réunit un domaine, des hébergements, un dîner assis et un brunch le lendemain.</p>
+
+    <p>Alors, <strong>combien coûte un mariage</strong> ? Cela dépend du lieu, de la période, du nombre d’invités, de la durée de la fête et des prestations retenues. Le bon budget mariage ne commence pas par une moyenne. Il commence par ce que vous pouvez réellement engager.</p>
+
+    <p>Moi, je ne suis pas wedding planner. Coralie connaît mieux que moi les appels, les délais et les tableaux très sérieux. Moi, j’observe. Et je remarque qu’un mariage devient plus calme dès que les mariés savent ce qu’ils peuvent financer…</p>
+
+    <h3>Partir de l’argent réellement mobilisable</h3>
+    <p>Posez une enveloppe réelle avant les premiers devis. Pas l’enveloppe rêvée. Celle qui respecte votre épargne, une éventuelle participation familiale déjà confirmée et vos possibilités d’ici au jour J.</p>
+    <ul>
+      <li>L’enveloppe idéale, qui contient toutes vos envies.</li>
+      <li>L’enveloppe mobilisable, qui guide vos choix.</li>
+      <li>Une marge pour les dépenses oubliées ou les ajustements.</li>
+    </ul>
+    <p>Un devis ne se lit pas seulement par son total. Regardez ce qui est inclus, ce qui est facturé en plus, les échéances et les conditions de paiement. Un prestataire doit informer le client du prix et des caractéristiques du service avant la conclusion du contrat. <a href="https://www.economie.gouv.fr/particuliers/mes-droits-conso/bien-consommer/affichage-des-prix-ce-que-vous-devez-savoir">Économie.gouv.fr</a> rappelle les règles d’information sur les prix applicables aux prestations de services.</p>
+
+    <h3>Définir vos priorités avant de comparer les offres</h3>
+    <p>Le <strong>prix du mariage</strong> dépend surtout de vos arbitrages. Vous voulez peut-être un repas généreux, beaucoup d’invités, un lieu avec hébergement ou des photos très travaillées. Tout ne peut pas être prioritaire. C’est normal.</p>
+    <ul>
+      <li><strong>Indispensable</strong> : ce que vous voulez vivre à tout prix.</li>
+      <li><strong>Important</strong> : ce qui compte, mais peut évoluer.</li>
+      <li><strong>Optionnel</strong> : ce qui serait joli, sans déséquilibrer le reste.</li>
+    </ul>
+    <p>Je ne dis pas qu’il faut tout rationner. Un coup de cœur pour une robe ou un bouquet peut compter. Mais un <strong>financement mariage</strong> clair évite que ce coup de cœur déplace silencieusement tout le reste.</p>
+
+    <h3>Suivre chaque dépense dans Google Sheets ou Excel</h3>
+    <p>Un tableau Google Sheets ou Excel évite de s’appuyer sur sa mémoire. Et c’est mieux ainsi. Les frais de livraison, les repas prestataires ou le second versement du photographe aiment bien se faire oublier…</p>
+    <ul>
+      <li>L’estimation initiale.</li>
+      <li>Le devis reçu.</li>
+      <li>Le montant retenu.</li>
+      <li>L’acompte et le solde.</li>
+      <li>La date d’échéance.</li>
+      <li>Les prestations incluses et exclues.</li>
+    </ul>
+    <p>Vous verrez votre <strong>budget prévisionnel mariage</strong> se dessiner progressivement. Vous pourrez comparer les devis sur une même base, sans vous laisser guider uniquement par le premier total affiché.</p>
+
+    <h2>Budget mariage par poste : ce qui structure vraiment l’enveloppe</h2>
+    <p>Je vais vous parler du <strong>budget mariage par poste</strong>. Je sais, dit comme ça, on imagine un tableau Excel gris, avec des colonnes qui avancent au garde-à-vous. Pourtant, derrière ces lignes, il y a votre réception, vos invités, la lumière de fin de journée sur les tables, peut-être une chanson que vous avez choisie à deux. Et oui, il faut aussi parler de la location de salle, du traiteur et de tout ce qui arrive en supplément, parfois sans faire de bruit…</p>
+    <p>Le piège, ce n’est pas d’avoir beaucoup de postes. Un mariage en a forcément. Le piège, c’est de croire qu’un intitulé identique couvre exactement la même chose chez deux prestataires. Une salle de réception peut inclure du mobilier, ou non. Un repas peut comprendre les boissons, ou les laisser à votre charge. Un photographe peut être présent six heures, dix heures, ou jusqu’à la première danse. Avouez que cela change le regard sur un devis.</p>
+
+    <h3>Réception : lieu, repas et boissons doivent être chiffrés ensemble</h3>
+    <p>Le lieu, le repas et les boissons forment souvent le cœur du <strong>prix mariage</strong>. Les séparer trop vite peut donner une impression de budget maîtrisé, alors que certaines lignes réapparaîtront ensuite ailleurs : verrerie, personnel, mobilier, droit de bouchon, nettoyage, repas prestataires, livraison ou heures supplémentaires.</p>
+    <p>Pour cette raison, je regarderais toujours la réception comme un petit écosystème. Le lieu définit parfois les contraintes. Le traiteur s’adapte à la cuisine disponible, aux horaires et au nombre de couverts. Les boissons peuvent être comprises, imposées, facturées à part ou soumises à certaines conditions. Il faut tout lire, même les petites lignes qui semblent parler d’un monde parallèle.</p>
+    <p>Vous pourrez ensuite <a href="/blog/prix-salle-mariage/">analyser le prix d’une salle de mariage</a> et <a href="/blog/traiteur-mariage-prix-choix/">évaluer le prix d’un traiteur de mariage</a> plus en détail. Ces deux décisions se répondent. L’une sans l’autre, c’est un peu comme une table sans chaises. Très belle à regarder, peut-être. Mais pas très commode pour recevoir vos proches.</p>
+    <blockquote><p><strong>À vérifier dans chaque devis :</strong> les horaires d’accès et de fin de soirée, le mobilier inclus, le nettoyage, les frais de livraison, le personnel, les boissons, le droit de bouchon, les repas des prestataires et les éventuelles heures supplémentaires.</p></blockquote>
+    <p>Un devis utile doit vous permettre de comparer le contenu réel de deux propositions. L’Institut national de la consommation rappelle que le consommateur doit pouvoir accéder aux informations nécessaires pour comprendre les prix des biens et services. <a href="https://www.inc-conso.fr/content/linformation-sur-les-prix-generalites">Institut national de la consommation</a>.</p>
+
+    <h3>Tenues, souvenirs et ambiance : les postes à prévoir dès le départ</h3>
+    <p>Ensuite viennent les dépenses qui donnent sa couleur à la journée. La <strong>robe de mariée</strong>, le costume, les retouches et les accessoires. Le photographe et le vidéaste, qui ne proposent pas seulement des images, mais un temps de présence, une sélection, parfois un album ou un film. Les fleurs, la décoration, le DJ, les musiciens, les faire-part et les petits détails que vous voulez voir sur les tables.</p>
+    <p>Je ne dis pas que chaque mariage a besoin de tout cela. Certainement pas. Vous pouvez préférer quelques fleurs de saison à une scénographie complète. Une playlist choisie à deux à une longue soirée animée. Un reportage photo à la vidéo. Ce sont des arbitrages, pas des manques.</p>
+    <p>Le <strong>wedding planner</strong> ou le coordinateur du jour J mérite aussi une ligne à part. Comparez le périmètre réel : recherche de prestataires, direction artistique, suivi des contrats, coordination le jour J ou accompagnement complet. Le même mot peut cacher des missions très différentes. Encore une fois, je suis peut-être un peu méfiante. Mais les mots ont leur importance, surtout lorsqu’ils figurent sur une facture.</p>
+    <table>
+      <thead><tr><th>Type de poste</th><th>Exemples</th><th>Varie surtout selon</th><th>Question à poser</th></tr></thead>
+      <tbody>
+        <tr><td>Principalement variable</td><td>Traiteur, boissons, papeterie, cadeaux invités</td><td>Nombre d’invités, formule, durée</td><td>Le prix couvre-t-il toutes les personnes présentes ?</td></tr>
+        <tr><td>Principalement fixe ou semi-fixe</td><td>Salle de réception, DJ, photographe, vidéaste</td><td>Date, durée, zone géographique, options</td><td>Quels frais s’ajoutent au forfait annoncé ?</td></tr>
+        <tr><td>Souvent oublié</td><td>Ménage, livraison, repas prestataires, droit de bouchon, heures supplémentaires</td><td>Clauses, logistique et horaires</td><td>Est-ce inclus, plafonné ou facturé en supplément ?</td></tr>
+      </tbody>
+    </table>
+    <p>Bon. Je me relis et je vois que je suis partie d’une salle et de son droit de bouchon pour finir avec les fleurs, les photos et les petites lignes. Mais c’est bien le sujet. Un <strong>budget mariage</strong> ne se compose pas uniquement de grands montants. Il se construit aussi avec ce qui paraît secondaire, jusqu’au moment où cela ne l’est plus.</p>
+
+    <h2>Budget mariage par invité : utiliser le bon indicateur</h2>
+    <p>Le <strong>budget mariage par invité</strong>, c’est le chiffre que l’on cherche souvent en premier. Je comprends pourquoi. Il donne l’impression d’avoir trouvé une formule simple : on choisit 50, 100 ou 150 personnes, on multiplie, et voilà. Sauf qu’un mariage ne se laisse pas toujours enfermer dans une petite multiplication bien sage…</p>
+    <p>Chaque invité ajoute souvent un couvert, des boissons, une place à table, parfois un cadeau, un faire-part ou une nuitée. Mais la salle, le photographe, le DJ ou certaines décorations ne doublent pas forcément quand la liste des invités double. C’est là que le calcul devient plus vivant, et un peu moins pratique, je vous l’accorde.</p>
+
+    <h3>Pourquoi chaque invité ne coûte pas la même chose</h3>
+    <p>Le nombre d’invités agit surtout sur la réception. Le <strong>traiteur</strong>, les boissons, le personnel, le mobilier, la papeterie et les cadeaux invités suivent généralement la liste des convives. À partir d’un certain seuil, il peut aussi falloir un lieu plus grand, davantage de service ou une logistique différente.</p>
+    <p>Mais tout n’évolue pas au même rythme. Un photographe peut proposer une même durée de présence pour 50 ou 100 personnes. Un DJ aussi. La location de salle peut rester stable tant que sa capacité suffit. À l’inverse, passer de 100 à 150 invités peut obliger à repenser le lieu, le plan de table ou même le déroulé de la soirée.</p>
+    <p>Donc non, je ne vous donnerai pas un coût fixe par personne. Ce serait rassurant cinq minutes, puis assez trompeur au moment de recevoir les devis.</p>
+
+    <h3>Comparer trois scénarios : 50, 100 et 150 personnes</h3>
+    <p>Un <strong>budget mariage 50 personnes</strong> peut permettre une réception plus intime. Attention tout de même : les coûts fixes restent là, bien installés, comme un oncle qui arrive très tôt au vin d’honneur.</p>
+    <p>Un <strong>budget mariage 100 personnes</strong> sert souvent de repère pour organiser les devis de réception. Vous pouvez comparer la capacité du lieu, le repas, les boissons et le nombre de personnes nécessaires au service.</p>
+    <p>Un <strong>budget mariage 150 personnes</strong> demande souvent une vigilance supplémentaire. Le volume de repas augmente, bien sûr. Mais la circulation, le stationnement, les hébergements et le rythme de la soirée peuvent aussi prendre une autre dimension.</p>
+    <table>
+      <thead><tr><th>Paramètre à chiffrer</th><th>50 personnes</th><th>100 personnes</th><th>150 personnes</th></tr></thead>
+      <tbody>
+        <tr><td>Repas et boissons</td><td>Devis réel × nombre de couverts</td><td>Devis réel × nombre de couverts</td><td>Devis réel × nombre de couverts</td></tr>
+        <tr><td>Capacité du lieu</td><td>À confirmer</td><td>À confirmer</td><td>À confirmer</td></tr>
+        <tr><td>Papeterie et cadeaux</td><td>À estimer selon les foyers et convives</td><td>À estimer selon les foyers et convives</td><td>À estimer selon les foyers et convives</td></tr>
+        <tr><td>Personnel et logistique</td><td>À confirmer dans le devis</td><td>À confirmer dans le devis</td><td>À confirmer dans le devis</td></tr>
+      </tbody>
+    </table>
+    <p>La bonne question n’est donc pas seulement « combien coûte un invité ? ». Elle devient : « qu’est-ce que chaque invité ajoute à notre réception, et à partir de quand notre format doit-il changer ? »</p>
+    <p>L’Insee recense <strong>248 174 mariages</strong> célébrés en France en 2024. Cela montre combien les formes de célébration peuvent varier d’un couple à l’autre. <a href="https://www.insee.fr/fr/statistiques/8902576">Insee</a>.</p>
+
+    <h2>Petit budget, mariage champêtre ou mariage luxe : adapter la répartition</h2>
+    <p>Je vais dire quelque chose qui peut sembler évident, mais qui fait du bien à entendre : un <strong>budget mariage petit budget</strong> n’est pas un mariage au rabais. Et un budget mariage luxe n’est pas automatiquement un mariage plus sincère ou plus beau. Vous voyez l’idée ? L’enveloppe change les possibilités, pas la valeur de la journée.</p>
+    <p>Moi, je garde en tête le mariage de ma cousine Agnès, avec sa robe bleue fleurie. J’avais six ans. Elle n’était pas blanche, ce qui avait un peu bousculé mon imaginaire d’enfant. Mais je me souviens surtout des motifs, des tables, de la lumière d’avril et de cette impression que le mariage lui ressemblait. Pas d’un catalogue. À elle.</p>
+
+    <h3>Budget mariage petit budget : réduire le périmètre avant de réduire vos priorités</h3>
+    <p>Un <strong>budget mariage à petit prix</strong> demande souvent de simplifier le format avant de dégrader ce qui compte pour vous. Vous pouvez revoir la taille de la liste d’invités, raccourcir la durée de la réception, choisir un repas plus simple ou réserver certaines options aux moments qui vous tiennent vraiment à cœur.</p>
+    <p>Je ne dis pas qu’il faut tout enlever. Ce serait triste de transformer votre mariage en exercice comptable. Mais vous pouvez décider qu’un beau repas partagé vaut davantage qu’une accumulation de petits détails, ou l’inverse. Ce n’est que votre choix.</p>
+    <p>Pour les tenues, vous pourrez bientôt <a href="/blog/budget-robe-de-mariee/">prévoir le budget d’une robe de mariée</a>, avec les retouches, les accessoires et les alternatives qui peuvent modifier l’enveloppe finale.</p>
+
+    <h3>Mariage champêtre : anticiper la logistique derrière le décor</h3>
+    <p>Le <strong>budget mariage champêtre</strong> a quelque chose qui me plaît beaucoup. Les fleurs, le bois, les nappes un peu froissées, les lumières qui commencent à apparaître quand le soleil descend… Mais je ne suis pas neutre. Je viens de la Somme, j’ai grandi près des paysages, des arbres et de cette lumière un peu douce qui ne ressemble à rien d’autre.</p>
+    <p>Attention toutefois. Un lieu extérieur ou rural peut demander des vérifications très concrètes : plan B météo, éclairage, accès, stationnement, sanitaires, alimentation électrique, mobilier ou transport des invités. Tout cela n’est pas systématique. Tout cela mérite un devis précis.</p>
+
+    <h3>Mariage luxe : clarifier ce qui augmente réellement l’enveloppe</h3>
+    <p>Un <strong>budget mariage luxe</strong> peut inclure une privatisation, plusieurs jours de réception, des hébergements, une gastronomie plus travaillée, une scénographie florale ou une coordination étendue. Ce ne sont pas seulement des objets plus chers. Ce sont parfois des services, du temps et une logistique plus large.</p>
+    <p>Pour les souvenirs, vous pourrez aussi <a href="/blog/photographe-mariage-tarifs/">choisir un photographe de mariage selon votre budget</a>. Un reportage, une présence longue, une galerie, un album ou un second photographe ne recouvrent pas le même travail.</p>
+    <blockquote><p><strong>Alerte devis :</strong> un intitulé identique ne garantit pas une prestation équivalente. Vérifiez les inclusions, les horaires, les plafonds, les frais de déplacement et les conditions de report.</p></blockquote>
+    <p>Bon. Je me relis, et je suis partie d’un budget pour finir avec la robe bleue d’Agnès et des sanitaires de secours. Je crois que c’est assez fidèle à un mariage : la poésie et la logistique finissent toujours par s’asseoir à la même table…</p>
+
+    <h2>Mariage civil, religieux ou laïque : isoler les coûts de cérémonie</h2>
+    <p>La cérémonie, ce n’est pas la réception. Dit comme ça, c’est presque étrange, mais cette distinction évite bien des confusions dans un <strong>budget mariage civil</strong> ou un budget mariage religieux. Vous pouvez prévoir une mairie le matin, puis un déjeuner simple. Vous pouvez aussi organiser une cérémonie laïque, de la musique, une décoration florale, un officiant et un cocktail. Chaque projet a son propre contour.</p>
+
+    <h3>Le mariage civil et les démarches de mairie</h3>
+    <p>En France, le mariage civil suppose notamment de remplir les conditions requises, de choisir la mairie compétente et d’y déposer un dossier. Le détail dépend de votre situation et de la commune concernée. Vous pouvez consulter les <a href="https://www.service-public.fr/particuliers/vosdroits/F930">conditions et démarches du mariage civil sur Service-Public</a>.</p>
+    <p>Dans votre budget, séparez les formalités administratives de ce qui relève de la réception. Les dépenses peuvent ensuite venir de la tenue, des déplacements, d’un repas, de la musique ou de la décoration choisie autour de ce moment. Pour avancer sans tout mélanger, vous pourrez bientôt <a href="/blog/mariage-civil-mairie-demarches/">préparer les démarches du mariage civil en mairie</a>.</p>
+
+    <h3>Cérémonie religieuse ou laïque : faire préciser le périmètre</h3>
+    <p>Une cérémonie religieuse ou laïque peut appeler des choix différents : lieu, livret, musique, fleurs, officiant, sonorisation ou transport. Rien n’est automatique. Rien ne doit être supposé. Demandez ce qui est inclus, ce qui reste à organiser et qui intervient à quel moment.</p>
+    <p>Un <strong>wedding planner</strong> peut aussi accompagner cette coordination. Mais le mot recouvre des missions variées. Certains professionnels gèrent seulement le jour J. D’autres suivent les prestataires, les contrats et la scénographie. Là encore, il faut comparer ce qui se trouve réellement derrière le nom.</p>
+
+    <h2>Quel budget mariage moyen retenir en 2026 ? Lire les repères avec recul</h2>
+    <p>Ah, le <strong>budget mariage moyen</strong>. Vous avez bien dit « moyen » ? C’est un mot pratique, mais un peu mystérieux. Il peut désigner une somme envisagée, une dépense finale, un mariage de 50 personnes ou une réception de 150 invités. Il peut inclure certains postes et en oublier d’autres. Alors, oui, les chiffres sont utiles. Mais ils demandent à être lus avec leurs chaussures de marche.</p>
+
+    <h3>Pourquoi les chiffres publiés ne sont pas directement comparables</h3>
+    <p>Le Sofinscope, baromètre OpinionWay pour Sofinco, indiquait en 2024 un <strong>budget moyen envisagé de 7 576 €</strong> pour les futurs mariés. Il s’agit d’un budget déclaré dans une étude, pas d’un tarif garanti pour un projet précis. <a href="https://www.sofinco.fr/actualite-credit/sofinscope/mariage/les-francais-leur-budget-mariage-2024">Sofinco</a>.</p>
+    <p>D’autres guides avancent des repères plus élevés, notamment lorsqu’ils partent d’une réception de 100 personnes ou incluent davantage de prestations. Je ne vais pas mélanger ces chiffres pour fabriquer une moyenne encore plus floue. Votre <strong>budget mariage 2026</strong> mérite mieux que cela.</p>
+    <p>Le bon réflexe consiste à noter la source, l’année, le nombre d’invités et les postes inclus. Les chiffres deviennent alors des repères. Ils ne remplacent pas vos devis.</p>
+
+    <h3>Utiliser les plateformes et les devis pour comparer votre propre projet</h3>
+    <p>Zankyou, Mariages.net et WeddingWire peuvent vous aider à repérer des prestataires ou à comprendre les prestations proposées près de chez vous. Mais le comparatif utile commence lorsque vous envoyez le même brief : même date, même nombre de convives, même lieu ou même zone géographique, même format de réception.</p>
+    <p>Les mots « prix à partir de » peuvent être charmants. Ils ne sont pas toujours très bavards. Demandez plutôt ce qui est inclus, ce qui est facturé séparément et ce qui se passe en cas de report. C’est moins glamour qu’une photo de table couverte de fleurs, je sais. Mais cela vous évite de découvrir une ligne oubliée trop tard.</p>
+
+    <h2>Checklist : finaliser un budget mariage sans angle mort</h2>
+    <p>Vous avez une enveloppe, des envies, peut-être déjà quelques devis. Avant de signer, prenez un moment pour vérifier que votre <strong>budget prévisionnel mariage</strong> tient encore debout. Pas parfaitement droit, avec un costume et une cravate. Juste assez solide pour vous laisser respirer.</p>
+    <ul>
+      <li>Fixer l’enveloppe maximale réellement mobilisable.</li>
+      <li>Définir vos trois priorités de couple.</li>
+      <li>Confirmer le nombre d’invités envisagé.</li>
+      <li>Comparer des devis sur un périmètre identique.</li>
+      <li>Lister les inclusions et les exclusions de chaque prestation.</li>
+      <li>Noter les acomptes, les soldes et leurs dates d’échéance.</li>
+      <li>Prévoir les repas des prestataires, les livraisons et les heures supplémentaires.</li>
+      <li>Garder une marge pour les ajustements de dernière minute.</li>
+      <li>Vérifier les conditions de report et d’annulation.</li>
+      <li>Reporter chaque décision dans Google Sheets ou Excel.</li>
+    </ul>
+    <p>Quand deux devis vous semblent proches, prenez le temps de <a href="/blog/comparer-devis-prestataires/">comparer les devis de prestataires de mariage</a>. Le prix seul ne raconte pas tout. Et c’est souvent dans les détails que se glisse la différence.</p>
+
+    <h2>Questions fréquentes sur le budget mariage</h2>
+    <h3>Quel budget mariage prévoir pour 50 personnes ?</h3>
+    <p>Un <strong>budget mariage 50 personnes</strong> ne correspond pas à la moitié d’un budget pour 100 personnes. Le repas, les boissons et la papeterie suivent souvent le nombre de convives. Mais le lieu, le photographe ou le DJ peuvent conserver un coût proche. Partez donc des devis réels et repérez les dépenses fixes avant de calculer.</p>
+
+    <h3>Quel budget mariage prévoir pour 100 personnes ?</h3>
+    <p>Un <strong>budget mariage 100 personnes</strong> permet de comparer plus facilement les offres de réception. Chiffrez séparément le lieu, le repas, les boissons, le service, les éventuels hébergements et les éléments de décoration. Les moyennes publiées peuvent aider à poser des questions, mais elles ne remplacent pas un devis adapté à votre date et à votre région.</p>
+
+    <h3>Quel budget mariage prévoir pour 150 personnes ?</h3>
+    <p>Un <strong>budget mariage 150 personnes</strong> demande surtout d’anticiper les effets de seuil. Il peut falloir un lieu plus vaste, davantage de service, une organisation des transports ou du stationnement, et une logistique plus dense. Listez ces éléments avant de comparer les prestations.</p>
+
+    <h3>Comment financer un mariage sans déséquilibrer son budget ?</h3>
+    <p>Le <strong>financement mariage</strong> commence par une enveloppe réaliste. Appuyez-vous sur votre épargne, les participations déjà confirmées et un calendrier de paiement lisible. N’acceptez pas une prestation que vous ne pouvez pas couvrir avec cette enveloppe. Ce n’est pas une règle triste. C’est une manière de garder votre journée légère.</p>
+
+    <h3>Comment suivre un budget mariage par poste ?</h3>
+    <p>Un tableau Google Sheets ou Excel peut suivre votre <strong>budget mariage par poste</strong> : estimation, devis, montant retenu, acompte, solde, échéance et inclusions. Ajoutez une colonne « à vérifier ». Elle vous évitera peut-être une mauvaise surprise. Et elle vous donnera aussi ce petit plaisir très adulte de cocher une case terminée, ce qui n’est pas rien.</p>
+
+    <h2>À retenir</h2>
+    <p>Un <strong>budget mariage</strong> n’a pas besoin de ressembler à une moyenne nationale. Il doit surtout ressembler à votre réception, à vos priorités et à ce que vous pouvez financer sereinement. Le nombre d’invités, le lieu, le repas et les prestations choisies dessinent l’enveloppe, petit à petit.</p>
+    <p>Quand votre budget commence à être clair, vous pourrez <a href="/blog/retroplanning-mariage/">suivre un rétroplanning de mariage mois par mois</a>. Parce qu’après les chiffres, il reste les rendez-vous, les échéances, les proches et cette journée qui approche… avec ses fleurs, ses chaises, ses chansons et sa lumière.</p>
+  </article>
+  <!-- ARTICLE_HTML_END -->
+
+  <!--
+  SOURCES EXTERNES UTILISÉES
+  - https://www.economie.gouv.fr/particuliers/mes-droits-conso/bien-consommer/affichage-des-prix-ce-que-vous-devez-savoir
+  - https://www.inc-conso.fr/content/linformation-sur-les-prix-generalites
+  - https://www.insee.fr/fr/statistiques/8902576
+  - https://www.service-public.fr/particuliers/vosdroits/F930
+  - https://www.sofinco.fr/actualite-credit/sofinscope/mariage/les-francais-leur-budget-mariage-2024
+  -->
+</body>
+</html>

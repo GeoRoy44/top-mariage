@@ -1,0 +1,409 @@
+<!--
+ARTICLE : Rétroplanning mariage : le calendrier des 12 mois
+Slug suggéré : retroplanning-mariage
+URL cible : /blog/retroplanning-mariage/
+Statut : brouillon à relire avant publication
+
+WIDGET : placé dans les 200 premiers mots.
+Nom : Mon prochain jalon de mariage.
+Intégration Astro/Markdown : si les balises <script> sont filtrées, placer le bloc
+WIDGET_RETROPLANNING_START / WIDGET_RETROPLANNING_END dans un composant dédié.
+-->
+
+<article id="retroplanning-mariage">
+  <header>
+    <h1>Rétroplanning mariage : le calendrier des 12 mois</h1>
+  </header>
+
+  <section id="introduction-retroplanning-mariage">
+    <p>Oui, un mariage peut se préparer sans deux ou trois années devant vous. Un <strong>rétroplanning mariage</strong> vous donne un ordre de marche, même si votre date arrive plus vite que prévu.</p>
+
+    <p>Des fiançailles longues peuvent accompagner un projet d’épargne, des études, un déménagement ou une envie de prendre son temps. Elles ne fixent aucune règle. Un mariage prévu dans l’année peut avancer sereinement si vous gardez un format cohérent et des choix assez souples.</p>
+
+    <!-- WIDGET_RETROPLANNING_START -->
+    <section class="tm-milestone-widget" id="tm-milestone-widget" aria-labelledby="tm-milestone-title">
+      <div class="tm-milestone-widget__heading">
+        <p class="tm-milestone-widget__eyebrow">Mini-outil de préparation</p>
+        <h2 id="tm-milestone-title">Trouvez votre prochain jalon</h2>
+        <p>Répondez à ces trois questions. Le widget vous propose une prochaine action à inscrire dans votre planning partagé.</p>
+      </div>
+
+      <form class="tm-milestone-widget__form">
+        <fieldset>
+          <legend>Où en êtes-vous ?</legend>
+          <div class="tm-milestone-widget__options">
+            <label><input type="radio" name="tm-stage" value="start" checked> Nous commençons tout juste</label>
+            <label><input type="radio" name="tm-stage" value="booked"> La date ou le lieu avance déjà</label>
+            <label><input type="radio" name="tm-stage" value="final"> Nous sommes dans les derniers mois</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Qu’est-ce qui reste le plus flou ?</legend>
+          <div class="tm-milestone-widget__options">
+            <label><input type="radio" name="tm-uncertainty" value="format" checked> Le format et les invités</label>
+            <label><input type="radio" name="tm-uncertainty" value="providers"> Les prestataires et les confirmations</label>
+            <label><input type="radio" name="tm-uncertainty" value="day"> Le déroulé du jour J</label>
+          </div>
+        </fieldset>
+
+        <label class="tm-milestone-widget__select-label" for="tm-support">Votre support de suivi préféré</label>
+        <select id="tm-support" name="tm-support">
+          <option value="document partagé">Un document partagé</option>
+          <option value="agenda papier">Un agenda papier</option>
+          <option value="tableau numérique">Un tableau numérique</option>
+        </select>
+
+        <button type="button" id="tm-milestone-button">Afficher ma prochaine action</button>
+      </form>
+
+      <div class="tm-milestone-widget__result" id="tm-milestone-result" aria-live="polite" hidden>
+        <p class="tm-milestone-widget__result-label">Votre prochain jalon</p>
+        <h3 id="tm-milestone-result-title">—</h3>
+        <p id="tm-milestone-result-text">—</p>
+        <p class="tm-milestone-widget__copy"><strong>À inscrire :</strong> <span id="tm-milestone-result-note">—</span></p>
+      </div>
+
+      <p class="tm-milestone-widget__notice">Ce mini-outil organise les priorités. Il ne remplace pas les consignes de la mairie, les conditions de vos contrats ou les réponses de vos prestataires.</p>
+    </section>
+
+    <style>
+      .tm-milestone-widget {
+        --tm-ink: #1e2424;
+        --tm-green: #0c4023;
+        --tm-green-soft: #e6f0e9;
+        --tm-salmon: #eb5e55;
+        --tm-paper: #f1f3f3;
+        --tm-line: #d4dddd;
+        max-width: 860px;
+        margin: 2rem auto;
+        padding: clamp(1.25rem, 3.5vw, 2.25rem);
+        border: 1px solid var(--tm-line);
+        border-radius: 18px;
+        background: linear-gradient(145deg, #ffffff 0%, var(--tm-paper) 100%);
+        color: var(--tm-ink);
+        box-shadow: 0 12px 34px rgba(30, 36, 36, .08);
+      }
+      .tm-milestone-widget * { box-sizing: border-box; }
+      .tm-milestone-widget__eyebrow { margin: 0 0 .35rem; color: var(--tm-green); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+      .tm-milestone-widget h2 { margin: 0 0 .65rem; color: var(--tm-green); font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; }
+      .tm-milestone-widget h3 { margin: 0 0 .5rem; color: var(--tm-green); font-size: 1.25rem; }
+      .tm-milestone-widget__heading > p:last-child { max-width: 62ch; margin: 0 0 1.5rem; line-height: 1.55; }
+      .tm-milestone-widget__form { display: grid; gap: 1rem; }
+      .tm-milestone-widget fieldset { margin: 0; padding: 1rem; border: 1px solid var(--tm-line); border-radius: 12px; background: rgba(255, 255, 255, .75); }
+      .tm-milestone-widget legend, .tm-milestone-widget__select-label { color: var(--tm-ink); font-weight: 700; }
+      .tm-milestone-widget legend { padding: 0 .35rem; }
+      .tm-milestone-widget__options { display: grid; gap: .6rem; margin-top: .25rem; }
+      .tm-milestone-widget__options label { display: flex; gap: .55rem; align-items: flex-start; padding: .3rem; cursor: pointer; line-height: 1.35; }
+      .tm-milestone-widget input { margin-top: .18rem; accent-color: var(--tm-green); }
+      .tm-milestone-widget select { width: 100%; margin-top: .45rem; padding: .75rem; border: 1px solid var(--tm-line); border-radius: 9px; background: #fff; color: var(--tm-ink); font: inherit; }
+      .tm-milestone-widget button { justify-self: start; padding: .8rem 1rem; border: 0; border-radius: 9px; background: var(--tm-salmon); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+      .tm-milestone-widget button:hover, .tm-milestone-widget button:focus { background: #c94b44; }
+      .tm-milestone-widget__result { margin-top: 1.25rem; padding: 1.15rem; border-radius: 12px; background: var(--tm-green-soft); border-left: 5px solid var(--tm-green); }
+      .tm-milestone-widget__result-label { margin: 0 0 .35rem; color: var(--tm-green); font-size: .83rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+      .tm-milestone-widget__result p { margin: .45rem 0; line-height: 1.5; }
+      .tm-milestone-widget__copy { padding-top: .6rem; border-top: 1px solid rgba(12, 64, 35, .18); }
+      .tm-milestone-widget__notice { margin: 1.15rem 0 0; color: #526060; font-size: .88rem; line-height: 1.45; }
+      @media (min-width: 720px) {
+        .tm-milestone-widget__options { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+        .tm-milestone-widget__options label { min-height: 4.4rem; padding: .7rem; border: 1px solid transparent; border-radius: 9px; background: rgba(255, 255, 255, .58); }
+        .tm-milestone-widget__options label:has(input:checked) { border-color: var(--tm-green); background: #fff; }
+      }
+    </style>
+
+    <script>
+      (() => {
+        const root = document.getElementById('tm-milestone-widget');
+        if (!root) return;
+
+        const button = root.querySelector('#tm-milestone-button');
+        const result = root.querySelector('#tm-milestone-result');
+        const resultTitle = root.querySelector('#tm-milestone-result-title');
+        const resultText = root.querySelector('#tm-milestone-result-text');
+        const resultNote = root.querySelector('#tm-milestone-result-note');
+        const support = root.querySelector('#tm-support');
+
+        const recommendations = {
+          start: {
+            format: {
+              title: 'Cadrer le projet à deux',
+              text: 'Notez votre période souhaitée, le format de réception, une première estimation des invités et trois priorités communes avant de comparer des offres.',
+              note: 'Définir le format, la période et les invités estimés.'
+            },
+            providers: {
+              title: 'Clarifier ce qui doit être réservé',
+              text: 'Avant d’appeler des prestataires, vérifiez ce qui est déjà confirmé. La date, le lieu et l’effectif estimé rendent vos demandes plus faciles à comparer.',
+              note: 'Lister les éléments confirmés et les réponses attendues.'
+            },
+            day: {
+              title: 'Revenir aux décisions fondatrices',
+              text: 'Le déroulé du jour J devient plus clair après la date, le lieu et le format. Commencez par noter les moments que vous souhaitez vraiment vivre.',
+              note: 'Écrire les trois moments prioritaires de la journée.'
+            }
+          },
+          booked: {
+            format: {
+              title: 'Transformer vos choix en brief commun',
+              text: 'Votre date ou votre lieu avance déjà. Mettez par écrit le format, les horaires et l’effectif estimé pour que chaque prestataire reçoive les mêmes informations.',
+              note: 'Créer un brief commun avec date, lieu et effectif estimé.'
+            },
+            providers: {
+              title: 'Suivre les confirmations, pas seulement les idées',
+              text: 'Regroupez les devis, les contrats, les échéances et les rendez-vous. Attribuez une personne responsable de chaque relance pour éviter les options oubliées.',
+              note: 'Ajouter les confirmations et les relances dans le planning.'
+            },
+            day: {
+              title: 'Nommer une personne référente',
+              text: 'Commencez à identifier qui recevra les informations pratiques le jour J. Cette personne devra connaître les horaires, les contacts et les décisions déjà prises.',
+              note: 'Choisir un référent du jour J et demander son accord.'
+            }
+          },
+          final: {
+            format: {
+              title: 'Stabiliser les derniers choix utiles',
+              text: 'Dans les derniers mois, concentrez-vous sur les informations qui changent réellement l’expérience : effectif, repas, accès, horaires et confort des invités.',
+              note: 'Vérifier les informations nécessaires aux invités et au traiteur.'
+            },
+            providers: {
+              title: 'Établir une feuille de déroulé',
+              text: 'Réunissez les horaires, accès, livraisons, contacts et besoins de chaque intervenant. Transmettez une version courte aux personnes qui prendront le relais.',
+              note: 'Préparer une feuille de route avec horaires et contacts.'
+            },
+            day: {
+              title: 'Passer le relais progressivement',
+              text: 'Préparez les objets, les consignes et un plan B météo. Décidez qui répond aux appels afin de ne pas porter toutes les questions le matin du mariage.',
+              note: 'Remettre les consignes et les objets au référent désigné.'
+            }
+          }
+        };
+
+        button.addEventListener('click', () => {
+          const stage = root.querySelector('input[name="tm-stage"]:checked').value;
+          const uncertainty = root.querySelector('input[name="tm-uncertainty"]:checked').value;
+          const recommendation = recommendations[stage][uncertainty];
+          const supportText = support.options[support.selectedIndex].text.toLowerCase();
+
+          resultTitle.textContent = recommendation.title;
+          resultText.textContent = `${recommendation.text} Notez cette action dans ${supportText}.`;
+          resultNote.textContent = recommendation.note;
+          result.hidden = false;
+          result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      })();
+    </script>
+    <!-- WIDGET_RETROPLANNING_END -->
+
+    <p>Vous avez déjà le lieu, le repas ou une tenue ? Une partie du chemin est déjà tracée… Votre <strong>rétroplanning mariage 12 mois</strong> ne doit pas reproduire celui d’un autre couple. Il doit suivre vos confirmations, vos disponibilités et le type de réception que vous souhaitez vivre.</p>
+
+    <p>Ce <strong>planning mariage 12 mois</strong> suit quatre mouvements simples : cadrer ce que vous voulez, réserver ce qui conditionne la journée, confirmer les détails, puis transmettre les consignes. Pour replacer ces étapes dans l’ensemble de vos préparatifs, commencez par <a href="/comment-organiser-un-mariage/">organiser un mariage étape par étape</a>.</p>
+
+    <p>Vous n’aurez pas à tout décider cette semaine. Commencez plutôt par créer un planning partagé avant de réserver quoi que ce soit. Cette petite mise à plat change souvent l’ambiance des préparatifs !</p>
+  </section>
+
+  <nav aria-label="Sommaire">
+    <h2>Sommaire</h2>
+    <ul>
+      <li><a href="#planning-mariage-partage">Avant de commencer : bâtissez votre planning de mariage partagé</a></li>
+      <li><a href="#retroplanning-j12-j10">J-12 à J-10 mois : choisir le cadre et réserver ce qui conditionne le reste</a></li>
+      <li><a href="#retroplanning-j9-j7">J-9 à J-7 mois : avancer sur la mairie, les prestataires et les tenues</a></li>
+      <li><a href="#retroplanning-j6-j4">J-6 à J-4 mois : informer les invités et imaginer la réception</a></li>
+      <li><a href="#retroplanning-j3-j2">J-3 à J-2 mois : transformer les réservations en déroulé concret</a></li>
+      <li><a href="#retroplanning-j15-j7">J-15 à J-7 : verrouillez le jour J et déléguez les dernières missions</a></li>
+      <li><a href="#retroplanning-j7-j1">J-7 à J-1 : finalisez, transmettez et quittez progressivement le planning</a></li>
+      <li><a href="#faq-retroplanning">Questions fréquentes</a></li>
+    </ul>
+  </nav>
+
+  <section id="planning-mariage-partage">
+    <h2>Avant de commencer : bâtissez votre planning de mariage partagé</h2>
+    <h3>Centralisez les décisions dans un seul outil</h3>
+    <p>Un <strong>planning mariage 12 mois</strong> commence rarement par une jolie frise. Il commence par un endroit unique où retrouver les décisions, les réponses et les prochaines actions.</p>
+    <p>Google Sheets, Excel, Canva, un agenda papier ou un carnet peuvent convenir. Choisissez surtout un support que vous ouvrirez tous les deux. Un outil trop ambitieux finit souvent oublié après quelques jours…</p>
+    <p>Évitez de disperser les informations entre captures d’écran, messages, notes de téléphone et cartons de visite. Quand un prestataire répond, ajoutez la réponse au même endroit. Vous saurez ainsi ce qui reste à faire.</p>
+    <p>Votre tableau peut rester très simple. Il doit toutefois indiquer qui suit la tâche, ce qui bloque son avancée et ce qui prouve qu’elle est terminée.</p>
+    <table>
+      <thead><tr><th scope="col">Tâche</th><th scope="col">Responsable</th><th scope="col">Échéance</th><th scope="col">Dépendance</th><th scope="col">Confirmation reçue</th></tr></thead>
+      <tbody>
+        <tr><td>Contacter des lieux</td><td>À attribuer</td><td>À fixer</td><td>Estimation des invités</td><td>Visites programmées</td></tr>
+        <tr><td>Préparer les invitations</td><td>À attribuer</td><td>À fixer</td><td>Date et horaires confirmés</td><td>Informations validées</td></tr>
+        <tr><td>Demander des devis traiteur</td><td>À attribuer</td><td>À fixer</td><td>Date, lieu et effectif estimé</td><td>Offres reçues</td></tr>
+      </tbody>
+    </table>
+    <h3>Classez les tâches selon leur impact</h3>
+    <p>Dans un <strong>calendrier mariage 12 mois</strong>, toutes les tâches n’ont pas le même poids. Certaines décisions débloquent le reste. D’autres peuvent attendre sans gêner votre réception.</p>
+    <p>La date, le lieu, le format et une première estimation des invités passent avant les marque-places ou la couleur des serviettes. Ce n’est pas moins romantique. C’est simplement plus confortable à gérer !</p>
+    <ul><li>Une décision qui débloque d’autres sujets</li><li>Une question à poser au prestataire</li><li>Une date de relance</li><li>Une information à transmettre aux proches</li></ul>
+    <p>Répartissez les missions selon vos disponibilités et vos envies. L’un peut appeler les lieux pendant que l’autre rassemble les coordonnées des invités. Les choix qui engagent le budget ou le format restent des décisions communes.</p>
+    <p>Vous pouvez aussi demander de l’aide à vos proches. Demandez leur accord avant de leur confier une tâche. Un témoin peut accepter de gérer une livraison. Il n’a pas forcément envie de devenir responsable de toute la décoration.</p>
+    <blockquote><p><strong>Conseil de la rédaction :</strong> ne cherchez pas à tout faire dans la même semaine. Traitez d’abord ce qui conditionne les autres choix.</p></blockquote>
+    <p>Ouvrez votre document partagé ce soir. Renseignez ensemble trois tâches : une décision à prendre, une réponse à obtenir et une personne chargée de relancer.</p>
+  </section>
+
+  <section id="retroplanning-j12-j10">
+    <h2>J-12 à J-10 mois : choisir le cadre et réserver ce qui conditionne le reste</h2>
+    <h3>Fixez le format, la période et le nombre approximatif d’invités</h3>
+    <p>Le début d’un <strong>rétroplanning mariage 12 mois</strong> ne demande pas de choisir chaque détail. Il vous invite à poser le décor : la période, le type de cérémonie et la forme de la réception.</p>
+    <p>Commencez par une période souhaitée. Elle peut couvrir plusieurs week-ends ou plusieurs mois. Une date devient solide lorsqu’elle convient à la mairie, au lieu et aux personnes qui comptent pour vous.</p>
+    <p>Établissez aussi une première <strong>liste des invités</strong>. Classez les personnes en trois groupes : les indispensables, les souhaités et les personnes à confirmer. Cette estimation guidera les échanges avec les lieux et les professionnels.</p>
+    <p>Le format mérite une discussion simple. Préférez-vous un déjeuner, un dîner, un cocktail, un buffet ou un repas assis ? Souhaitez-vous une journée unique ou prolonger les retrouvailles le lendemain ?</p>
+    <p>Une réception décontractée peut alléger certains usages. Elle demande malgré tout de prévoir les repas, les accès, les horaires et le confort des invités. Figurez-vous que les choix les plus simples gagnent aussi à être clairs dès le départ.</p>
+    <ul><li>Le type de cérémonie souhaité</li><li>La période compatible avec vos contraintes</li><li>Le nombre approximatif de convives</li><li>Le style de repas et de soirée</li><li>Les priorités du couple : lieu, musique, repas, images ou temps partagé</li></ul>
+    <h3>Sécurisez le lieu et la restauration</h3>
+    <p>Le <strong>lieu de réception</strong> donne une forme concrète à votre journée. Avant de vous engager, vérifiez sa capacité utilisable. Cent personnes assises, une piste de danse et un espace de cérémonie ne réclament pas la même configuration.</p>
+    <p>Lors des visites, prenez le temps de <a href="/lieux-mariage/">choisir un lieu de mariage adapté à votre réception</a>. Regardez les accès, le stationnement, les horaires, le mobilier disponible et les espaces prévus si la météo change.</p>
+    <p>La restauration suit généralement cette décision. Transmettez au traiteur la date envisagée, le lieu, l’effectif approximatif et le format choisi. Vous recevrez des propositions plus faciles à rapprocher.</p>
+    <p>Demandez ce qui est inclus avant de verser une somme. Le service, les boissons, la vaisselle, les livraisons ou le nettoyage ne recouvrent pas toujours les mêmes réalités d’un devis à l’autre…</p>
+    <p>Conservez chaque réponse écrite dans votre planning partagé. Elle sera utile quand les premières options devront devenir des réservations confirmées.</p>
+    <h4>À confirmer avant de réserver</h4>
+    <ul><li>Les horaires d’accès, d’installation et de fin de réception</li><li>La capacité pour le repas, la cérémonie et la danse</li><li>Le repli prévu en cas de pluie, de vent ou de chaleur</li><li>Les conditions d’accès pour les invités et les livraisons</li><li>Les prestations comprises dans la location ou la formule</li><li>Les modalités de règlement et les dates prévues</li></ul>
+    <p>Gardez uniquement les options compatibles avec votre format. Vérifiez ensuite que la mairie, le lieu et la restauration peuvent s’accorder sur une même date.</p>
+  </section>
+
+  <section id="retroplanning-j9-j7">
+    <h2>J-9 à J-7 mois : avancer sur la mairie, les prestataires et les tenues</h2>
+    <h3>Ouvrez le dossier de mariage en mairie sans attendre</h3>
+    <p>Votre <strong>rétroplanning mariage civil 12 mois</strong> gagne à intégrer la mairie dès que votre période se précise. Prenez contact avec la commune concernée et demandez les modalités applicables à votre situation.</p>
+    <p>La date du mariage civil se fixe avec la mairie et les futurs époux, lorsque le dossier est complet et à jour. La publication des bans dure dix jours. Le mariage est célébré au plus tôt le dixième jour suivant cette publication, hors dérogation. <a href="https://www.service-public.fr/particuliers/vosdroits/F930">Service-Public</a>.</p>
+    <p>Ce délai ne correspond pas au temps total de préparation du dossier. Une mairie peut demander des documents, proposer des rendez-vous ou organiser son propre calendrier. Notez donc la réponse obtenue, plutôt qu’une date supposée.</p>
+    <p>Ajoutez dans votre planning le nom de votre interlocuteur, les pièces à vérifier et la prochaine relance. Vous éviterez ainsi de chercher une information administrative entre deux demandes de devis…</p>
+    <p>Pour aller plus loin sur cette étape, vous pourrez bientôt <a href="/dossier-mariage-mairie-delai/">préparer votre dossier de mariage en mairie dans les délais</a>. Vérifiez toutefois que cette page est publiée avant de conserver ce lien.</p>
+    <h3>Réservez les prestataires et lancez les essayages</h3>
+    <p>Une fois le cadre posé, sélectionnez les professionnels qui correspondent à votre réception. Photographe, vidéaste, DJ, groupe, fleuriste, coiffure, maquillage ou officiant ne sont pas tous nécessaires. Gardez ceux qui servent vraiment votre journée.</p>
+    <p>Envoyez le même brief à chaque prestataire comparé. Indiquez la date, le lieu, le nombre approximatif de convives, la durée attendue et vos besoins techniques. Les réponses seront plus faciles à lire.</p>
+    <p>Conservez les devis, les contrats et les échéances de paiement dans votre document partagé. Désignez aussi une personne qui suivra les réponses. Cette habitude évite les relances oubliées et les options qui expirent sans décision.</p>
+    <p>Le jour J, un professionnel ou un proche peut coordonner les arrivées et les questions pratiques. Cette mission doit être définie avec son accord. Elle ne doit pas reposer sur une personne qui découvre les consignes le matin même !</p>
+    <p>Pour les <strong>tenues de mariage</strong>, lancez les essayages ou planifiez les retouches nécessaires. Si la robe est déjà choisie, concentrez-vous sur l’ajustement, les accessoires et les essais prévus.</p>
+    <p>Les délais varient selon les boutiques et les prestations. Demandez-les par écrit, puis inscrivez chaque rendez-vous dans votre calendrier. Vous pourrez ainsi <a href="/robes-tenues/">préparer les tenues de mariage et les rendez-vous d’essayage</a> sans perdre le fil.</p>
+    <table>
+      <thead><tr><th scope="col">Sujet</th><th scope="col">Question à poser</th><th scope="col">Confirmation à archiver</th></tr></thead>
+      <tbody>
+        <tr><td>Mairie</td><td>Quelles modalités et quels rendez-vous s’appliquent à notre dossier ?</td><td>Liste des démarches et échéances communiquées</td></tr>
+        <tr><td>Photographe ou vidéaste</td><td>Quelle présence, quelles livraisons et quels besoins techniques sont prévus ?</td><td>Prestation retenue et horaires convenus</td></tr>
+        <tr><td>Tenue et retouches</td><td>Quels rendez-vous, accessoires et ajustements sont nécessaires ?</td><td>Dates d’essai et de remise confirmées</td></tr>
+      </tbody>
+    </table>
+    <p>Pour chaque réservation en cours, notez maintenant deux confirmations attendues. Il peut s’agir d’une date, d’un devis signé, d’un rendez-vous ou d’une réponse de la mairie.</p>
+  </section>
+
+  <section id="retroplanning-j6-j4">
+    <h2>J-6 à J-4 mois : informer les invités et imaginer la réception</h2>
+    <h3>Envoyez les invitations avec les informations utiles</h3>
+    <p>À ce stade, votre <strong>calendrier mariage 12 mois</strong> passe des réservations aux informations concrètes. Vérifiez votre liste avant d’envoyer les faire-part. Une adresse erronée ou un horaire imprécis crée vite des relances inutiles.</p>
+    <p>Indiquez la date, le lieu, les horaires utiles et la manière de répondre. Ajoutez les informations de transport ou d’hébergement seulement lorsqu’elles sont déjà confirmées. Vos invités n’ont pas besoin d’un roman. Ils ont besoin de repères fiables.</p>
+    <p>Attribuez le suivi des réponses à une personne. Elle peut mettre à jour votre tableau partagé au fil des confirmations. Notez les besoins pratiques signalés volontairement, comme un régime alimentaire transmis pour le repas.</p>
+    <p>Ne bloquez pas toute votre papeterie sur des détails encore ouverts. Une <strong>invitation mariage</strong> annonce la journée. Elle ne vous oblige pas à choisir immédiatement la couleur des fleurs ou la forme du livre d’or…</p>
+    <h3>Affinez la réception sans figer trop tôt les détails</h3>
+    <p>Les mois suivants permettent d’avancer sur la dégustation, les boissons, le dessert et l’ambiance de la soirée. Vous pouvez aussi préciser la décoration, les fleurs, l’éclairage et le déroulé de cérémonie.</p>
+    <p>Pensez au confort des invités. L’ombre, le chauffage, les sanitaires, l’eau, le stationnement et les accès méritent autant d’attention qu’un centre de table. Selon le lieu, une navette ou une information sur les hébergements peut aussi simplifier les déplacements.</p>
+    <p>Préparez un repli en cas de pluie, de vent, de chaleur ou d’humidité. Une solution intérieure, une tente ou un changement d’implantation peut suffire. L’idée n’est pas de tout prévoir. Il s’agit de savoir qui décide si la météo change !</p>
+    <p>Le <strong>plan de table</strong> n’est pas obligatoire pour chaque mariage. Un repas servi à table demande souvent une organisation des places. Un cocktail ou un buffet peut fonctionner avec davantage de liberté, selon le lieu et le service retenu.</p>
+    <h4>Informations à vérifier avant l’envoi</h4>
+    <ul><li>Les coordonnées postales ou électroniques des invités</li><li>Les horaires entre cérémonie et réception</li><li>La personne qui reçoit les réponses</li><li>Les informations utiles sur le transport ou l’hébergement</li><li>Le repli prévu si la météo évolue</li><li>Les besoins pratiques à transmettre au traiteur</li></ul>
+    <blockquote><p><strong>Repère pratique :</strong> une invitation informe. Elle ne vous oblige pas à finaliser trop tôt les éléments qui dépendent encore des réponses ou des prestataires.</p></blockquote>
+    <p>Avant l’envoi, relisez ensemble les informations qui doivent figurer sur chaque invitation. Notez séparément les détails qui peuvent encore évoluer.</p>
+  </section>
+
+  <section id="retroplanning-j3-j2">
+    <h2>J-3 à J-2 mois : transformer les réservations en déroulé concret</h2>
+    <h3>Relancez les réponses et confirmez l’effectif</h3>
+    <p>Votre <strong>préparation mariage mois par mois</strong> entre dans une phase plus concrète. Relancez les personnes qui n’ont pas répondu. Une réponse tardive reste plus simple à gérer avant la finalisation des repas.</p>
+    <p>Mettez à jour les adultes, les enfants, les repas signalés, les hébergements et les besoins de transport. Prévenez le traiteur selon le calendrier qu’il vous a communiqué. Gardez une date de clôture interne avant la sienne.</p>
+    <p>L’effectif évolue parfois jusqu’aux derniers jours. Votre tableau doit donc garder une trace des changements. N’essayez pas de deviner qui viendra. Demandez une réponse claire et consignez-la.</p>
+    <p>Si votre format le demande, commencez le <strong>plan de table</strong>. Laissez toutefois une marge pour les ajustements. Les noms sur papier peuvent attendre tant que les réponses restent incertaines.</p>
+    <h3>Préparez les essais, les textes et les objets à apporter</h3>
+    <p>Les derniers essayages arrivent à ce moment. Vérifiez les retouches, les accessoires et les chaussures. Si vous avez prévu un essai coiffure ou maquillage, conservez les références utiles dans votre dossier.</p>
+    <p>Rassemblez aussi les vœux, les discours, les lectures, les musiques et les alliances. Un texte peut rester personnel sans être improvisé à la dernière minute. Une répétition courte peut vous rassurer…</p>
+    <p>Confirmez les livraisons de fleurs, de gâteau, de mobilier ou de matériel loué. Listez les objets personnels à apporter : livre d’or, urne, panneau d’accueil, accessoires, décorations ou cadeaux destinés aux invités.</p>
+    <table>
+      <thead><tr><th scope="col">Élément</th><th scope="col">À confirmer</th><th scope="col">Personne référente</th></tr></thead>
+      <tbody>
+        <tr><td>Nombre final de repas</td><td>Informations communiquées au traiteur</td><td>À attribuer</td></tr>
+        <tr><td>Horaires d’arrivée</td><td>Créneaux de chaque prestataire</td><td>À attribuer</td></tr>
+        <tr><td>Installation décorative</td><td>Accès, matériel et personnes présentes</td><td>À attribuer</td></tr>
+        <tr><td>Textes et musiques</td><td>Ordre et fichiers prêts</td><td>À attribuer</td></tr>
+      </tbody>
+    </table>
+    <p>Ouvrez maintenant une liste distincte des objets à transporter. Confiez son suivi à une personne identifiée, puis cochez les éléments au moment de leur départ.</p>
+  </section>
+
+  <section id="retroplanning-j15-j7">
+    <h2>J-15 à J-7 : verrouillez le jour J et déléguez les dernières missions</h2>
+    <h3>Confirmez les horaires avec chaque prestataire</h3>
+    <p>La dernière quinzaine sert à réunir les informations dispersées. Contactez le lieu, le traiteur, le photographe, le vidéaste, le fleuriste, le DJ et les intervenants prévus. Vérifiez les horaires, les accès et le contact disponible sur place.</p>
+    <p>Demandez aussi les besoins d’installation, les livraisons, les repas prestataires et les contraintes électriques. Votre <strong>feuille de route mariage</strong> n’a pas besoin d’être longue. Elle doit répondre aux questions pratiques avant qu’elles n’arrivent.</p>
+    <p>Indiquez les moments utiles : arrivée des prestataires, cérémonie, photos de groupe, repas, discours, ouverture de bal et fin prévue. Gardez un exemplaire pour vous. Transmettez surtout une version simple à votre personne référente.</p>
+    <h3>Ajustez le plan de table et répartissez les dernières tâches</h3>
+    <p>Finalisez le plan de table si vous en avez choisi un. Corrigez les derniers changements sans refaire toute la réception pour un seul désistement. Une solution claire vaut souvent mieux qu’une perfection introuvable.</p>
+    <p>Répartissez les petites missions : installer les panneaux, surveiller l’urne, apporter le livre d’or, accueillir une livraison ou récupérer les fleurs. Demandez toujours l’accord des proches avant de leur confier une responsabilité.</p>
+    <p>Un témoin peut avoir un rôle officiel sans devenir régisseur de soirée. Une autre personne peut gérer les appels pratiques. Cette séparation protège vos proches et vous laisse davantage de place pour vivre la journée !</p>
+    <ol><li>Envoyez la feuille de déroulé aux personnes concernées</li><li>Vérifiez les numéros de téléphone utiles</li><li>Désignez la personne qui répond aux appels</li><li>Répartissez les objets personnels à transporter</li><li>Prévoyez le retour des éléments loués</li></ol>
+    <blockquote><p><strong>Conseil de la rédaction :</strong> prévoyez un référent et un relais. Une seule personne indisponible ne doit pas bloquer toute la journée.</p></blockquote>
+    <p>Envoyez votre feuille de déroulé aux personnes référentes. Demandez une confirmation de réception, puis gardez la version la plus récente dans votre téléphone et votre dossier partagé.</p>
+  </section>
+
+  <section id="retroplanning-j7-j1">
+    <h2>J-7 à J-1 : finalisez, transmettez et quittez progressivement le planning</h2>
+    <h3>Préparez les règlements, les sacs et le kit de secours</h3>
+    <p>Le dernier chapitre de votre <strong>rétroplanning mariage complet 12 mois</strong> ne sert pas à lancer de nouvelles idées. Il permet de préparer ce qui peut l’être avant l’arrivée des invités.</p>
+    <p>Réglez les prestations restantes en amont lorsque les modalités prévues le permettent. Vérifiez vos moyens de paiement. Si un plafond bancaire doit évoluer, renseignez-vous auprès de votre banque assez tôt.</p>
+    <p>Préparez les sacs, les tenues, les alliances, les documents, les enveloppes et les cadeaux. Si le lieu l’autorise, installez certains éléments de décoration la veille. Vous gagnerez du temps le matin, sans transformer la veille en marathon…</p>
+    <p>Un <strong>kit de secours mariage</strong> peut réunir de l’eau, des mouchoirs, des pansements, du fil, une aiguille, du déodorant, un chargeur ou des chaussures confortables. Prenez ce qui vous semble utile. Cette liste n’est pas une obligation.</p>
+    <h3>Passez réellement le relais avant le mariage</h3>
+    <p>Remettez le déroulé définitif à vos personnes référentes. Elles doivent connaître les contacts, les horaires, les accès et les objets dont elles ont la charge. Désignez aussi la personne qui recevra les appels le matin.</p>
+    <p>Précisez qui décide si la météo change, si un prestataire arrive en retard ou si un élément manque. Vous n’anticipez pas une catastrophe. Vous évitez simplement de devoir répondre à chaque question en tenue de mariage.</p>
+    <p>Les derniers jours peuvent donner envie de modifier un détail de plus. Faites une pause avant d’ouvrir une nouvelle discussion. Si la décision ne change ni le confort ni le déroulé, elle peut probablement attendre après la cérémonie.</p>
+    <h4>À transmettre avant de décrocher</h4>
+    <ul><li>Les contacts des prestataires</li><li>Les horaires et le déroulé prévu</li><li>Les accès, codes et consignes utiles</li><li>Les objets personnels à remettre</li><li>Les paiements prévus</li><li>Le plan B météo</li><li>Le nom de la personne décisionnaire</li></ul>
+    <p>Remettez le dossier du jour J à votre référent. Réservez ensuite un moment sans planning avant la cérémonie. Vos préparatifs ont déjà fait leur travail !</p>
+  </section>
+
+  <section id="faq-retroplanning">
+    <h2>Questions fréquentes</h2>
+    <h3>Peut-on organiser un mariage en moins de 12 mois ?</h3>
+    <p>Oui, cela peut être possible. La faisabilité dépend de la souplesse sur la date, le lieu, le nombre d’invités et les prestations souhaitées. Commencez par le format, la mairie, le lieu et la restauration. Réduisez ensuite les tâches facultatives plutôt que de cumuler les urgences.</p>
+    <h3>Par quoi commencer un rétroplanning mariage ?</h3>
+    <p>Commencez par définir le format de la réception, une période souhaitée, une première estimation des invités et les priorités du couple. Créez ensuite un document partagé qui indique la tâche, la personne responsable, l’échéance et la confirmation attendue.</p>
+    <h3>Quand contacter la mairie pour un mariage civil ?</h3>
+    <p>Contactez la mairie dès que votre période de mariage se précise. La date est fixée avec la mairie lorsque le dossier est complet et à jour. Les bans sont publiés pendant dix jours. La célébration intervient au plus tôt le dixième jour suivant cette publication, hors dérogation. <a href="https://www.service-public.fr/particuliers/vosdroits/F930">Service-Public</a>.</p>
+    <h3>Faut-il prévoir un plan de table pour tous les mariages ?</h3>
+    <p>Non. Un repas assis demande souvent une organisation des places. Un cocktail ou un buffet peut fonctionner sans plan nominatif. Le choix dépend du lieu, du service, de l’effectif et de l’ambiance recherchée pour la réception.</p>
+    <h3>Quel outil utiliser pour un planning mariage 12 mois ?</h3>
+    <p>Google Sheets, Excel, Canva, un agenda partagé ou un carnet peuvent convenir. Choisissez un outil que vous utiliserez tous les deux. L’outil doit surtout rendre visibles les actions, les réponses attendues, les échéances et les responsabilités.</p>
+  </section>
+
+  <section id="a-retenir">
+    <h2>À retenir</h2>
+    <p>Un <strong>rétroplanning mariage</strong> ne vous impose pas une manière unique de préparer votre journée. Douze mois forment une trame adaptable. Le plus utile consiste à cadrer votre format, réserver les éléments qui dépendent d’une date, confirmer les informations utiles, puis transmettre les consignes.</p>
+    <p>Votre <strong>planning mariage 12 mois</strong> peut tenir dans un document partagé. Notez la prochaine action, la personne responsable et la réponse attendue. Ce calendrier de mariage restera vivant jusqu’au jour J, puis il pourra enfin se refermer…!!</p>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Rétroplanning mariage : le calendrier des 12 mois",
+  "name": "Rétroplanning mariage : le calendrier des 12 mois",
+  "description": "Rétroplanning mariage sur 12 mois : les tâches à planifier, de la réservation du lieu aux derniers détails avant le jour J.",
+  "url": "https://top-mariage.fr/blog/retroplanning-mariage/",
+  "author": {"@type": "Organization", "name": "Top Mariage"},
+  "publisher": {"@type": "Organization", "name": "Top Mariage"},
+  "datePublished": "2026-09-25",
+  "dateModified": "2026-09-25",
+  "mainEntityOfPage": "https://top-mariage.fr/blog/retroplanning-mariage/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Peut-on organiser un mariage en moins de 12 mois ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, cela peut être possible. La faisabilité dépend de la souplesse sur la date, le lieu, le nombre d’invités et les prestations souhaitées. Commencez par le format, la mairie, le lieu et la restauration. Réduisez ensuite les tâches facultatives plutôt que de cumuler les urgences."}},
+    {"@type": "Question", "name": "Par quoi commencer un rétroplanning mariage ?", "acceptedAnswer": {"@type": "Answer", "text": "Commencez par définir le format de la réception, une période souhaitée, une première estimation des invités et les priorités du couple. Créez ensuite un document partagé qui indique la tâche, la personne responsable, l’échéance et la confirmation attendue."}},
+    {"@type": "Question", "name": "Quand contacter la mairie pour un mariage civil ?", "acceptedAnswer": {"@type": "Answer", "text": "Contactez la mairie dès que votre période de mariage se précise. La date est fixée avec la mairie lorsque le dossier est complet et à jour. Les bans sont publiés pendant dix jours. La célébration intervient au plus tôt le dixième jour suivant cette publication, hors dérogation."}},
+    {"@type": "Question", "name": "Faut-il prévoir un plan de table pour tous les mariages ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Un repas assis demande souvent une organisation des places. Un cocktail ou un buffet peut fonctionner sans plan nominatif. Le choix dépend du lieu, du service, de l’effectif et de l’ambiance recherchée pour la réception."}},
+    {"@type": "Question", "name": "Quel outil utiliser pour un planning mariage 12 mois ?", "acceptedAnswer": {"@type": "Answer", "text": "Google Sheets, Excel, Canva, un agenda partagé ou un carnet peuvent convenir. Choisissez un outil que vous utiliserez tous les deux. L’outil doit surtout rendre visibles les actions, les réponses attendues, les échéances et les responsabilités."}}
+  ]
+}
+</script>
