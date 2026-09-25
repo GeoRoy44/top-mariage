@@ -1,47 +1,52 @@
 <section class="budget-calculator" aria-labelledby="budget-calculator-title">
-  <div class="budget-calculator__intro">
-    <p class="eyebrow">Estimation personnalisable</p>
-    <h2 id="budget-calculator-title">Calculez votre budget mariage estimatif</h2>
-    <p>Choisissez votre nombre d’invités et votre niveau de réception. Le résultat est un repère de préparation, à ajuster avec des devis comparables.</p>
+  <div class="budget-calculator__header">
+    <p class="eyebrow">Outil gratuit</p>
+    <h2 id="budget-calculator-title">Estimez votre budget mariage</h2>
+    <p>Obtenez un ordre de grandeur en quelques clics, puis affinez-le avec vos devis.</p>
   </div>
 
-  <div class="budget-calculator__controls">
-    <label for="budget-guests">Nombre d’invités <output id="budget-guests-output" for="budget-guests">80</output></label>
-    <input id="budget-guests" type="range" min="20" max="200" step="5" value="80" aria-describedby="budget-guests-help" />
-    <p id="budget-guests-help" class="budget-calculator__help">Le nombre de convives fait évoluer les postes liés au repas, aux boissons et à la papeterie.</p>
-
-    <fieldset>
-      <legend>Format de réception</legend>
-      <div class="budget-calculator__options">
-        <label class="budget-calculator__option"><input type="radio" name="budget-format" value="simple" /><span><strong>Simple et resserré</strong><small>Priorités ciblées, format réduit</small></span></label>
-        <label class="budget-calculator__option"><input type="radio" name="budget-format" value="equilibre" checked /><span><strong>Équilibré</strong><small>Réception complète et arbitrages mesurés</small></span></label>
-        <label class="budget-calculator__option"><input type="radio" name="budget-format" value="etendu" /><span><strong>Étendu</strong><small>Plus d’options, de durée ou de personnalisation</small></span></label>
+  <div class="budget-calculator__layout">
+    <div class="budget-calculator__form">
+      <div class="field-group">
+        <div class="field-group__label">
+          <label for="budget-guests">Nombre d’invités</label>
+          <output id="budget-guests-output" for="budget-guests">80</output>
+        </div>
+        <input id="budget-guests" type="range" min="20" max="200" step="5" value="80" />
+        <div class="range-labels" aria-hidden="true"><span>20</span><span>200</span></div>
       </div>
-    </fieldset>
 
-    <fieldset>
-      <legend>Options à prendre en compte</legend>
-      <div class="budget-calculator__checks">
-        <label><input type="checkbox" value="video" /> Vidéaste</label>
-        <label><input type="checkbox" value="brunch" /> Brunch du lendemain</label>
-        <label><input type="checkbox" value="coordination" /> Coordination du jour J</label>
-      </div>
-    </fieldset>
+      <fieldset>
+        <legend>Votre format de réception</legend>
+        <div class="format-options">
+          <label class="format-option"><input type="radio" name="budget-format" value="simple" /><span><strong>Simple</strong><small>L’essentiel, format resserré</small></span></label>
+          <label class="format-option"><input type="radio" name="budget-format" value="equilibre" checked /><span><strong>Équilibré</strong><small>Le meilleur compromis</small></span></label>
+          <label class="format-option"><input type="radio" name="budget-format" value="etendu" /><span><strong>Étendu</strong><small>Plus de prestations</small></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Options complémentaires</legend>
+        <div class="extra-options">
+          <label><input type="checkbox" value="video" /><span>Vidéaste</span></label>
+          <label><input type="checkbox" value="brunch" /><span>Brunch du lendemain</span></label>
+          <label><input type="checkbox" value="coordination" /><span>Coordination jour J</span></label>
+        </div>
+      </fieldset>
+    </div>
+
+    <aside class="budget-calculator__result" aria-live="polite">
+      <p class="budget-calculator__result-label">Votre enveloppe indicative</p>
+      <p class="budget-calculator__total" id="budget-total">—</p>
+      <p class="budget-calculator__per-guest" id="budget-per-guest">—</p>
+      <div class="budget-calculator__divider"></div>
+      <p class="budget-calculator__hint">Une estimation de départ, à comparer ensuite avec des prestations et inclusions identiques.</p>
+      <details>
+        <summary>Voir le détail de l’estimation</summary>
+        <ul id="budget-breakdown"></ul>
+      </details>
+    </aside>
   </div>
-
-  <div class="budget-calculator__result" aria-live="polite">
-    <p class="budget-calculator__result-label">Estimation de votre enveloppe</p>
-    <p class="budget-calculator__total" id="budget-total">—</p>
-    <p class="budget-calculator__per-guest" id="budget-per-guest">—</p>
-    <p class="budget-calculator__notice">Cette estimation n’est ni un devis ni une moyenne nationale. Les tarifs changent selon la région, la date, le lieu et les prestations incluses.</p>
-  </div>
-
-  <details class="budget-calculator__details">
-    <summary>Voir la répartition indicative</summary>
-    <ul id="budget-breakdown"></ul>
-  </details>
-
-  <p class="budget-calculator__footnote">Conseil : comparez toujours des devis portant sur le même nombre d’invités, la même durée et les mêmes inclusions.</p>
 </section>
 
 <script>
@@ -61,18 +66,12 @@
       equilibre: { fixed: 8800, guest: 145 },
       etendu: { fixed: 15500, guest: 235 },
     };
-
     const extras: Record<string, { amount?: number; amountPerGuest?: number; label: string }> = {
       video: { amount: 2200, label: 'Vidéaste' },
       brunch: { amountPerGuest: 24, label: 'Brunch du lendemain' },
       coordination: { amount: 1250, label: 'Coordination du jour J' },
     };
-
-    const euro = new Intl.NumberFormat('fr-FR', {
-      style: 'currency',
-      currency: 'EUR',
-      maximumFractionDigits: 0,
-    });
+    const euro = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
 
     function updateBudget() {
       if (!guestsInput || !guestsOutput || !totalOutput || !perGuestOutput || !breakdown) return;
@@ -84,8 +83,8 @@
       const guests = Number(guestsInput.value);
       let total = format.fixed + guests * format.guest;
       const rows: Array<{ label: string; amount: number }> = [
-        { label: 'Base de réception et prestations fixes', amount: format.fixed },
-        { label: 'Part estimative liée aux invités', amount: guests * format.guest },
+        { label: 'Organisation & prestations fixes', amount: format.fixed },
+        { label: `Réception pour ${guests} invités`, amount: guests * format.guest },
       ];
 
       calculatorRoot.querySelectorAll<HTMLInputElement>('input[type="checkbox"]:checked').forEach((input) => {
@@ -98,7 +97,7 @@
 
       guestsOutput.textContent = String(guests);
       totalOutput.textContent = euro.format(total);
-      perGuestOutput.textContent = `Environ ${euro.format(Math.round(total / guests))} par invité, tous postes confondus`;
+      perGuestOutput.textContent = `${euro.format(Math.round(total / guests))} par invité`;
       breakdown.replaceChildren(...rows.map((row) => {
         const item = document.createElement('li');
         const label = document.createElement('span');
@@ -115,3 +114,65 @@
     updateBudget();
   }
 </script>
+
+<style>
+  .budget-calculator {
+    --ink: #1f2937;
+    --muted: #667085;
+    --line: #e6e8ec;
+    --surface: #ffffff;
+    --soft: #f7f8f5;
+    --accent: #b56048;
+    --accent-dark: #914735;
+    display: grid;
+    gap: 2rem;
+    max-width: 1080px;
+    margin: 3rem auto;
+    padding: clamp(1.4rem, 4vw, 3rem);
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: 0 18px 45px rgba(41, 48, 43, 0.08);
+  }
+
+  .budget-calculator__header { max-width: 660px; }
+  .budget-calculator__header .eyebrow { margin: 0 0 .45rem; color: var(--accent-dark); font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .budget-calculator h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.1; }
+  .budget-calculator__header > p:last-child { max-width: 560px; margin: .85rem 0 0; color: var(--muted); line-height: 1.6; }
+  .budget-calculator__layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(270px, .75fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+  .budget-calculator__form { display: grid; gap: 1.75rem; }
+  .field-group, fieldset { margin: 0; padding: 0; border: 0; }
+  .field-group__label { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; font-weight: 750; }
+  .field-group output { min-width: 3.25rem; padding: .35rem .7rem; color: var(--accent-dark); text-align: center; background: #fbeeea; border-radius: 999px; }
+  input[type='range'] { width: 100%; accent-color: var(--accent); cursor: pointer; }
+  .range-labels { display: flex; justify-content: space-between; margin-top: .4rem; color: var(--muted); font-size: .78rem; }
+  legend { margin-bottom: .8rem; font-weight: 750; }
+  .format-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
+  .format-option { display: block; cursor: pointer; }
+  .format-option input { position: absolute; opacity: 0; pointer-events: none; }
+  .format-option span { display: grid; min-height: 100%; gap: .25rem; padding: .9rem; background: #fff; border: 1px solid var(--line); border-radius: 14px; transition: border-color .16s ease, background .16s ease, box-shadow .16s ease; }
+  .format-option small { color: var(--muted); font-size: .75rem; line-height: 1.35; }
+  .format-option input:checked + span { background: #fdf4f1; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(181, 96, 72, .12); }
+  .format-option input:focus-visible + span { outline: 3px solid rgba(181, 96, 72, .35); outline-offset: 2px; }
+  .extra-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
+  .extra-options label { display: flex; align-items: center; gap: .55rem; padding: .8rem; color: #374151; font-size: .88rem; background: var(--soft); border-radius: 12px; cursor: pointer; }
+  .extra-options input { width: 1rem; height: 1rem; margin: 0; accent-color: var(--accent); }
+  .budget-calculator__result { position: sticky; top: 1rem; padding: clamp(1.25rem, 3vw, 2rem); color: #fff; background: #2f473d; border-radius: 18px; }
+  .budget-calculator__result-label { margin: 0; color: #d9e6dc; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .budget-calculator__total { margin: .55rem 0 .2rem; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.15rem, 5vw, 3.45rem); font-weight: 700; letter-spacing: -.04em; line-height: 1; }
+  .budget-calculator__per-guest { margin: 0; color: #e2ece5; font-size: .95rem; }
+  .budget-calculator__divider { height: 1px; margin: 1.35rem 0; background: rgba(255, 255, 255, .22); }
+  .budget-calculator__hint { margin: 0; color: #d9e6dc; font-size: .87rem; line-height: 1.55; }
+  .budget-calculator__result details { margin-top: 1.25rem; }
+  .budget-calculator__result summary { color: #fff; font-size: .9rem; font-weight: 700; cursor: pointer; }
+  .budget-calculator__result ul { display: grid; gap: .55rem; margin: .85rem 0 0; padding: .9rem 0 0; border-top: 1px solid rgba(255, 255, 255, .2); list-style: none; }
+  .budget-calculator__result li { display: flex; justify-content: space-between; gap: 1rem; color: #e2ece5; font-size: .82rem; }
+  .budget-calculator__result li strong { color: #fff; white-space: nowrap; }
+  @media (max-width: 760px) {
+    .budget-calculator { margin: 1.5rem auto; border-radius: 18px; }
+    .budget-calculator__layout { grid-template-columns: 1fr; }
+    .budget-calculator__result { position: static; order: -1; }
+    .format-options, .extra-options { grid-template-columns: 1fr; }
+  }
+</style>
