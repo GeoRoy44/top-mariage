@@ -10,12 +10,6 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
 ---
 
 <BaseLayout title="Top Mariage : Comparatif et calculateur budget mariage" description="Guides pratiques pour organiser votre mariage : budget, lieu, prestataires, tenues et planning.">
-  <section class="home-calculator">
-    <div class="container">
-      <BudgetCalculator />
-    </div>
-  </section>
-
   <section class="hero">
     <div class="container hero__grid">
       <div>
@@ -35,6 +29,13 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
       </aside>
     </div>
   </section>
+
+  <section class="home-calculator">
+    <div class="container">
+      <BudgetCalculator />
+    </div>
+  </section>
+
   <section class="section container">
     <div class="section-heading">
       <div><p class="eyebrow">Guides pratiques</p><h2>Avancez étape par étape</h2></div>
