@@ -10,7 +10,7 @@ tags:
   - coût mariage 50 personnes
   - prix mariage 50 personnes
   - mariage intimiste
-draft: true
+draft: false
 ---
 
 <article id="budget-mariage-50-personnes">
