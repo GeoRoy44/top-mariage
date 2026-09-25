@@ -10,7 +10,7 @@ tags:
   - coût mariage 50 personnes
   - prix mariage 50 personnes
   - mariage intimiste
-draft: false
+draft: true
 ---
 
 <article id="budget-mariage-50-personnes">
@@ -32,105 +32,11 @@ draft: false
       <p>Choisissez votre nombre d’invités et votre niveau de réception. Le résultat est un repère de préparation, à ajuster avec des devis comparables.</p>
     </div>
 
-    <div class="tm-budget-widget__controls">
-      <label for="tm-guests">Nombre d’invités <output id="tm-guests-output" for="tm-guests">50</output></label>
-      <input id="tm-guests" type="range" min="20" max="200" step="5" value="50" aria-describedby="tm-guests-help">
-      <p id="tm-guests-help" class="tm-budget-widget__help">Le nombre de convives fait évoluer les postes liés au repas, aux boissons et à la papeterie.</p>
-
-      <fieldset>
-        <legend>Format de réception</legend>
-        <div class="tm-budget-widget__options">
-          <label class="tm-budget-widget__option">
-            <input type="radio" name="tm-format" value="simple">
-            <span><strong>Simple et resserré</strong><small>Priorités ciblées, format réduit</small></span>
-          </label>
-          <label class="tm-budget-widget__option">
-            <input type="radio" name="tm-format" value="equilibre" checked>
-            <span><strong>Équilibré</strong><small>Réception complète et arbitrages mesurés</small></span>
-          </label>
-          <label class="tm-budget-widget__option">
-            <input type="radio" name="tm-format" value="etendu">
-            <span><strong>Étendu</strong><small>Plus d’options, de durée ou de personnalisation</small></span>
-          </label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Options à prendre en compte</legend>
-        <div class="tm-budget-widget__checks">
-          <label><input type="checkbox" value="video"> Vidéaste</label>
-          <label><input type="checkbox" value="brunch"> Brunch du lendemain</label>
-          <label><input type="checkbox" value="coordination"> Coordination du jour J</label>
-        </div>
-      </fieldset>
-    </div>
-
-    <div class="tm-budget-widget__result" aria-live="polite">
-      <p class="tm-budget-widget__result-label">Estimation de votre enveloppe</p>
-      <p class="tm-budget-widget__total" id="tm-total">—</p>
-      <p class="tm-budget-widget__per-guest" id="tm-per-guest">—</p>
-      <p class="tm-budget-widget__notice">Cette estimation n’est ni un devis ni une moyenne nationale. Les tarifs changent selon la région, la date, le lieu et les prestations incluses.</p>
-    </div>
-
-    <details class="tm-budget-widget__details">
-      <summary>Voir la répartition indicative</summary>
-      <ul id="tm-breakdown"></ul>
-    </details>
-
-    <p class="tm-budget-widget__footnote">Conseil : comparez toujours des devis portant sur le même nombre d’invités, la même durée et les mêmes inclusions.</p>
-  </section>
-
-  <style>
-    .tm-budget-widget {
-      --tm-ink: #1e2424;
-      --tm-green: #0c4023;
-      --tm-paper: #f1f3f3;
-      --tm-salmon: #eb5e55;
-      --tm-line: #d9dddd;
-      max-width: 860px;
-      margin: 2.5rem auto;
-      padding: clamp(1.25rem, 3vw, 2.25rem);
-      border: 1px solid var(--tm-line);
-      border-radius: 18px;
-      background: linear-gradient(145deg, #ffffff 0%, var(--tm-paper) 100%);
-      color: var(--tm-ink);
-      font-family: inherit;
-      box-shadow: 0 12px 34px rgba(30, 36, 36, 0.08);
-    }
-    .tm-budget-widget * { box-sizing: border-box; }
-    .tm-budget-widget__eyebrow { margin: 0 0 .35rem; color: var(--tm-green); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-    .tm-budget-widget h2 { margin: 0 0 .65rem; color: var(--tm-green); font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; }
-    .tm-budget-widget__intro > p:last-child { max-width: 65ch; margin-bottom: 1.75rem; line-height: 1.55; }
-    .tm-budget-widget__controls { display: grid; gap: 1.5rem; }
-    .tm-budget-widget label, .tm-budget-widget legend { font-weight: 650; }
-    .tm-budget-widget output { float: right; min-width: 3rem; padding: .2rem .5rem; border-radius: 999px; background: var(--tm-green); color: #fff; text-align: center; }
-    .tm-budget-widget input[type="range"] { width: 100%; margin: 1rem 0 .25rem; accent-color: var(--tm-salmon); }
-    .tm-budget-widget__help, .tm-budget-widget__notice, .tm-budget-widget__footnote { margin: 0; color: #526060; font-size: .92rem; line-height: 1.45; }
-    .tm-budget-widget fieldset { margin: 0; padding: 1rem; border: 1px solid var(--tm-line); border-radius: 12px; }
-    .tm-budget-widget legend { padding: 0 .35rem; }
-    .tm-budget-widget__options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
-    .tm-budget-widget__option { display: flex; gap: .55rem; align-items: flex-start; min-height: 100%; padding: .9rem; border: 1px solid var(--tm-line); border-radius: 10px; background: #fff; cursor: pointer; }
-    .tm-budget-widget__option:has(input:checked) { border-color: var(--tm-green); outline: 2px solid rgba(12, 64, 35, .12); }
-    .tm-budget-widget__option input { margin-top: .25rem; accent-color: var(--tm-green); }
-    .tm-budget-widget__option strong, .tm-budget-widget__option small { display: block; }
-    .tm-budget-widget__option small { margin-top: .25rem; color: #526060; font-size: .8rem; line-height: 1.3; }
-    .tm-budget-widget__checks { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; }
-    .tm-budget-widget__checks label { font-weight: 500; }
-    .tm-budget-widget__checks input { accent-color: var(--tm-green); }
-    .tm-budget-widget__result { margin-top: 1.5rem; padding: 1.25rem; border-radius: 12px; background: var(--tm-green); color: #fff; }
-    .tm-budget-widget__result-label { margin: 0; font-size: .9rem; opacity: .85; }
-    .tm-budget-widget__total { margin: .25rem 0; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.03em; }
-    .tm-budget-widget__per-guest { margin: 0 0 .75rem; font-size: 1rem; font-weight: 650; }
-    .tm-budget-widget__notice { color: rgba(255, 255, 255, .88); }
-    .tm-budget-widget__details { margin-top: 1rem; padding: 1rem; border-radius: 12px; background: #fff; }
-    .tm-budget-widget__details summary { cursor: pointer; color: var(--tm-green); font-weight: 700; }
-    .tm-budget-widget__details ul { margin: 1rem 0 0; padding-left: 1.2rem; }
-    .tm-budget-widget__details li { display: flex; justify-content: space-between; gap: 1rem; margin: .45rem 0; }
-    .tm-budget-widget__footnote { margin-top: 1rem; }
-    @media (max-width: 680px) {
-      .tm-budget-widget__options { grid-template-columns: 1fr; }
-      .tm-budget-widget__details li { flex-direction: column; gap: .1rem; }
-    }
+  <section class="home-calculator">
+  <div class="container">
+    <BudgetCalculator />
+  </div>
+</section>
   </style>
 
   <script>
