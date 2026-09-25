@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  article: CollectionEntry<'blog'>;
+}
+
+const { article } = Astro.props;
+const categoryLabels: Record<CollectionEntry<'blog'>['data']['category'], string> = {
+  'organisation-mariage': 'Organisation',
+  'lieux-mariage': 'Lieux de mariage',
+  'prestataires-mariage': 'Prestataires',
+  'robes-tenues': 'Robes & tenues',
+};
+---
+
+<article class="article-card">
+  <p class="eyebrow">{categoryLabels[article.data.category]}</p>
+  <h2><a href={`/blog/${article.slug}/`}>{article.data.title}</a></h2>
+  <p>{article.data.description}</p>
+  <div class="article-card__footer">
+    <time datetime={article.data.pubDate.toISOString()}>{article.data.pubDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+    <a class="text-link" href={`/blog/${article.slug}/`}>Lire le guide <span aria-hidden="true">→</span></a>
+  </div>
+</article>

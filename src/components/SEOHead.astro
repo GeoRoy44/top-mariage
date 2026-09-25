@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: URL | string;
+  article?: CollectionEntry<'blog'>;
+}
+
+const { title, description, canonical = Astro.url, article } = Astro.props;
+const canonicalUrl = new URL(canonical, Astro.site);
+const imageUrl = article?.data.image ? new URL(article.data.image, Astro.site) : new URL('/favicon.svg', Astro.site);
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<meta property="og:type" content={article ? 'article' : 'website'} />
+<meta property="og:site_name" content="Top Mariage" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta name="twitter:card" content="summary" />
+{article && <meta property="article:published_time" content={article.data.pubDate.toISOString()} />}
+{article?.data.updatedDate && <meta property="article:modified_time" content={article.data.updatedDate.toISOString()} />}

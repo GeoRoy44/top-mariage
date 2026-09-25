@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const articles = (await getCollection('blog', ({ data }) => !data.draft && data.category === 'organisation-mariage'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Organisation de mariage — Guides et conseils | Top Mariage" description="Planifiez votre mariage avec méthode : budget, planning, démarches, invitations et coordination du jour J.">
+  <section class="page-hero container">
+    <Breadcrumbs items={[{ label: 'Organisation du mariage' }]} />
+    <p class="eyebrow">Organisation</p><h1>Donnez une structure simple à votre préparation.</h1>
+    <p class="lead">Du premier cadrage aux dernières confirmations, retrouvez les repères pour avancer sans vous disperser.</p>
+  </section>
+  <section class="section container">{articles.length ? <div class="card-grid">{articles.map((article) => <ArticleCard article={article} />)}</div> : <p>Les guides d’organisation arrivent bientôt.</p>}</section>
+</BaseLayout>

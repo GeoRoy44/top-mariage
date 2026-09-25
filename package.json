@@ -1,0 +1,26 @@
+{
+  "name": "top-mariage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.8",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.13.7",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.36.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4"
+  }
+}

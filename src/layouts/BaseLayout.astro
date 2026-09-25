@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEOHead from '../components/SEOHead.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+  article?: CollectionEntry<'blog'>;
+}
+
+const { title, description, article } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#526D5C" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEOHead title={title} description={description} article={article} />
+  </head>
+  <body>
+    <Header />
+    <main><slot /></main>
+    <Footer />
+  </body>
+</html>

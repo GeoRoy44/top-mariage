@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const articles = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Guides mariage — Top Mariage" description="Retrouvez les guides Top Mariage pour organiser votre journée, choisir votre lieu, vos prestataires et vos tenues.">
+  <section class="page-hero container">
+    <Breadcrumbs items={[{ label: 'Guides' }]} />
+    <p class="eyebrow">Guides mariage</p>
+    <h1>Des réponses concrètes, au bon moment.</h1>
+    <p class="lead">Budget, organisation, lieux, prestataires et tenues : consultez les ressources utiles pour préparer chaque étape.</p>
+  </section>
+  <section class="section container">
+    {articles.length ? <div class="card-grid">{articles.map((article) => <ArticleCard article={article} />)}</div> : <p>Aucun guide publié pour le moment.</p>}
+  </section>
+</BaseLayout>

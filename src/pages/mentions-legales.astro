@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Mentions légales | Top Mariage" description="Mentions légales du site Top Mariage.">
+  <section class="page-hero container"><Breadcrumbs items={[{ label: 'Mentions légales' }]} /><p class="eyebrow">Informations</p><h1>Mentions légales</h1></section>
+  <section class="article-content container"><h2>Éditeur du site</h2><p>Le site Top Mariage est édité par son responsable de publication. Les informations d’identification complètes seront communiquées conformément aux obligations applicables avant toute exploitation commerciale du site.</p><h2>Hébergement</h2><p>Le site est hébergé sur l’infrastructure Cloudflare.</p><h2>Propriété intellectuelle</h2><p>Les contenus publiés sur Top Mariage sont protégés par le droit de la propriété intellectuelle. Toute réutilisation nécessite une autorisation préalable, sauf exception légale.</p></section>
+</BaseLayout>

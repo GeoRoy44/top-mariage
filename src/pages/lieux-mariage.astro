@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const articles = (await getCollection('blog', ({ data }) => !data.draft && data.category === 'lieux-mariage'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Lieux de mariage — Guides et conseils | Top Mariage" description="Préparez la recherche de votre lieu de mariage avec des critères utiles, des questions à poser et des conseils pratiques.">
+  <section class="page-hero container"><Breadcrumbs items={[{ label: 'Lieux de mariage' }]} /><p class="eyebrow">Lieux de mariage</p><h1>Trouver un cadre adapté à votre journée.</h1><p class="lead">Capacité, accès, horaires, hébergements et plan B : évaluez les lieux avec les bons critères.</p></section>
+  <section class="section container">{articles.length ? <div class="card-grid">{articles.map((article) => <ArticleCard article={article} />)}</div> : <p>Les guides sur les lieux de mariage arrivent bientôt.</p>}</section>
+</BaseLayout>

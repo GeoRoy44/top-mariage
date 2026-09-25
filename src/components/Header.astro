@@ -1,0 +1,21 @@
+---
+const links = [
+  { href: '/', label: 'Accueil' },
+  { href: '/organisation-mariage/', label: 'Organisation' },
+  { href: '/lieux-mariage/', label: 'Lieux' },
+  { href: '/prestataires-mariage/', label: 'Prestataires' },
+  { href: '/robes-tenues/', label: 'Robes & tenues' },
+  { href: '/blog/', label: 'Guides' },
+];
+---
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="brand" href="/" aria-label="Top Mariage — accueil">Top <span>Mariage</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <ul>
+        {links.map((link) => <li><a href={link.href} aria-current={Astro.url.pathname === link.href ? 'page' : undefined}>{link.label}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+</header>

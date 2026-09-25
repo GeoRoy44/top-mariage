@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const articles = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title="Top Mariage — Préparer un mariage avec méthode" description="Guides pratiques pour organiser votre mariage : budget, lieu, prestataires, tenues et planning.">
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <p class="eyebrow">Préparer sereinement</p>
+        <h1>Les bons repères pour organiser un mariage qui vous ressemble.</h1>
+        <p class="lead">Top Mariage réunit des guides clairs pour prendre vos décisions dans le bon ordre, de la première idée jusqu’au jour J.</p>
+        <a class="button" href="/blog/">Explorer les guides <span aria-hidden="true">→</span></a>
+      </div>
+      <aside class="hero__panel" aria-label="Les grandes étapes">
+        <p class="eyebrow">Par où commencer ?</p>
+        <ol>
+          <li>Définir votre format et vos priorités</li>
+          <li>Cadrer votre budget et votre calendrier</li>
+          <li>Choisir le lieu et réserver l’essentiel</li>
+          <li>Coordonner les derniers détails</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+  <section class="section container">
+    <div class="section-heading">
+      <div><p class="eyebrow">Guides pratiques</p><h2>Avancez étape par étape</h2></div>
+      <a class="text-link" href="/blog/">Voir tous les guides <span aria-hidden="true">→</span></a>
+    </div>
+    {articles.length ? <div class="card-grid">{articles.map((article) => <ArticleCard article={article} />)}</div> : <p>Les premiers guides arrivent bientôt.</p>}
+  </section>
+  <section class="section section--soft">
+    <div class="container split-content">
+      <div><p class="eyebrow">Notre approche</p><h2>Moins d’injonctions, plus de méthode.</h2></div>
+      <p>Un mariage se prépare rarement en ligne droite. Nos contenus vous aident à hiérarchiser les choix, poser les bonnes questions aux professionnels et conserver une vision simple de votre projet.</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="À propos de Top Mariage" description="Découvrez la ligne éditoriale de Top Mariage et sa manière d’aborder la préparation d’un mariage.">
+  <section class="page-hero container"><Breadcrumbs items={[{ label: 'À propos' }]} /><p class="eyebrow">Top Mariage</p><h1>Des contenus utiles pour faire des choix sereins.</h1><p class="lead">Top Mariage propose des guides éditoriaux pour vous aider à organiser votre mariage avec méthode, sans multiplier les injonctions.</p></section>
+  <section class="article-content container"><h2>Notre ligne éditoriale</h2><p>Préparer un mariage implique des choix personnels, logistiques et budgétaires. Nous privilégions des contenus pratiques, structurés et nuancés : des questions utiles à poser, des étapes à hiérarchiser et des éléments à vérifier avant de décider.</p><h2>Notre objectif</h2><p>Vous aider à avancer à votre rythme, en gardant une vision claire de votre projet. Les contenus publiés sur ce site ne remplacent pas les informations officielles, les contrats ou les conseils des professionnels concernés.</p></section>
+</BaseLayout>

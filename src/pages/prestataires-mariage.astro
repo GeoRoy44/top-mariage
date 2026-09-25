@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const articles = (await getCollection('blog', ({ data }) => !data.draft && data.category === 'prestataires-mariage'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Prestataires mariage — Guides et conseils | Top Mariage" description="Choisissez vos prestataires de mariage et comparez les devis sur des critères concrets.">
+  <section class="page-hero container"><Breadcrumbs items={[{ label: 'Prestataires de mariage' }]} /><p class="eyebrow">Prestataires</p><h1>Choisir les professionnels qui vous accompagneront.</h1><p class="lead">Préparez un brief clair, comparez les prestations et organisez vos réservations dans le bon ordre.</p></section>
+  <section class="section container">{articles.length ? <div class="card-grid">{articles.map((article) => <ArticleCard article={article} />)}</div> : <p>Les guides sur les prestataires arrivent bientôt.</p>}</section>
+</BaseLayout>

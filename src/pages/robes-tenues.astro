@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const articles = (await getCollection('blog', ({ data }) => !data.draft && data.category === 'robes-tenues'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Robes et tenues de mariage — Guides | Top Mariage" description="Conseils et guides pour choisir une robe, un costume ou une tenue de mariage adaptée à votre journée.">
+  <section class="page-hero container"><Breadcrumbs items={[{ label: 'Robes et tenues' }]} /><p class="eyebrow">Robes et tenues</p><h1>Choisir une tenue dans laquelle vous vous sentez vous-même.</h1><p class="lead">Retrouvez des repères pour planifier les essayages et faire des choix adaptés à votre mariage.</p></section>
+  <section class="section container">{articles.length ? <div class="card-grid">{articles.map((article) => <ArticleCard article={article} />)}</div> : <p>Les guides sur les robes et tenues arrivent bientôt.</p>}</section>
+</BaseLayout>

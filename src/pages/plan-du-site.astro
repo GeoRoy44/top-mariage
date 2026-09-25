@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const articles = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'fr'));
+const categories = [
+  ['organisation-mariage', 'Organisation du mariage'],
+  ['lieux-mariage', 'Lieux de mariage'],
+  ['prestataires-mariage', 'Prestataires de mariage'],
+  ['robes-tenues', 'Robes et tenues'],
+] as const;
+const pages = [
+  ['Accueil', '/'], ['Guides', '/blog/'], ['Organisation du mariage', '/organisation-mariage/'], ['Lieux de mariage', '/lieux-mariage/'], ['Prestataires de mariage', '/prestataires-mariage/'], ['Robes et tenues', '/robes-tenues/'], ['À propos', '/a-propos/'], ['Mentions légales', '/mentions-legales/'], ['Politique de confidentialité', '/politique-confidentialite/'],
+];
+---
+
+<BaseLayout title="Plan du site | Top Mariage" description="Plan du site Top Mariage : toutes les pages et tous les guides publiés.">
+  <section class="page-hero container"><Breadcrumbs items={[{ label: 'Plan du site' }]} /><p class="eyebrow">Navigation</p><h1>Plan du site</h1><p class="lead">Retrouvez toutes les pages et tous les guides publiés sur Top Mariage.</p></section>
+  <section class="section container sitemap">
+    <h2>Pages</h2><ul>{pages.map(([label, href]) => <li><a href={href}>{label}</a></li>)}</ul>
+    {categories.map(([slug, label]) => {
+      const categoryArticles = articles.filter((article) => article.data.category === slug);
+      return categoryArticles.length > 0 && <section><h2>{label}</h2><ul>{categoryArticles.map((article) => <li><a href={`/blog/${article.slug}/`}>{article.data.title}</a></li>)}</ul></section>;
+    })}
+  </section>
+</BaseLayout>
