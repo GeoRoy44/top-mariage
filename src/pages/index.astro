@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import BudgetCalculator from '../components/BudgetCalculator.astro';
 
 const articles = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -9,6 +10,12 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
 ---
 
 <BaseLayout title="Top Mariage — Préparer un mariage avec méthode" description="Guides pratiques pour organiser votre mariage : budget, lieu, prestataires, tenues et planning.">
+  <section class="home-calculator">
+    <div class="container">
+      <BudgetCalculator />
+    </div>
+  </section>
+
   <section class="hero">
     <div class="container hero__grid">
       <div>
