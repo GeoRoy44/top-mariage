@@ -1,5 +1,5 @@
 ---
-src/content/blog/budget-mariage-100-personnes.mdx
+src/content/blog/budget-mariage-100-personnes.md
 title: "Budget mariage : comment prévoir vos dépenses sans mauvaise surprise"
 description: "Budget mariage : méthode, postes de dépenses, devis et suivi pour construire une enveloppe adaptée à votre réception."
 pubDate: 2026-09-26
@@ -27,7 +27,6 @@ Un **budget mariage moyen** peut aider à se situer. Il ne raconte pourtant pas 
 
 Alors, **combien coûte un mariage** ? Cela dépend du lieu, de la période, du nombre d’invités, de la durée de la fête et des prestations retenues. Le bon budget mariage ne commence pas par une moyenne. Il commence par ce que vous pouvez réellement engager.
 
-<BudgetCalculator />
 
 ### Partir de l’argent réellement mobilisable
 
