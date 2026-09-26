@@ -6,8 +6,6 @@ category: "organisation-mariage"
 draft: false
 ---
 
-# Organisation mariage : les étapes essentielles pour préparer votre journée
-
 Organiser un mariage demande de prendre de nombreuses décisions : le budget, le nombre d’invités, le lieu, les prestataires et le déroulé de la journée. L’essentiel est de choisir un ordre qui vous permet d’avancer sereinement, sans essayer de tout régler en même temps.
 
 ## Commencer par vos priorités
