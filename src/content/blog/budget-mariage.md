@@ -40,7 +40,7 @@ Un devis ne se lit pas seulement par son total. Regardez ce qui est inclus, ce q
 
 ### Définir vos priorités avant de comparer les offres
 
-Le **prix du mariage** dépend surtout de vos arbitrages. Vous voulez peut-être un repas généreux, beaucoup d’invités, un lieu avec hébergement ou des photos très travaillées. Tout ne peut pas être prioritaire. C’est normal.
+Le **prix du mariage** dépend surtout de vos arbitrages. Vous voulez peut-être un repas généreux, beaucoup d’invités (lLe [budget pour un mariage de 50 personnes](/blog/budget-mariage-50-personnes-md/) sera différent de celui d’une [cérémonie à 200 personnes](/blog/budget-mariage-200-personnes-md/) !), un lieu avec hébergement ou des photos très travaillées. Tout ne peut pas être prioritaire. C’est normal.
 
 | Niveau | Ce qu’il recouvre |
 |---|---|
@@ -108,6 +108,8 @@ Chaque invité ajoute souvent un couvert, des boissons, une place à table, parf
 Le nombre d’invités agit surtout sur la réception. Le **traiteur**, les boissons, le personnel, le mobilier, la papeterie et les cadeaux invités suivent généralement la liste des convives. À partir d’un certain seuil, il peut aussi falloir un lieu plus grand, davantage de service ou une logistique différente.
 
 Mais tout n’évolue pas au même rythme. Un photographe peut proposer une même durée de présence pour 50 ou 100 personnes. Un DJ aussi. La location de salle peut rester stable tant que sa capacité suffit. À l’inverse, passer de 100 à 150 invités peut obliger à repenser le lieu, le plan de table ou même le déroulé de la soirée.
+
+C’est aussi tout l’intérêt d’avoir un [rétroplanning de mariage](/blog/retroplanning-mariage-md/) : il vous aide à anticiper les décisions qui dépendent du nombre d’invités, à réserver les prestations au bon moment et à ajuster l’organisation sans tout revoir dans l’urgence.
 
 Donc non, je ne vous donnerai pas un coût fixe par personne. Ce serait rassurant cinq minutes, puis assez trompeur au moment de recevoir les devis.
 
