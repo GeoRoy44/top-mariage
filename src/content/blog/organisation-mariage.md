@@ -2,7 +2,7 @@
 title: "Organisation mariage : étapes, budget et conseils pour tout préparer"
 description: "Organisez votre mariage étape par étape : budget, invités, lieu, prestataires et planning pour préparer sereinement votre journée."
 pubDate: 2026-09-25
-category: "Organisation"
+category: "organisation-mariage"
 draft: false
 ---
 
