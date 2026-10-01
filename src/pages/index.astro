@@ -49,4 +49,23 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
       <p>Un mariage se prépare rarement en ligne droite. Nos contenus vous aident à hiérarchiser les choix, poser les bonnes questions aux professionnels et conserver une vision simple de votre projet.</p>
     </div>
   </section>
+  <section class="section home-author" aria-labelledby="home-author-heading">
+    <div class="container home-author__grid">
+      <img
+        class="home-author__portrait"
+        src="/images/coralie-foussard-top-mariage-405.webp"
+        width="405"
+        height="407"
+        alt="Coralie Foussard, créatrice de Top Mariage"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="home-author__copy">
+        <p class="eyebrow">Derrière les conseils, une expérience</p>
+        <h2 id="home-author-heading">Derrière Top Mariage, Coralie.</h2>
+        <p class="home-author__bio">Je suis Coralie, wedding planner indépendante depuis 2015 et créatrice de Top Mariage. J’accompagne des couples en France et en Europe. Ici, je partage mon expérience, des conseils concrets et une vision du mariage sans injonctions. Mon envie : vous aider à faire des choix sereins, sans courir après la journée parfaite. Pour construire, à votre rythme, un mariage qui vous ressemble.</p>
+        <a class="button" href="/a-propos/">À la rencontre de Coralie <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
