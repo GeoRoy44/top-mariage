@@ -198,6 +198,25 @@
   font-size: 1.5rem;
 }
 
+.about-journey-photo {
+  max-width: 320px;
+  margin: var(--about-space-8) 0 0;
+}
+
+.about-journey-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: .4rem;
+  background: var(--background);
+}
+
+.about-journey-photo figcaption {
+  margin-top: var(--about-space-3);
+  color: var(--muted);
+  font-size: var(--about-small);
+  line-height: 1.6;
+}
+
 .about-margin-note {
   margin-top: var(--about-space-12);
   color: var(--muted);
