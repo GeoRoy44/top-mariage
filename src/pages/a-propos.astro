@@ -1,9 +1,134 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import '../styles/about.css';
 ---
 
-<BaseLayout title="À propos de Top Mariage" description="Découvrez la ligne éditoriale de Top Mariage et sa manière d’aborder la préparation d’un mariage.">
-  <section class="page-hero container"><Breadcrumbs items={[{ label: 'À propos' }]} /><p class="eyebrow">Top Mariage</p><h1>Des contenus utiles pour faire des choix sereins.</h1><p class="lead">Top Mariage propose des guides éditoriaux pour vous aider à organiser votre mariage avec méthode, sans multiplier les injonctions.</p></section>
-  <section class="article-content container"><h2>Notre ligne éditoriale</h2><p>Préparer un mariage implique des choix personnels, logistiques et budgétaires. Nous privilégions des contenus pratiques, structurés et nuancés : des questions utiles à poser, des étapes à hiérarchiser et des éléments à vérifier avant de décider.</p><h2>Notre objectif</h2><p>Vous aider à avancer à votre rythme, en gardant une vision claire de votre projet. Les contenus publiés sur ce site ne remplacent pas les informations officielles, les contrats ou les conseils des professionnels concernés.</p></section>
+<BaseLayout title="À propos de Top Mariage" description="Découvrez l’histoire de Top Mariage, le parcours de Coralie dans le wedding planning et sa vision d’un mariage personnel, serein et fidèle à vos envies.">
+  <article class="about-page">
+    <header class="about-hero container">
+      <Breadcrumbs items={[{ label: 'À propos' }]} />
+      <div class="about-hero__grid">
+        <div class="about-hero__copy" data-about-reveal>
+          <p class="about-kicker">Une histoire, une conviction</p>
+          <h1>À propos de <span>Top Mariage</span></h1>
+          <p class="about-hero__intro">Bref, je ne crois pas au mariage parfait. Je crois aux journées qui ont du sens.</p>
+          <nav class="about-jump-links" aria-label="Dans cette page">
+            <a href="#mon-parcours">Mon parcours <span aria-hidden="true">↗</span></a>
+            <a href="#ma-vision">Ma vision <span aria-hidden="true">↗</span></a>
+            <a href="#le-journal">Le journal <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+        <figure class="about-portrait" data-about-reveal>
+          <img
+            src="/images/coralie-foussard-top-mariage.webp"
+            srcset="/images/coralie-foussard-top-mariage-405.webp 405w, /images/coralie-foussard-top-mariage.webp 810w"
+            sizes="(max-width: 760px) calc(100vw - 48px), 440px"
+            width="810"
+            height="814"
+            alt="Coralie Foussard, souriante, dans un intérieur chaleureux"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <figcaption>
+            <span class="about-portrait__name">Coralie Foussard</span>
+            <span>Wedding planner depuis 2015</span>
+          </figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <section class="about-section container" aria-labelledby="une-envie">
+      <div class="about-section__heading" data-about-reveal>
+        <p class="about-kicker">L’envie de départ</p>
+        <h2 id="une-envie">Un site né d’une envie de parler du mariage autrement</h2>
+      </div>
+      <div class="about-prose" data-about-reveal>
+        <p>Quand on commence à organiser son mariage, il y a souvent une idée qui revient. Vous voulez que cette journée vous ressemble. Vous voulez réunir les personnes qui comptent, choisir un lieu qui vous fait quelque chose, imaginer une cérémonie, un repas, une fête… Puis les questions arrivent.</p>
+        <p>Combien prévoir pour le budget ? Par où commencer ? Faut-il suivre les traditions ? Comment choisir ses prestataires ? Et surtout, comment éviter de se perdre entre les avis de la famille, les tendances vues sur les réseaux sociaux et les listes qui semblent ne jamais finir ?</p>
+        <p class="about-emphasis">En fait, c’est aussi pour cela que j’ai créé Top Mariage.</p>
+        <p>Je travaille comme wedding planner depuis 2015. J’accompagne des couples qui préparent leur mariage entre Le Mans, Lille, Strasbourg, Paris et plusieurs destinations européennes. Je connais les tableaux de budget, les plannings, les appels aux prestataires et les imprévus de dernière minute. Mais je connais aussi les conversations qui reviennent souvent chez les futurs mariés : « Est-ce que nous en faisons trop ? », « Et si nous ne réussissions pas à faire plaisir à tout le monde ? », « Est-ce que cette journée nous ressemble vraiment ? »</p>
+        <p>J’avais envie de créer un espace où parler de tout cela. Pas seulement du choix d’un traiteur ou de la couleur des serviettes, même si ces sujets comptent aussi. Je voulais pouvoir partager mon expérience, poser des questions, donner des repères et aborder le mariage avec davantage de liberté.</p>
+        <p>Top Mariage est né de cette envie.</p>
+      </div>
+    </section>
+
+    <div class="about-journey">
+      <section class="about-section container" aria-labelledby="mon-parcours">
+        <div class="about-section__heading" data-about-reveal>
+          <p class="about-kicker">L’expérience du terrain</p>
+          <h2 id="mon-parcours">Mon parcours dans le wedding planning</h2>
+          <ol class="about-timeline" aria-label="Les étapes de mon parcours">
+            <li><span class="about-timeline__date">2013</span><span>Premiers mariages en Europe</span></li>
+            <li><span class="about-timeline__date">2014</span><span>Paris et l’Est de la France</span></li>
+            <li><span class="about-timeline__date">2015</span><span>Le début de l’indépendance</span></li>
+            <li><span class="about-timeline__date">2019</span><span>L’aventure devient collective</span></li>
+          </ol>
+        </div>
+        <div class="about-prose" data-about-reveal>
+          <p>Je viens du Mans, dans la Sarthe. La vie m’a ensuite menée à Strasbourg, où j’ai découvert les coulisses du métier de wedding planner.</p>
+          <p>En 2013, j’ai réalisé un premier stage de six mois au sein d’une agence strasbourgeoise spécialisée dans les mariages organisés en Europe. J’ai pu découvrir différents pays, des prestataires locaux, des habitudes culturelles et les réalités parfois très concrètes d’un mariage à l’étranger. Les vols, les transferts, les langues, les documents administratifs, les horaires, les invités qui voyagent… Il y a de quoi faire !</p>
+          <p>En 2014, j’ai poursuivi mon apprentissage dans une autre agence, toujours à Strasbourg. Cette fois, les projets se déroulaient surtout en région parisienne et dans l’Est de la France. J’y ai découvert des mariages plus haut de gamme, avec d’autres exigences, d’autres budgets et une autre façon de penser l’accueil des invités.</p>
+          <p>Ces expériences m’ont appris une chose : aucun mariage ne se ressemble vraiment. Deux couples peuvent choisir le même lieu, le même nombre d’invités ou une saison identique, tout en imaginant deux journées très différentes. L’histoire, les proches, les priorités et les envies changent tout.</p>
+          <p>Je me suis lancée comme wedding planner indépendante en 2015. Puis, en 2019, deux premières personnes ont rejoint l’aventure. Depuis, j’accompagne des mariages au Mans, à Lille, à Strasbourg, à Paris et dans certains pays européens, notamment en Scandinavie.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="about-section container" aria-labelledby="ma-vision">
+      <div class="about-section__heading" data-about-reveal>
+        <p class="about-kicker">Ce qui me guide</p>
+        <h2 id="ma-vision">Pour moi, le mariage est un repère</h2>
+        <p class="about-margin-note">Une balise dans le temps.<br />Un nouvel élan à deux.</p>
+      </div>
+      <div class="about-prose" data-about-reveal>
+        <p>On parle souvent du mariage comme du plus beau jour de sa vie. Il faut le dire, cette idée peut être belle. Elle peut aussi mettre beaucoup de pression sur les épaules des futurs mariés.</p>
+        <p>Vous préparez une journée pendant des mois. Vous choisissez un lieu, vous pensez aux invités, vous surveillez le budget, vous imaginez les émotions de la cérémonie et l’ambiance de la soirée. Alors, forcément, vous souhaitez que tout se passe bien.</p>
+        <p>Mais un mariage ne doit pas avoir la mission de résumer toute une vie. La météo peut changer. Un proche peut être ému au mauvais moment. Un discours peut déborder. Un planning peut prendre un peu de retard… Et malgré cela, vous pouvez vivre une journée forte, joyeuse et profondément sincère.</p>
+        <p>À vrai dire, je vois le mariage comme une balise dans le temps. Il permet de regarder le chemin déjà parcouru, de réunir ceux qui vous accompagnent et de prendre un nouvel élan à deux. Il marque parfois une transition, parfois le début d’un projet, parfois simplement l’envie de dire : nous continuons ensemble.</p>
+        <p>Cette vision vient aussi de mon histoire personnelle. Mes parents se sont séparés quand j’étais petite. J’ai grandi avec l’idée que le mariage ne garantit pas tout. Mais il peut représenter un choix. Un engagement vivant. Un morceau de chemin que l’on décide de partager, puis de faire durer, un jour après l’autre.</p>
+        <blockquote class="about-quote" data-about-reveal>
+          <p>Bref, je ne crois pas au mariage parfait. Je crois aux journées qui ont du sens.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="about-section about-journal container" aria-labelledby="le-journal">
+      <div class="about-section__heading" data-about-reveal>
+        <p class="about-kicker">Un espace pour vous</p>
+        <h2 id="le-journal">Ce que vous trouverez sur Top Mariage</h2>
+        <a class="about-guide-link" href="/blog/">Découvrir les guides <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="about-prose" data-about-reveal>
+        <p>Sur Top Mariage, je partage des conseils concrets pour avancer dans l’organisation de votre mariage. Budget, lieux, prestataires, tenues, cérémonie, repas, liste d’invités, mariage à l’étranger, traditions ou déroulé de la journée : vous trouverez ici des articles pour mieux comprendre vos options et faire des choix plus sereins.</p>
+        <p>Je partagerai aussi des réflexions plus personnelles. Car organiser un mariage ne consiste pas seulement à cocher des cases. Vous discutez, vous changez parfois d’avis, vous devez faire des compromis, vous apprenez à définir ce qui compte le plus pour vous. D’ailleurs, c’est souvent là que votre mariage commence à devenir vraiment personnel.</p>
+        <p>Je ne vous dirai pas qu’il existe une seule bonne manière de se marier. Vous pouvez organiser une grande fête, choisir une cérémonie intime, partir à l’étranger avec vos proches ou célébrer près de chez vous. Vous pouvez suivre certaines traditions, en laisser d’autres de côté ou inventer les vôtres.</p>
+        <p>Mon rôle, ici, consiste à vous aider à poser les bonnes questions. À vous apporter des repères, des idées et des retours de terrain. Puis à vous laisser construire une journée qui vous ressemble.</p>
+        <p>J’écris aussi aux côtés de Lilou Ann Sanchez pour <a href="https://saison-mariage.fr/" target="_blank" rel="noopener noreferrer">Saison Mariage</a>, un autre espace consacré à l’inspiration, aux conseils et aux histoires autour du mariage.</p>
+        <div class="about-closing" data-about-reveal>
+          <p>Alors, prenez ce qui vous parle. Gardez ce qui vous aide. Et imaginez, petit à petit, la journée que vous aurez envie de raconter longtemps après.</p>
+          <span class="about-signature">Coralie</span>
+        </div>
+      </div>
+    </section>
+  </article>
 </BaseLayout>
+
+<script>
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!motionPreference.matches && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('about-revealed');
+          observer.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.06 });
+    document.querySelectorAll('[data-about-reveal]').forEach((element) => observer.observe(element));
+    motionPreference.addEventListener('change', (event) => {
+      if (event.matches) observer.disconnect();
+    });
+  }
+</script>

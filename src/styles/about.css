@@ -1,0 +1,311 @@
+.about-page {
+  --about-small: .875rem;
+  --about-body: 1rem;
+  --about-heading: clamp(2rem, 2.5vw, 2.65rem);
+  --about-display: clamp(2.75rem, 4.5vw, 3.5rem);
+  --about-ink: #85523c;
+  --about-space-2: .5rem;
+  --about-space-3: .75rem;
+  --about-space-4: 1rem;
+  --about-space-6: 1.5rem;
+  --about-space-8: 2rem;
+  --about-space-12: 3rem;
+  --about-space-16: 4rem;
+  --about-space-24: 6rem;
+}
+
+.about-page h1,
+.about-page h2 {
+  text-wrap: balance;
+}
+
+.about-page h2 {
+  margin-bottom: var(--about-space-6);
+  font-size: var(--about-heading);
+  line-height: 1.16;
+  scroll-margin-top: 160px;
+}
+
+.about-page a:focus-visible {
+  outline: 2px solid var(--signature);
+  outline-offset: 6px;
+}
+
+.about-hero {
+  padding-block: var(--about-space-8) var(--about-space-24);
+}
+
+.about-hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(var(--about-space-8), 6vw, var(--about-space-24));
+}
+
+.about-kicker {
+  margin-bottom: var(--about-space-6);
+  color: var(--about-ink);
+  font-size: var(--about-small);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.about-hero h1 {
+  margin-bottom: var(--about-space-8);
+  font-size: var(--about-display);
+  line-height: 1.05;
+}
+
+.about-hero h1 span {
+  display: block;
+  color: var(--signature);
+}
+
+.about-hero__intro {
+  max-width: 31ch;
+  margin-bottom: var(--about-space-8);
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.about-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--about-space-6);
+  font-size: var(--about-small);
+}
+
+.about-jump-links a,
+.about-guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--about-space-3);
+  min-height: 44px;
+  color: var(--signature);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.about-jump-links a:hover,
+.about-guide-link:hover {
+  color: var(--about-ink);
+  border-color: currentColor;
+}
+
+.about-portrait {
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+  margin: 0;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 48% 48% .4rem .4rem;
+  background: var(--accent-soft);
+}
+
+.about-portrait figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--about-space-2) var(--about-space-4);
+  padding-top: var(--about-space-4);
+  color: var(--muted);
+  font-size: var(--about-small);
+}
+
+.about-portrait__name {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+  gap: clamp(var(--about-space-8), 6vw, var(--about-space-24));
+  padding-block: clamp(var(--about-space-12), 6vw, var(--about-space-24));
+  border-top: 1px solid var(--border);
+}
+
+.about-section__heading {
+  align-self: start;
+}
+
+.about-prose {
+  min-width: 0;
+  max-width: 65ch;
+  font-size: var(--about-body);
+  line-height: 1.85;
+}
+
+.about-prose p {
+  margin-bottom: var(--about-space-6);
+}
+
+.about-prose > :last-child {
+  margin-bottom: 0;
+}
+
+.about-prose a {
+  color: var(--signature);
+  font-weight: 600;
+}
+
+.about-emphasis {
+  padding-block: var(--about-space-4);
+  color: var(--signature);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.about-journey {
+  background: var(--accent-soft);
+}
+
+.about-journey .about-section {
+  border-top: 0;
+}
+
+.about-timeline {
+  display: grid;
+  gap: var(--about-space-6);
+  margin: var(--about-space-12) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  align-items: baseline;
+  gap: var(--about-space-4);
+  padding-bottom: var(--about-space-4);
+  border-bottom: 1px solid color-mix(in srgb, var(--signature) 23%, transparent);
+  font-size: var(--about-small);
+}
+
+.about-timeline__date {
+  color: var(--signature);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+}
+
+.about-margin-note {
+  margin-top: var(--about-space-12);
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.about-quote {
+  margin: var(--about-space-12) 0 0;
+  padding: clamp(var(--about-space-6), 4vw, var(--about-space-12));
+  background: var(--signature);
+  border-radius: .4rem;
+}
+
+.about-quote p {
+  margin: 0;
+  color: var(--background);
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.4;
+}
+
+.about-journal {
+  padding-bottom: clamp(var(--about-space-16), 8vw, var(--about-space-24));
+}
+
+.about-guide-link {
+  margin-top: var(--about-space-4);
+  font-size: var(--about-small);
+  font-weight: 700;
+}
+
+.about-closing {
+  margin-top: var(--about-space-12);
+  padding-top: var(--about-space-8);
+  border-top: 1px solid var(--border);
+}
+
+.about-closing p {
+  color: var(--signature);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.about-signature {
+  color: var(--about-ink);
+  font-family: var(--serif);
+  font-size: 2rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .about-revealed {
+    animation: about-reveal 650ms cubic-bezier(.2, .65, .3, 1) both;
+  }
+
+  @keyframes about-reveal {
+    from { opacity: .35; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.about-page) { scroll-behavior: auto; }
+}
+
+@media (max-width: 760px) {
+  .about-page .container {
+    width: min(calc(100% - 3rem), var(--container));
+  }
+
+  .about-hero {
+    padding-bottom: var(--about-space-12);
+  }
+
+  .about-hero__grid,
+  .about-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--about-space-8);
+  }
+
+  .about-hero__intro {
+    max-width: 40ch;
+  }
+
+  .about-portrait {
+    justify-self: center;
+  }
+
+  .about-section h2 {
+    max-width: 22ch;
+    margin-bottom: 0;
+  }
+
+  .about-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--about-space-6);
+    margin-top: var(--about-space-8);
+  }
+
+  .about-timeline li {
+    grid-template-columns: 1fr;
+    gap: var(--about-space-2);
+  }
+
+  .about-margin-note {
+    margin-top: var(--about-space-6);
+    margin-bottom: 0;
+  }
+}
