@@ -60,7 +60,7 @@ L’objectif n’est pas de tout planifier à la minute près, mais de vous assu
 
 À l’approche du mariage, concentrez-vous sur le déroulé de la journée, les contacts utiles, les plans d’accès, les repas prestataires et les éventuelles solutions de secours.
 
-Un document simple avec les horaires, les coordonnées des prestataires et les responsabilités de chacun peut vous faire gagner beaucoup de sérénité le jour J.
+Un document simple avec les horaires, les coordonnées des prestataires et les responsabilités de chacun peut vous faire gagner beaucoup de sérénité le jour J. <!-- 7c6345ddc52f9843bb57927e4c5974ee -->
 
 ## À retenir
 
