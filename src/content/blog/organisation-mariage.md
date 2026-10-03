@@ -52,7 +52,7 @@ Comparez les devis sur un périmètre identique : durée, nombre de personnes, p
 
 ## Créer un rétroplanning
 
-Un rétroplanning permet de visualiser les décisions à prendre mois après mois. Il peut inclure les rendez-vous avec les prestataires, les échéances de paiement, les essais de tenues, l’envoi des invitations et les derniers ajustements.
+Un rétroplanning permet de visualiser les décisions à prendre mois après mois. Il peut inclure les rendez-vous avec les prestataires, les échéances de paiement, les essais de tenues, l’envoi des invitations et les derniers ajustements. <!-- 7c6345ddc52f9843bb57927e4c5974ee -->
 
 L’objectif n’est pas de tout planifier à la minute près, mais de vous assurer que les décisions importantes sont prises au bon moment.
 
