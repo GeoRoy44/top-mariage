@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import BudgetCalculator from '../../components/BudgetCalculator.astro';
 import ArticleIllustration from '../../components/ArticleIllustration.astro';
+import ArticleAuthor from '../../components/ArticleAuthor.astro';
 
 export const prerender = true;
 
@@ -52,6 +53,7 @@ const related = (await getCollection('blog', ({ data }) => !data.draft && data.c
       </div>
     )}
     <div class="article-content container"><Content /></div>
+    <ArticleAuthor />
   </article>
   {related.length > 0 && <section class="section section--soft"><div class="container"><div class="section-heading"><div><p class="eyebrow">À lire aussi</p><h2>Dans la même thématique</h2></div></div><div class="card-grid">{related.map((article) => <ArticleCard article={article} />)}</div></div></section>}
 </BaseLayout>
