@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import BudgetCalculator from '../../components/BudgetCalculator.astro';
+import ArticleIllustration from '../../components/ArticleIllustration.astro';
 
 export const prerender = true;
 
@@ -44,6 +45,7 @@ const related = (await getCollection('blog', ({ data }) => !data.draft && data.c
       <p class="lead">{post.data.description}</p>
       <p class="article-meta">Publié le <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</time>{post.data.updatedDate && <> · Mis à jour le <time datetime={post.data.updatedDate.toISOString()}>{post.data.updatedDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</time></>}</p>
     </header>
+    <ArticleIllustration slug={post.slug} title={post.data.title} />
     {showBudgetCalculator && (
       <div class="container article-budget-tool" data-article-budget-tool>
         {!hasEmbeddedCalculator && <BudgetCalculator />}

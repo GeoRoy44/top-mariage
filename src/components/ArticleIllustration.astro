@@ -1,0 +1,101 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+}
+const { slug, title } = Astro.props;
+const keywords: Record<string, string> = {
+  'budget-mariage-100-personnes-md': 'Budget mariage 100 personnes',
+  'budget-mariage-200-personnes-md': 'Budget mariage 200 personnes',
+  'budget-mariage-50-personnes-md': 'Budget mariage 50 personnes',
+  'budget-mariage-50-personnes': 'Budget mariage 50 personnes',
+  'budget-mariage': 'Budget mariage',
+  'decoration-table-mariage-pas-cher': 'Décoration de table de mariage pas chère',
+  'discours-mariage': 'Discours de mariage',
+  'lieux-mariage': 'Lieux de mariage',
+  'mariage-atypique-pas-cher': 'Mariage atypique pas cher',
+  'mariage-mairie-sans-ceremonie': 'Mariage à la mairie sans cérémonie',
+  'organisation-mariage': 'Organisation de mariage',
+  'organiser-mariage-pas-cher': 'Organiser un mariage pas cher',
+  'retroplanning-mariage-md': 'Rétroplanning mariage',
+  'tarif-traiteur-mariage-50-personnes': 'Tarif traiteur mariage 50 personnes',
+  'tarif-wedding-planner': 'Tarif wedding planner',
+  'texte-faire-part-mariage': 'Texte de faire-part de mariage',
+  'vin-mariage-pas-cher': 'Vin de mariage pas cher',
+  'wedding-planner-angers': 'Wedding planner Angers',
+  'wedding-planner-strasbourg': 'Wedding planner Strasbourg',
+};
+const images = [
+  {
+    src: 'https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/f7707e71-937b-5e84-b0a2-9d3f3b8f1e86/ff65e6a8-7fa7-5800-a68d-40c87b06ce82.jpg',
+    source: 'https://www.pexels.com/photo/set-table-for-a-wedding-reception-12846017/',
+    credit: 'Jonathan Borba / Pexels',
+    description: 'table de réception en extérieur, avec fleurs et verres',
+    width: 4000,
+    height: 2667,
+  },
+  {
+    src: 'https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/14fbecab-7929-5903-aebf-cc3fef77cdbd/ff65e6a8-7fa7-5800-a68d-40c87b06ce82.jpg',
+    source: 'https://www.pexels.com/photo/decoration-of-wedding-table-19870041/',
+    credit: 'Pexels',
+    description: 'table ronde dressée avec une nappe blanche et un centre de table fleuri',
+    width: 1200,
+    height: 627,
+  },
+  {
+    src: 'https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/13c64ee6-93d1-5d1b-aeff-16c9d392ecf7/ff65e6a8-7fa7-5800-a68d-40c87b06ce82.jpg',
+    source: 'https://www.pexels.com/photo/elegant-wedding-reception-table-setting-29040997/',
+    credit: 'Pexels',
+    description: 'salle de réception avec tables rondes, serviettes bleues et compositions florales',
+    width: 6016,
+    height: 4016,
+  },
+];
+const keyword = keywords[slug] ?? title;
+const imageIndex = /decoration|traiteur|vin/.test(slug) ? 1 : /lieux|wedding-planner/.test(slug) ? 2 : 0;
+const image = images[imageIndex];
+const isLocal = /wedding-planner-(angers|strasbourg)/.test(slug);
+const alt = `${keyword} : illustration d’une ${image.description}`;
+---
+
+<figure class="article-illustration container">
+  <img
+    src={image.src}
+    alt={alt}
+    width={image.width}
+    height={image.height}
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    referrerpolicy="no-referrer"
+  />
+  <figcaption>
+    Photo d’illustration. Source : <a href={image.source} target="_blank" rel="noopener noreferrer">{image.credit}</a>.
+    {isLocal && <span> Cette image ne représente pas une réalisation des prestataires cités ni un lieu identifié dans la ville.</span>}
+  </figcaption>
+</figure>
+
+<style>
+  .article-illustration {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .article-illustration img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 36rem;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  .article-illustration figcaption {
+    margin-top: 0.65rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .article-illustration a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+</style>
