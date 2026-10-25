@@ -13,24 +13,39 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
 ---
 
 <BaseLayout title="Top Mariage : Comparatif et calculateur budget mariage" description="Guides pratiques pour organiser votre mariage : budget, lieu, prestataires, tenues et planning.">
-  <section class="hero">
-    <div class="container hero__grid">
-      <div>
+  <section class="hero home-hero" aria-labelledby="home-hero-title">
+    <div class="container home-hero__grid">
+      <div class="home-hero__copy">
         <p class="eyebrow">Préparer sereinement</p>
-        <h1>Les bons repères pour organiser un mariage qui vous ressemble.</h1>
+        <h1 id="home-hero-title">Les bons repères pour organiser un mariage qui vous ressemble.</h1>
         <p class="lead">Top Mariage réunit des guides clairs pour prendre vos décisions dans le bon ordre, de la première idée jusqu’au jour J.</p>
-        <a class="button" href="/blog/">Explorer les guides <span aria-hidden="true">→</span></a>
+        <a class="button home-hero__cta" href="/blog/">Explorer les guides <span aria-hidden="true">→</span></a>
       </div>
-      <aside class="hero__panel" aria-label="Les grandes étapes">
-        <p class="eyebrow">Par où commencer ?</p>
-        <ol>
-          <li>Définir votre format et vos priorités</li>
-          <li>Cadrer votre budget et votre calendrier</li>
-          <li>Choisir le lieu et réserver l’essentiel</li>
-          <li>Coordonner les derniers détails</li>
-        </ol>
-      </aside>
+      <figure class="home-hero__photo">
+        <img
+          src="https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=960&h=720&fit=crop"
+          srcset="https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=480&h=360&fit=crop 480w, https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=960&h=720&fit=crop 960w"
+          sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1200px) 44vw, 500px"
+          width="960"
+          height="720"
+          alt="Un couple de mariés, illustration pour préparer un mariage qui vous ressemble"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          referrerpolicy="no-referrer"
+        />
+        <figcaption>Photo : <a href="https://www.pexels.com/photo/picture-of-bride-and-groom-949223/" target="_blank" rel="noopener noreferrer">Dimitri Kuliuk / Pexels</a></figcaption>
+      </figure>
     </div>
+    <aside class="container home-hero__steps" aria-label="Les grandes étapes">
+      <p class="eyebrow">Par où commencer ?</p>
+      <ol>
+        <li>Définir votre format et vos priorités</li>
+        <li>Cadrer votre budget et votre calendrier</li>
+        <li>Choisir le lieu et réserver l’essentiel</li>
+        <li>Coordonner les derniers détails</li>
+      </ol>
+    </aside>
   </section>
 
   <HomePodcast />
@@ -77,3 +92,35 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
   </section>
   <HomeFaq />
 </BaseLayout>
+
+<style>
+  .home-hero { padding: clamp(1.5rem, 3.5vw, 3rem) 0 1.5rem; }
+  .home-hero__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: clamp(1.5rem, 4vw, 3rem); }
+  .home-hero__copy { min-width: 0; }
+  .home-hero .eyebrow { margin-bottom: .6rem; }
+  .home-hero h1 { max-width: 19ch; margin: 0 0 1rem; font-size: clamp(2rem, 3.8vw, 3.25rem); line-height: 1.1; letter-spacing: -.035em; text-wrap: balance; }
+  .home-hero .lead { max-width: 47ch; margin-bottom: 1rem; font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.65; }
+  .home-hero__cta { min-height: 48px; margin-top: 0; }
+  .home-hero__cta:focus-visible { outline: 2px solid var(--signature); outline-offset: 4px; }
+  .home-hero__photo { min-width: 0; margin: 0; }
+  .home-hero__photo img { width: 100%; height: auto; max-height: 360px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 5rem 1rem 5rem 1rem; box-shadow: 0 12px 30px rgba(38, 50, 45, .1); }
+  .home-hero__photo figcaption { margin-top: .5rem; text-align: right; font-size: .72rem; color: var(--muted); }
+  .home-hero__photo a { text-underline-offset: .2em; }
+  .home-hero__steps { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .home-hero__steps ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+  .home-hero__steps li { display: flex; align-items: baseline; gap: .5rem; font-size: .8rem; line-height: 1.5; }
+  .home-hero__steps li::before { content: counter(step, decimal-leading-zero); counter-increment: step; color: var(--accent); font-family: var(--serif); font-size: 1.1rem; }
+  @media (max-width: 760px) {
+    .home-hero { padding-top: 1.25rem; }
+    .home-hero__grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .home-hero h1 { max-width: 23ch; font-size: clamp(1.85rem, 6.5vw, 2.4rem); margin-bottom: .75rem; }
+    .home-hero .lead { max-width: 55ch; margin-bottom: .85rem; font-size: 1rem; line-height: 1.55; }
+    .home-hero__photo img { aspect-ratio: 16 / 9; max-height: 230px; border-radius: 2.5rem .75rem 2.5rem .75rem; }
+    .home-hero__steps ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-height: 600px) {
+    .home-hero { padding-top: .75rem; }
+    .home-hero h1 { font-size: clamp(1.65rem, 3.2vw, 2.5rem); margin-bottom: .5rem; }
+    .home-hero .lead { margin-bottom: .65rem; line-height: 1.45; }
+  }
+</style>
