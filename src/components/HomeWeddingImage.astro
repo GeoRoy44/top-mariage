@@ -1,21 +1,37 @@
-<figure class="home-wedding-image container">
-  <img
-    src="https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
-    srcset="https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=640&h=360&fit=crop 640w, https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=1024&h=576&fit=crop 1024w, https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop 1600w"
-    sizes="(max-width: 760px) 100vw, 1100px"
-    width="1600"
-    height="900"
-    alt="un mariage au top et conseil sur budget et organisation"
-    loading="lazy"
-    decoding="async"
-    referrerpolicy="no-referrer"
-  />
-  <figcaption>Photo : <a href="https://www.pexels.com/photo/picture-of-bride-and-groom-949223/" target="_blank" rel="noopener noreferrer">Dimitri Kuliuk / Pexels</a></figcaption>
-</figure>
+<section class="home-wedding-image container" aria-labelledby="home-wedding-advice-heading">
+  <figure class="home-wedding-image__figure">
+    <img
+      src="https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=1024&h=576&fit=crop"
+      srcset="https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=640&h=360&fit=crop 640w, https://images.pexels.com/photos/949223/pexels-photo-949223.jpeg?auto=compress&cs=tinysrgb&w=1024&h=576&fit=crop 1024w"
+      sizes="(max-width: 760px) calc(100vw - 48px), (max-width: 1200px) 38vw, 440px"
+      width="1024"
+      height="576"
+      alt="Un couple de mariés, illustration des conseils pour organiser son mariage"
+      loading="lazy"
+      decoding="async"
+      referrerpolicy="no-referrer"
+    />
+    <figcaption>Photo : <a href="https://www.pexels.com/photo/picture-of-bride-and-groom-949223/" target="_blank" rel="noopener noreferrer">Dimitri Kuliuk / Pexels</a></figcaption>
+  </figure>
+  <div class="home-wedding-image__copy">
+    <p class="eyebrow">Des repères, pas des injonctions</p>
+    <h2 id="home-wedding-advice-heading">S’informer, c’est déjà commencer à choisir.</h2>
+    <p>Vous n’avez pas besoin de tout savoir pour commencer, mais <strong>quelques bons repères</strong> aident à poser vos questions, comparer les devis et décider à deux. Être conseillé, ou simplement prendre le temps de se renseigner, permet de préciser ce que vous souhaitez déléguer et ce que vous préférez préparer vous-mêmes. C’est pour cela que j’ai créé Top Mariage : vous aider à avancer à votre rythme, sans courir après une journée parfaite.</p>
+    <p>Pour les démarches, je vous invite à consulter les <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F930" target="_blank" rel="noopener noreferrer">informations officielles sur le mariage civil de Service Public</a>, puis à vérifier votre dossier avec la mairie. Avant de réserver vos prestataires, les <a href="https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/acompte-arrhes-avoir" target="_blank" rel="noopener noreferrer">explications de la DGCCRF sur les arrhes et les acomptes</a> vous aideront aussi à comprendre <strong>les engagements liés au versement</strong>.</p>
+  </div>
+</section>
 
 <style>
   .home-wedding-image {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem);
     margin-block: clamp(2rem, 5vw, 4rem);
+  }
+  .home-wedding-image__figure {
+    min-width: 0;
+    margin: 0;
   }
   .home-wedding-image img {
     display: block;
@@ -31,8 +47,47 @@
     text-align: right;
     color: #667085;
   }
-  .home-wedding-image a {
+  .home-wedding-image figcaption a {
     color: inherit;
     text-underline-offset: .2em;
+  }
+  .home-wedding-image__copy {
+    min-width: 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid #dce3df;
+    border-radius: 20px;
+    background: #f1f3f3;
+    color: #1e2424;
+  }
+  .home-wedding-image__copy .eyebrow {
+    margin: 0 0 .65rem;
+    color: #0c4023;
+  }
+  .home-wedding-image__copy h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    line-height: 1.25;
+  }
+  .home-wedding-image__copy > p:not(.eyebrow) {
+    margin: 0 0 1rem;
+    line-height: 1.8;
+  }
+  .home-wedding-image__copy > p:last-child {
+    margin-bottom: 0;
+  }
+  .home-wedding-image__copy a {
+    color: #0c4023;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+  }
+  .home-wedding-image a:focus-visible {
+    outline: 2px solid #0c4023;
+    outline-offset: 4px;
+  }
+  @media (max-width: 760px) {
+    .home-wedding-image {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+    }
   }
 </style>
