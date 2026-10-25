@@ -5,6 +5,7 @@ import ArticleCard from '../components/ArticleCard.astro';
 import BudgetCalculator from '../components/BudgetCalculator.astro';
 import HomeWeddingImage from '../components/HomeWeddingImage.astro';
 import HomePodcast from '../components/HomePodcast.astro';
+import HomeFaq from '../components/HomeFaq.astro';
 
 const articles = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -74,4 +75,5 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
       </div>
     </div>
   </section>
+  <HomeFaq />
 </BaseLayout>
