@@ -7,15 +7,132 @@ const links = [
   { href: '/robes-tenues/', label: 'Robes & tenues' },
   { href: '/blog/', label: 'Guides' },
 ];
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) => currentPath === href;
 ---
 
 <header class="site-header">
   <div class="site-header__inner container">
-    <a class="brand" href="/" aria-label="Top Mariage — accueil">Top <span>Mariage</span></a>
-    <nav class="main-nav" aria-label="Navigation principale">
+    <a class="brand" href="/" aria-label="Top Mariage : accueil">Top <span>Mariage</span></a>
+    <nav class="main-nav desktop-nav" aria-label="Navigation principale">
       <ul>
-        {links.map((link) => <li><a href={link.href} aria-current={Astro.url.pathname === link.href ? 'page' : undefined}>{link.label}</a></li>)}
+        {links.map((link) => <li><a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</a></li>)}
       </ul>
     </nav>
+    <details class="mobile-menu" data-mobile-menu>
+      <summary class="mobile-menu__toggle" aria-controls="mobile-main-navigation">
+        <span class="mobile-menu__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="mobile-menu__open-label">Menu</span>
+        <span class="mobile-menu__close-label">Fermer</span>
+      </summary>
+      <nav id="mobile-main-navigation" class="mobile-menu__panel" aria-label="Navigation principale mobile">
+        <ul>
+          {links.map((link) => <li><a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}<span aria-hidden="true">→</span></a></li>)}
+          <li><a href="/a-propos/" aria-current={isCurrent('/a-propos/') ? 'page' : undefined}>À propos de Coralie<span aria-hidden="true">→</span></a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
 </header>
+
+<script>
+  const menus = document.querySelectorAll<HTMLDetailsElement>('[data-mobile-menu]');
+  for (const menu of menus) {
+    const toggle = menu.querySelector<HTMLElement>('summary');
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu.open) {
+        event.preventDefault();
+        menu.open = false;
+        toggle?.focus();
+      }
+    });
+    menu.querySelectorAll('nav a').forEach((link) => {
+      link.addEventListener('click', () => { menu.open = false; });
+    });
+    document.addEventListener('click', (event) => {
+      if (menu.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
+    });
+    const desktop = window.matchMedia('(min-width: 801px)');
+    desktop.addEventListener('change', (event) => {
+      if (event.matches) menu.open = false;
+    });
+  }
+</script>
+
+<style>
+  .site-header__inner { min-width: 0; }
+  .brand:focus-visible,
+  .desktop-nav a:focus-visible,
+  .mobile-menu summary:focus-visible,
+  .mobile-menu a:focus-visible {
+    outline: 2px solid var(--signature);
+    outline-offset: 4px;
+  }
+  .mobile-menu { display: none; }
+  @media (max-width: 800px) {
+    .site-header .desktop-nav { display: none; }
+    .site-header__inner { min-height: 72px; gap: .75rem; }
+    .site-header .brand { font-size: clamp(1.25rem, 5vw, 1.6rem); }
+    .mobile-menu { display: block; flex-shrink: 0; }
+    .mobile-menu__toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      min-width: 100px;
+      min-height: 48px;
+      padding: .65rem .8rem;
+      border: 1px solid var(--border);
+      border-radius: .5rem;
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: .9rem;
+      font-weight: 700;
+      line-height: 1.2;
+      cursor: pointer;
+      list-style: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .mobile-menu__toggle::-webkit-details-marker { display: none; }
+    .mobile-menu__toggle::marker { content: ''; }
+    .mobile-menu__icon { display: grid; gap: 4px; width: 20px; }
+    .mobile-menu__icon > span { display: block; width: 20px; height: 2px; border-radius: 2px; background: currentColor; }
+    .mobile-menu__close-label { display: none; }
+    .mobile-menu[open] .mobile-menu__open-label { display: none; }
+    .mobile-menu[open] .mobile-menu__close-label { display: inline; }
+    .mobile-menu[open] .mobile-menu__toggle { background: var(--accent-soft); border-color: var(--signature); }
+    .mobile-menu__panel {
+      position: absolute;
+      inset: 100% 0 auto;
+      max-height: calc(100vh - 72px);
+      max-height: calc(100dvh - 72px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: .5rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--background);
+      box-shadow: 0 16px 24px rgba(38, 50, 45, .12);
+    }
+    .mobile-menu__panel ul { max-width: var(--container); margin: 0 auto; padding: 0; list-style: none; }
+    .mobile-menu__panel li + li { border-top: 1px solid var(--border); }
+    .mobile-menu__panel a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 48px;
+      padding: .75rem .5rem;
+      border-radius: .25rem;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    .mobile-menu__panel a:hover,
+    .mobile-menu__panel a[aria-current='page'] { color: var(--signature); background: var(--accent-soft); }
+    .mobile-menu__panel a[aria-current='page'] { font-weight: 700; }
+  }
+</style>
