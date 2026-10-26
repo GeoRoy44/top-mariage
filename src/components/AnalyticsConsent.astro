@@ -1,0 +1,25 @@
+<section id="analytics-consent" class="analytics-consent" aria-labelledby="analytics-consent-title" hidden>
+  <h2 id="analytics-consent-title" tabindex="-1">Votre choix pour les statistiques</h2>
+  <p>Avec votre accord, Top Mariage utilise Google Analytics pour mesurer la fréquentation et comprendre quels guides vous sont utiles. Sans votre accord, cette balise ne se charge pas. Vous pouvez refuser ou changer d’avis à tout moment.</p>
+  <p><a href="/politique-confidentialite/">Consulter la politique de confidentialité</a>. Ce choix concerne Google Analytics, pas les autres services intégrés au site.</p>
+  <div class="analytics-consent__actions">
+    <button type="button" data-analytics-choice="denied">Refuser</button>
+    <button type="button" data-analytics-choice="granted">Accepter</button>
+  </div>
+  <p class="analytics-consent__status" role="status" data-analytics-status></p>
+</section>
+<button type="button" class="analytics-preferences" id="analytics-preferences" aria-controls="analytics-consent" hidden>Choix statistiques</button>
+<noscript><p class="container">JavaScript est désactivé : la balise Google Analytics n’est pas chargée.</p></noscript>
+
+<style>
+  .analytics-consent[hidden], .analytics-preferences[hidden] { display: none; }
+  .analytics-consent { position: fixed; z-index: 60; inset: auto 1rem 1rem; width: min(42rem, calc(100% - 2rem)); max-height: calc(100vh - 2rem); max-height: calc(100dvh - 2rem); overflow-y: auto; padding: 1.5rem; border: 1px solid var(--border); border-radius: 1rem; color: var(--text); background: var(--background); box-shadow: 0 10px 40px rgba(0, 0, 0, .18); }
+  .analytics-consent h2 { margin: 0 0 .75rem; font-size: 1.4rem; }
+  .analytics-consent p { margin: 0 0 .75rem; font-size: .9rem; line-height: 1.6; }
+  .analytics-consent__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .analytics-consent__actions button { flex: 1; min-height: 48px; padding: .7rem 1rem; border: 1px solid var(--signature); border-radius: .4rem; font: inherit; font-weight: 700; color: var(--surface); background: var(--signature); cursor: pointer; }
+  .analytics-preferences { position: fixed; z-index: 45; bottom: .6rem; left: .6rem; min-height: 44px; padding: .5rem .75rem; border: 1px solid var(--border); border-radius: .4rem; font: inherit; font-size: .75rem; color: var(--text); background: var(--background); cursor: pointer; }
+  .analytics-consent button:focus-visible, .analytics-consent a:focus-visible, .analytics-preferences:focus-visible { outline: 2px solid var(--signature); outline-offset: 3px; }
+  .analytics-consent .analytics-consent__status { margin: .75rem 0 0; }
+  .analytics-consent__status:empty { display: none; }
+</style>
