@@ -1,3 +1,18 @@
+---
+interface Props {
+  initialGuests?: number;
+}
+
+function normalizeGuests(guests = 80) {
+  return Number.isFinite(guests)
+    ? Math.min(200, Math.max(20, Math.round(guests / 5) * 5))
+    : 80;
+}
+
+const { initialGuests: guests = 80 } = Astro.props;
+const initialGuests = normalizeGuests(guests);
+---
+
 <section class="budget-calculator" aria-labelledby="budget-calculator-title">
   <div class="budget-calculator__header">
     <p class="eyebrow">Outil gratuit</p>
@@ -10,9 +25,9 @@
       <div class="field-group">
         <div class="field-group__label">
           <label for="budget-guests">Nombre d’invités</label>
-          <output id="budget-guests-output" for="budget-guests">80</output>
+          <output id="budget-guests-output" for="budget-guests">{initialGuests}</output>
         </div>
-        <input id="budget-guests" type="range" min="20" max="200" step="5" value="80" />
+        <input id="budget-guests" type="range" min="20" max="200" step="5" value={initialGuests} />
         <div class="range-labels" aria-hidden="true"><span>20</span><span>200</span></div>
       </div>
 

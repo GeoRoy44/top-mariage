@@ -49,7 +49,7 @@ const related = (await getCollection('blog', ({ data }) => !data.draft && data.c
     <ArticleIllustration slug={post.slug} title={post.data.title} />
     {showBudgetCalculator && (
       <div class="container article-budget-tool" data-article-budget-tool>
-        {!hasEmbeddedCalculator && <BudgetCalculator />}
+        {!hasEmbeddedCalculator && <BudgetCalculator initialGuests={post.data.budgetCalculatorGuests} />}
       </div>
     )}
     <div class="article-content container"><Content /></div>
