@@ -3,10 +3,10 @@ const links = [
   { href: '/', label: 'Accueil' },
   { href: '/organisation-mariage/', label: 'Organisation' },
   { href: '/lieux-mariage/', label: 'Lieux' },
-  { href: '/prestataires-mariage/', label: 'Prestataires' },
   { href: '/robes-tenues/', label: 'Robes & tenues' },
   { href: '/blog/', label: 'Guides' },
 ];
+const provider = { href: '/prestataires-mariage/', label: 'Trouver un prestataire' };
 const currentPath = Astro.url.pathname;
 const isCurrent = (href: string) => currentPath === href;
 ---
@@ -17,6 +17,7 @@ const isCurrent = (href: string) => currentPath === href;
     <nav class="main-nav desktop-nav" aria-label="Navigation principale">
       <ul>
         {links.map((link) => <li><a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</a></li>)}
+        <li class="provider-item"><a class="provider-link" href={provider.href} aria-current={isCurrent(provider.href) ? 'page' : undefined}>{provider.label}<span aria-hidden="true">→</span></a></li>
       </ul>
     </nav>
     <details class="mobile-menu" data-mobile-menu>
@@ -29,6 +30,7 @@ const isCurrent = (href: string) => currentPath === href;
         <ul>
           {links.map((link) => <li><a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}<span aria-hidden="true">→</span></a></li>)}
           <li><a href="/a-propos/" aria-current={isCurrent('/a-propos/') ? 'page' : undefined}>À propos de Coralie<span aria-hidden="true">→</span></a></li>
+          <li class="provider-item"><a class="provider-link" href={provider.href} aria-current={isCurrent(provider.href) ? 'page' : undefined}>{provider.label}<span aria-hidden="true">→</span></a></li>
         </ul>
       </nav>
     </details>
@@ -61,39 +63,19 @@ const isCurrent = (href: string) => currentPath === href;
 
 <style>
   .site-header__inner { min-width: 0; }
+  .desktop-nav ul { align-items: center; }
+  .desktop-nav .provider-item { margin-left: .4rem; }
   .brand:focus-visible,
   .desktop-nav a:focus-visible,
   .mobile-menu summary:focus-visible,
-  .mobile-menu a:focus-visible {
-    outline: 2px solid var(--signature);
-    outline-offset: 4px;
-  }
+  .mobile-menu a:focus-visible { outline: 2px solid var(--signature); outline-offset: 4px; }
   .mobile-menu { display: none; }
   @media (max-width: 800px) {
     .site-header .desktop-nav { display: none; }
     .site-header__inner { min-height: 72px; gap: .75rem; }
     .site-header .brand { font-size: clamp(1.25rem, 5vw, 1.6rem); }
     .mobile-menu { display: block; flex-shrink: 0; }
-    .mobile-menu__toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: .6rem;
-      min-width: 100px;
-      min-height: 48px;
-      padding: .65rem .8rem;
-      border: 1px solid var(--border);
-      border-radius: .5rem;
-      background: var(--surface);
-      color: var(--text);
-      font-family: var(--sans);
-      font-size: .9rem;
-      font-weight: 700;
-      line-height: 1.2;
-      cursor: pointer;
-      list-style: none;
-      -webkit-tap-highlight-color: transparent;
-    }
+    .mobile-menu__toggle { display: flex; align-items: center; justify-content: center; gap: .6rem; min-width: 100px; min-height: 48px; padding: .65rem .8rem; border: 1px solid var(--border); border-radius: .5rem; background: var(--surface); color: var(--text); font-family: var(--sans); font-size: .9rem; font-weight: 700; line-height: 1.2; cursor: pointer; list-style: none; -webkit-tap-highlight-color: transparent; }
     .mobile-menu__toggle::-webkit-details-marker { display: none; }
     .mobile-menu__toggle::marker { content: ''; }
     .mobile-menu__icon { display: grid; gap: 4px; width: 20px; }
@@ -102,37 +84,22 @@ const isCurrent = (href: string) => currentPath === href;
     .mobile-menu[open] .mobile-menu__open-label { display: none; }
     .mobile-menu[open] .mobile-menu__close-label { display: inline; }
     .mobile-menu[open] .mobile-menu__toggle { background: var(--accent-soft); border-color: var(--signature); }
-    .mobile-menu__panel {
-      position: absolute;
-      inset: 100% 0 auto;
-      max-height: calc(100vh - 72px);
-      max-height: calc(100dvh - 72px);
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      padding: .5rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px));
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--background);
-      box-shadow: 0 16px 24px rgba(38, 50, 45, .12);
-    }
+    .mobile-menu__panel { position: absolute; inset: 100% 0 auto; max-height: calc(100vh - 72px); max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; padding: .5rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--background); box-shadow: 0 16px 24px rgba(38, 50, 45, .12); }
     .mobile-menu__panel ul { max-width: var(--container); margin: 0 auto; padding: 0; list-style: none; }
     .mobile-menu__panel li + li { border-top: 1px solid var(--border); }
-    .mobile-menu__panel a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      min-height: 48px;
-      padding: .75rem .5rem;
-      border-radius: .25rem;
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      overflow-wrap: anywhere;
-    }
+    .mobile-menu__panel a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 48px; padding: .75rem .5rem; border-radius: .25rem; color: var(--text); font-size: 1rem; font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
     .mobile-menu__panel a:hover,
     .mobile-menu__panel a[aria-current='page'] { color: var(--signature); background: var(--accent-soft); }
     .mobile-menu__panel a[aria-current='page'] { font-weight: 700; }
+    .mobile-menu__panel .provider-item { margin-top: .75rem; padding-top: .75rem; }
+  }
+  .site-header .desktop-nav a.provider-link,
+  .site-header .mobile-menu__panel a.provider-link { display: flex; align-items: center; justify-content: center; gap: .6rem; min-height: 46px; padding: .7rem 1rem; border: 1px solid #eb5e55; border-radius: .6rem; background: #eb5e55; color: #1e2424; font-weight: 700; text-decoration: none; box-shadow: 0 4px 14px rgba(235, 94, 85, .24); transition: background .2s ease, box-shadow .2s ease; }
+  .site-header .desktop-nav a.provider-link:hover,
+  .site-header .mobile-menu__panel a.provider-link:hover { background: #f58279; border-color: #f58279; box-shadow: 0 5px 18px rgba(235, 94, 85, .35); }
+  .site-header a.provider-link[aria-current='page'] { outline: 2px solid #0c4023; outline-offset: 3px; }
+  .site-header a.provider-link:focus-visible { outline: 3px solid #0c4023; outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    .site-header a.provider-link { transition: none; }
   }
 </style>

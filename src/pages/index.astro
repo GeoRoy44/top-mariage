@@ -91,6 +91,15 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
     </div>
   </section>
   <HomeFaq />
+  <section class="section home-providers" aria-labelledby="home-providers-heading">
+    <div class="container home-providers__inner">
+      <div>
+        <h2 id="home-providers-heading">Trouvez les bons prestataires</h2>
+        <p>Explorez nos <strong>guides et comparatifs</strong> pour repérer les professionnels qui correspondent à vos envies et préparer vos demandes de devis.</p>
+      </div>
+      <a class="home-providers__button" href="/prestataires-mariage/">Trouver un prestataire <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
@@ -122,5 +131,16 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
     .home-hero { padding-top: .75rem; }
     .home-hero h1 { font-size: clamp(1.65rem, 3.2vw, 2.5rem); margin-bottom: .5rem; }
     .home-hero .lead { margin-bottom: .65rem; line-height: 1.45; }
+  }
+  .home-providers { background: #0c4023; color: #f1f3f3; }
+  .home-providers__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .home-providers h2 { margin: 0 0 .75rem; color: #f1f3f3; font-size: clamp(1.8rem, 3vw, 2.5rem); }
+  .home-providers p { max-width: 62ch; margin: 0; line-height: 1.75; }
+  .home-providers__button { display: inline-flex; align-items: center; justify-content: center; gap: .75rem; flex-shrink: 0; min-height: 48px; max-width: 100%; padding: .9rem 1.25rem; border: 1px solid #eb5e55; border-radius: .6rem; background: #eb5e55; color: #1e2424; font-weight: 700; text-decoration: none; box-shadow: 0 4px 18px rgba(235, 94, 85, .25); }
+  .home-providers__button:hover { background: #f58279; border-color: #f58279; color: #1e2424; }
+  .home-providers__button:focus-visible { outline: 3px solid #f1f3f3; outline-offset: 4px; }
+  @media (max-width: 760px) {
+    .home-providers__inner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .home-providers__button { width: 100%; }
   }
 </style>
