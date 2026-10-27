@@ -2,7 +2,7 @@
 title: "Vin pour mariage pas cher : choix, quantités et bonnes pistes d’achat"
 description: "Choisissez un vin pour mariage pas cher : sélection à prix relevés, accords, calcul des bouteilles pour 50 à 150 invités et frais à vérifier avant l’achat."
 pubDate: 2026-10-16
-updatedDate: 2026-10-16
+updatedDate: 2026-10-27
 category: "organisation-mariage"
 tags:
   - vin mariage pas cher
@@ -65,13 +65,13 @@ Bordeaux et Bourgogne ne sont pas des critères de sélection suffisants : cherc
 
 ## Une sélection de vins de mariage à petit prix à comparer
 
-Les références ci-dessous ont été repérées sur des sites marchands, sans dégustation par notre rédaction. Ce n’est donc pas un classement des meilleurs vins ni une promesse qu’ils conviendront à tous les invités. Les prix ont été consultés le 16 octobre 2026, hors livraison ; confirmez le millésime, le stock et le total au panier.
+Les références ci-dessous ont été repérées sur des sites marchands, sans dégustation par notre rédaction. Ce n’est donc pas un classement des meilleurs vins ni une promesse qu’ils conviendront à tous les invités. Les prix ont été consultés le 16 octobre 2026, hors livraison, sauf la référence Viognier actualisée le 27 octobre 2026 ; confirmez le millésime, le stock et le total au panier.
 
 | Référence | Prix affiché pour 75 cl | Pourquoi la comparer |
 | --- | --- | --- |
 | [Maison Castel Merlot Grande Réserve 2024, Pays d’Oc IGP, chez Nicolas](https://www.nicolas.com/fr/VINS/MAISON-CASTEL-MERLOT-GRANDE-RESERVE/p/503097.html) | 5,50 € en promotion, prix de référence affiché 6,90 € | Une piste de rouge dans une enveloppe inférieure à 8 € |
 | [Maison Castel Grande Réserve Chardonnay 2024, chez Nicolas](https://www.nicolas.com/fr/VINS/IGP-DOC/c/0145/) | 5,50 € en promotion, prix de référence affiché 6,90 € | Une proposition de blanc à goûter avec le menu |
-| [Maison Castel Grande Réserve Viognier 2024, chez Nicolas](https://www.nicolas.com/fr/VINS/MAISON-CASTEL-GRANDE-RESERVE-VIOGNIER/p/502655.html) | 5,50 € en promotion, prix de référence affiché 6,90 € | Un autre cépage blanc pour comparer vos préférences |
+| [Maison Castel Grande Réserve Viognier 2025, chez Nicolas](https://www.nicolas.com/fr/fr/p/maison-castel-grande-reserve-viognier---2025-2501.html) | 5,50 € en promotion, prix de référence affiché 6,90 € | Un autre cépage blanc pour comparer vos préférences |
 | [Les Petites Récoltes Cinsault / Grenache Rosé 2024, chez Nicolas](https://www.nicolas.com/fr/VINS/IGP-DOC/c/0145/) | 5 € | Une référence de rosé à intégrer à une dégustation comparative |
 | [Les Jamelles Chardonnay Blanc 2024, chez Nicolas](https://www.nicolas.com/fr/VINS/IGP-DOC/c/0145/) | 7,10 € en promotion, prix de référence affiché 8,90 € | Un point de comparaison dans un budget légèrement supérieur |
 
