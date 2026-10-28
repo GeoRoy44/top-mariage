@@ -13,6 +13,7 @@ interface Props {
 }
 
 const { title, description, article } = Astro.props;
+const isHome = Astro.url.pathname === '/';
 ---
 
 <!doctype html>
@@ -22,6 +23,7 @@ const { title, description, article } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#526D5C" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {isHome && <meta name="poprise-verification" content="efLaewLKh5txJ8KBhwJMi49GwrRfM1dTKoB5vOaUrBOLzaNb886tVtzDG8rjIH8g" />}
     <SEOHead title={title} description={description} article={article} />
     <script is:inline src="/analytics-consent.js" defer></script>
   </head>
