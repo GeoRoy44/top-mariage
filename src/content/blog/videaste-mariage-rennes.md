@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - vidéaste mariage Rennes
   - prestataires mariage Rennes
-draft: false
+draft: true
 ---
 
 Vous cherchez un vidéaste de mariage à Rennes pour conserver les voix, les gestes et l’ambiance de votre journée ? Une bande-annonce ne suffit pas à comparer les offres. Voici cinq professionnels à examiner, en regardant aussi les films complets, la prise de son et les livrables annoncés.

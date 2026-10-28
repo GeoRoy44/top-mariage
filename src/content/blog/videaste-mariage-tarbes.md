@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - vidéaste mariage Tarbes
   - prestataires mariage Tarbes
-draft: false
+draft: true
 ---
 
 Vous cherchez un vidéaste de mariage à Tarbes ou dans les Hautes-Pyrénées ? Voici cinq profils pour comparer reportage, formule photo-vidéo et montage. Certains sont référencés à Tarbes, d’autres annoncent une intervention locale : vérifiez toujours l’adresse de départ et le coût complet pour votre lieu.

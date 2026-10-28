@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - vidéaste mariage Bourges
   - prestataires mariage Bourges
-draft: false
+draft: true
 ---
 
 Vous cherchez un vidéaste de mariage à Bourges ou dans le Cher ? Une recherche locale peut aussi faire apparaître des professionnels venant d’autres régions. Cette sélection distingue donc le secteur annoncé et l’adresse réelle lorsqu’elle est connue. Comparez cinq profils en demandant un film complet et un devis pour votre programme.

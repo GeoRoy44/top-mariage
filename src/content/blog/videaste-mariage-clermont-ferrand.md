@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - vidéaste mariage Clermont-Ferrand
   - prestataires mariage Clermont-Ferrand
-draft: false
+draft: true
 ---
 
 Vous préparez un mariage à Clermont-Ferrand ou dans le Puy-de-Dôme et souhaitez en conserver un film ? Ces cinq profils proposent des pistes locales ou régionales. Regardez au-delà des images spectaculaires : les voix, la continuité du récit et les conditions de livraison méritent autant d’attention que le tournage.

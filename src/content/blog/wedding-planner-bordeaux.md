@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - wedding planner Bordeaux
   - prestataires mariage Bordeaux
-draft: false
+draft: true
 ---
 
 Vous préparez un mariage à Bordeaux ou en Gironde et les recherches commencent à se multiplier ? Avant de choisir une agence, distinguez ce que vous souhaitez organiser vous-mêmes et les missions à déléguer. Ces cinq profils offrent des points de départ différents, de la coordination à une préparation plus complète.

@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - vidéaste mariage Pau
   - prestataires mariage Pau
-draft: false
+draft: true
 ---
 
 Vous recherchez un vidéaste de mariage à Pau pour raconter votre journée sans passer toute la réception devant une caméra ? Commencez par regarder des films complets et par décrire votre programme. Voici cinq profils du secteur ou intervenant dans les Pyrénées-Atlantiques, avec des questions adaptées à leurs présentations publiques.

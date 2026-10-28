@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - wedding planner Lyon
   - prestataires mariage Lyon
-draft: false
+draft: true
 ---
 
 Vous recherchez un wedding planner à Lyon pour organiser vos préparatifs ou coordonner une réception déjà bien avancée ? Les cinq profils ci-dessous ne proposent pas forcément les mêmes missions. Je vous invite à comparer leur méthode, leur périmètre et leurs réponses plutôt que de choisir une agence uniquement sur son univers visuel.

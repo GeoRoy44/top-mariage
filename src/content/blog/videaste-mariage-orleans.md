@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - vidéaste mariage Orléans
   - prestataires mariage Orléans
-draft: false
+draft: true
 ---
 
 Pour choisir un vidéaste de mariage à Orléans, partez des souvenirs que vous souhaitez retrouver : cérémonie, paroles de vos proches ou ambiance de la soirée. Ces cinq profils permettent une première comparaison. Le film livré, le son et les horaires comptent davantage qu’un intitulé de forfait.

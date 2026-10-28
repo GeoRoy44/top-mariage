@@ -7,7 +7,7 @@ category: prestataires-mariage
 tags:
   - vidéaste mariage Genève
   - prestataires mariage Genève
-draft: false
+draft: true
 ---
 
 Vous souhaitez confier votre film de mariage à un vidéaste intervenant à Genève ? Les cinq profils suivants permettent de comparer des offres suisses et des prestations en déplacement. Décrivez les lieux, les langues de la cérémonie et les souvenirs attendus avant de demander une proposition.
