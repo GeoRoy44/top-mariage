@@ -21,7 +21,7 @@ intro: "Oui, un mariage peut se préparer sans deux ou trois années devant vous
 > **En bref**  
 > Vous avez déjà le lieu, le repas ou une tenue ? Une partie du chemin est déjà tracée… Votre **rétroplanning mariage 12 mois** ne doit pas reproduire celui d’un autre couple. Il doit suivre vos confirmations, vos disponibilités et le type de réception que vous souhaitez vivre.
 
-Ce **planning mariage 12 mois** suit quatre mouvements simples : cadrer ce que vous voulez, réserver ce qui conditionne la journée, confirmer les détails, puis transmettre les consignes. Pour replacer ces étapes dans l’ensemble de vos préparatifs, commencez par [organiser un mariage étape par étape](/comment-organiser-un-mariage/).
+Ce **planning mariage 12 mois** suit quatre mouvements simples : cadrer ce que vous voulez, réserver ce qui conditionne la journée, confirmer les détails, puis transmettre les consignes. Pour replacer ces étapes dans l’ensemble de vos préparatifs, commencez par [organiser un mariage étape par étape](/blog/organisation-mariage/).
 
 Vous n’aurez pas à tout décider cette semaine. Commencez plutôt par créer un planning partagé avant de réserver quoi que ce soit. Cette petite mise à plat change souvent l’ambiance des préparatifs !
 
@@ -30,7 +30,7 @@ Vous n’aurez pas à tout décider cette semaine. Commencez plutôt par créer 
 - [Avant de commencer : bâtissez votre planning de mariage partagé](#avant-de-commencer--bâtissez-votre-planning-de-mariage-partagé)
 - [J-12 à J-10 mois : choisir le cadre et réserver ce qui conditionne le reste](#j-12-à-j-10-mois--choisir-le-cadre-et-réserver-ce-qui-conditionne-le-reste)
 - [J-9 à J-7 mois : avancer sur la mairie, les prestataires et les tenues](#j-9-à-j-7-mois--avancer-sur-la-mairie-les-prestataires-et-les-tenues)
-- [J-6 à J-4 mois : informer les invités et imaginer la réception](#j-6-à-j-4-mois--informer-les-invités-et-imaginez-la-réception)
+- [J-6 à J-4 mois : informer les invités et imaginer la réception](#j-6-à-j-4-mois--informer-les-invités-et-imaginer-la-réception)
 - [J-3 à J-2 mois : transformer les réservations en déroulé concret](#j-3-à-j-2-mois--transformer-les-réservations-en-déroulé-concret)
 - [J-15 à J-7 : verrouillez le jour J et déléguez les dernières missions](#j-15-à-j-7--verrouillez-le-jour-j-et-déléguez-les-dernières-missions)
 - [J-7 à J-1 : finalisez, transmettez et quittez progressivement le planning](#j-7-à-j-1--finalisez-transmettez-et-quittez-progressivement-le-planning)
