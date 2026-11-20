@@ -2,8 +2,9 @@
 interface Props {
   slug: string;
   title: string;
+  image?: string;
 }
-const { slug, title } = Astro.props;
+const { slug, title, image: articleImage } = Astro.props;
 const keywords: Record<string, string> = {
   'budget-mariage-100-personnes-md': 'Budget mariage 100 personnes',
   'budget-mariage-200-personnes-md': 'Budget mariage 200 personnes',
@@ -57,23 +58,31 @@ const imageIndex = /decoration|traiteur|vin/.test(slug) ? 1 : /lieux|wedding-pla
 const image = images[imageIndex];
 const isLocal = /wedding-planner-(angers|strasbourg)/.test(slug);
 const alt = `${keyword} : illustration d’une ${image.description}`;
+// Les illustrations des articles (champ `image`) sont au format de partage 1200 × 630.
+const illustration = articleImage
+  ? { src: articleImage, alt: title, width: 1200, height: 630 }
+  : { src: image.src, alt, width: image.width, height: image.height };
 ---
 
 <figure class="article-illustration container">
   <img
-    src={image.src}
-    alt={alt}
-    width={image.width}
-    height={image.height}
+    src={illustration.src}
+    alt={illustration.alt}
+    width={illustration.width}
+    height={illustration.height}
     loading="eager"
     decoding="async"
     fetchpriority="high"
     referrerpolicy="no-referrer"
   />
-  <figcaption>
-    Photo d’illustration. Source : <a href={image.source} target="_blank" rel="noopener noreferrer">{image.credit}</a>.
-    {isLocal && <span> Cette image ne représente pas une réalisation des prestataires cités ni un lieu identifié dans la ville.</span>}
-  </figcaption>
+  {articleImage ? (
+    isLocal && <figcaption>Cette image ne représente pas une réalisation des prestataires cités ni un lieu identifié dans la ville.</figcaption>
+  ) : (
+    <figcaption>
+      Photo d’illustration. Source : <a href={image.source} target="_blank" rel="noopener noreferrer">{image.credit}</a>.
+      {isLocal && <span> Cette image ne représente pas une réalisation des prestataires cités ni un lieu identifié dans la ville.</span>}
+    </figcaption>
+  )}
 </figure>
 
 <style>
