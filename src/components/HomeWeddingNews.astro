@@ -1,0 +1,66 @@
+---
+const sourceUrl = 'https://www.noovomoi.ca/en-vedette/actualites-potins/article/miley-cyrus-sest-mariee-pour-une-deuxieme-fois-voyez-les-premieres-images-de-son-mariage/';
+const photoSource = 'https://www.pexels.com/photo/bride-and-groom-embracing-outdoors-7945026/';
+---
+
+<section class="wedding-news" aria-labelledby="wedding-news-title">
+  <div class="container">
+    <div class="wedding-news__heading">
+      <p class="eyebrow">La sélection de la rédaction · Novembre 2026</p>
+      <h2 id="wedding-news-title">Le Top mariage du mois</h2>
+    </div>
+    <article class="wedding-news__card" aria-labelledby="wedding-news-story">
+      <figure class="wedding-news__figure">
+        <img
+          src="https://images.pexels.com/photos/7945026/pexels-photo-7945026.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+          width="800"
+          height="600"
+          alt="Photo d’illustration : un couple de mariés s’enlace en extérieur ; il ne s’agit pas de Miley Cyrus et Maxx Morando."
+          loading="lazy"
+          decoding="async"
+          referrerpolicy="no-referrer"
+        />
+        <figcaption>Photo d’illustration, sans lien avec le couple cité : <a href={photoSource} target="_blank" rel="noopener noreferrer">Jonathan Borba / Pexels</a>.</figcaption>
+      </figure>
+      <div class="wedding-news__copy">
+        <p class="wedding-news__label">À la une · Mariage de célébrités</p>
+        <h3 id="wedding-news-story">Miley Cyrus et Maxx Morando : un mariage intime à Palm Springs</h3>
+        <p>Selon Noovo Moi, la chanteuse et le musicien se sont mariés le 21 novembre 2026 à Palm Springs, en Californie. Le média décrit une cérémonie au bord d’une piscine, avec des bougies, une arche de fleurs blanches et une robe satinée au dos nu.</p>
+        <p class="wedding-news__takeaway"><strong>L’idée à retenir pour votre jour J :</strong> privilégier une ambiance qui vous ressemble plutôt que multiplier les éléments de décoration. Notre sélection est un coup de cœur éditorial, pas un classement.</p>
+        <p class="wedding-news__source">Source de l’actualité : <a href={sourceUrl} target="_blank" rel="noopener noreferrer">Noovo Moi, article publié le <time datetime="2026-11-22">22 novembre 2026</time></a>. Sélection du <time datetime="2026-11-24">24 novembre 2026</time>.</p>
+        <div class="wedding-news__links">
+          <a class="button" href={sourceUrl} target="_blank" rel="noopener noreferrer">Découvrir l’actualité <span aria-hidden="true">↗</span><span class="wedding-news__sr-only"> (nouvel onglet)</span></a>
+          <a class="text-link" href="/blog/mariage-atypique-pas-cher/">Trouver des idées pour notre mariage <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .wedding-news { padding: clamp(1.5rem, 4vw, 3rem) 0; background: #f1f3f3; color: #1e2424; }
+  .wedding-news__heading { margin-bottom: 1.25rem; }
+  .wedding-news__heading .eyebrow { margin-bottom: .5rem; color: #0c4023; }
+  .wedding-news__heading h2 { margin: 0; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.2; }
+  .wedding-news__card { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(1.25rem, 3vw, 2.5rem); align-items: center; padding: clamp(1rem, 2.5vw, 2rem); background: #fff; border: 1px solid #dce3df; border-top: 4px solid #eb5e55; border-radius: 1rem; }
+  .wedding-news__figure { min-width: 0; margin: 0; }
+  .wedding-news__figure img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .75rem; }
+  .wedding-news__figure figcaption { margin-top: .6rem; font-size: .75rem; line-height: 1.5; color: #47554d; }
+  .wedding-news__copy { min-width: 0; }
+  .wedding-news__label { margin: 0 0 .75rem; color: #0c4023; font-size: .8rem; font-weight: 700; }
+  .wedding-news__copy h3 { margin: 0 0 1rem; font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.25; text-wrap: balance; }
+  .wedding-news__copy p { line-height: 1.7; }
+  .wedding-news__takeaway { padding-left: 1rem; border-left: 3px solid #eb5e55; }
+  .wedding-news__source { font-size: .8rem; color: #47554d; }
+  .wedding-news__source a, .wedding-news__figure a { color: #0c4023; text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }
+  .wedding-news__links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.25rem; }
+  .wedding-news__links .button { min-height: 48px; background: #0c4023; color: #f1f3f3; }
+  .wedding-news a:focus-visible { outline: 3px solid #0c4023; outline-offset: 4px; }
+  .wedding-news__sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+  @media (max-width: 760px) {
+    .wedding-news__card { grid-template-columns: minmax(0, 1fr); }
+    .wedding-news__figure img { aspect-ratio: 16 / 9; }
+    .wedding-news__links { align-items: stretch; flex-direction: column; }
+    .wedding-news__links .button { justify-content: center; }
+  }
+</style>
