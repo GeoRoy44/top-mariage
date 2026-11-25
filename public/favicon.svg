@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title"><title>Top Mariage</title><rect width="64" height="64" rx="16" fill="#526D5C"/><path d="M18 19h28v7H35v20h-7V26H18z" fill="#FBF8F4"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Top Mariage</title>
+  <rect width="64" height="64" rx="18" fill="#FBF4F6"/>
+  <path d="M40 7c14 0 24 13 24 28v9c-11 9-24 5-29-4S26 7 40 7Z" fill="#EEF4F8"/>
+  <g fill="none" stroke="#91465F" stroke-width="4" stroke-linecap="round">
+    <circle cx="25" cy="38" r="12"/>
+    <circle cx="39" cy="38" r="12"/>
+    <path d="M32 10v10m-5-5h10" stroke-width="3"/>
+  </g>
+</svg>

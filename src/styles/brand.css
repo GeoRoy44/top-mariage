@@ -1,0 +1,32 @@
+body.theme-wedding .brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .3rem;
+  max-width: 100%;
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+  text-decoration: none;
+}
+body.theme-wedding .brand::before {
+  content: '';
+  display: block;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  margin-right: .25rem;
+  align-self: center;
+  background: url('/logo-mark.svg') center / contain no-repeat;
+}
+body.theme-wedding .site-header .brand { color: #302B32; }
+body.theme-wedding .site-header .brand span { color: #91465F; }
+body.theme-wedding .site-footer .brand { margin-bottom: 1rem; color: #FFFFFF; }
+body.theme-wedding .site-footer .brand span { color: #F3D9E3; }
+body.theme-wedding .brand:focus-visible { outline: 3px solid #91465F; outline-offset: 5px; border-radius: .3rem; }
+body.theme-wedding .site-footer .brand:focus-visible { outline-color: #F3D9E3; }
+@media (max-width: 800px) {
+  body.theme-wedding .site-header .brand { font-size: 1.15rem; gap: .2rem; }
+  body.theme-wedding .site-header .brand::before { flex-basis: 36px; width: 36px; height: 36px; margin-right: .1rem; }
+}

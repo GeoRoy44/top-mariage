@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Top Mariage</title>
+  <desc id="desc">Deux alliances rose profond entrelacées sous un éclat, sur un fond rose poudré et bleu pâle.</desc>
+  <rect width="64" height="64" rx="20" fill="#FBF4F6"/>
+  <path d="M40 7c14 0 24 13 24 28v9c-11 9-24 5-29-4S26 7 40 7Z" fill="#EEF4F8"/>
+  <g fill="none" stroke="#91465F" stroke-width="3" stroke-linecap="round">
+    <circle cx="25" cy="38" r="12"/>
+    <circle cx="39" cy="38" r="12"/>
+    <path d="M32 10v10m-5-5h10" stroke-width="2"/>
+    <path d="m45 19 2-2m-29 2-2-2" stroke-width="2"/>
+  </g>
+</svg>
