@@ -1,0 +1,85 @@
+html:root {
+  --background: #FFFFFF;
+  --surface: #FFFFFF;
+  --text: #302B32;
+  --muted: #6D626C;
+  --signature: #91465F;
+  --accent: #91465F;
+  --accent-soft: #FBF4F6;
+  --border: #E8DDE3;
+  --wedding-blue: #EEF4F8;
+  --wedding-hover: #74364C;
+}
+
+body.theme-wedding { background: var(--background); color: var(--text); }
+body.theme-wedding .site-header { background: rgba(255, 255, 255, .96); border-color: var(--border); }
+body.theme-wedding .button { color: #FFFFFF; background: var(--signature); border-color: var(--signature); }
+body.theme-wedding .button:hover { color: #FFFFFF; background: var(--wedding-hover); border-color: var(--wedding-hover); }
+body.theme-wedding .button:focus-visible { outline: 3px solid var(--signature); outline-offset: 4px; }
+body.theme-wedding .home-author .eyebrow { color: var(--signature); }
+body.theme-wedding .about-page { --about-ink: var(--signature); }
+body.theme-wedding .section--soft,
+body.theme-wedding .about-journey { background: var(--accent-soft); }
+
+body.theme-wedding .site-footer { background: var(--text); color: #FFFFFF; }
+body.theme-wedding .site-footer p,
+body.theme-wedding .site-footer a { color: #E8DDE3; }
+body.theme-wedding .site-footer a:hover,
+body.theme-wedding .site-footer .brand,
+body.theme-wedding .site-footer h2 { color: #FFFFFF; }
+body.theme-wedding .site-footer .brand span { color: #E8DDE3; }
+
+body.theme-wedding .home-providers { background: var(--wedding-blue); color: var(--text); }
+body.theme-wedding .home-providers h2 { color: var(--text); }
+body.theme-wedding .home-providers__button { background: var(--signature); border-color: var(--signature); color: #FFFFFF; box-shadow: 0 4px 18px rgba(145, 70, 95, .15); }
+body.theme-wedding .home-providers__button:hover { background: var(--wedding-hover); border-color: var(--wedding-hover); color: #FFFFFF; }
+body.theme-wedding .home-providers__button:focus-visible { outline-color: var(--signature); }
+
+body.theme-wedding .wedding-news { background: var(--accent-soft); color: var(--text); }
+body.theme-wedding .wedding-news__card { background: var(--surface); border-color: var(--border); border-top-color: var(--signature); }
+body.theme-wedding .wedding-news__heading .eyebrow,
+body.theme-wedding .wedding-news__label,
+body.theme-wedding .wedding-news__source a,
+body.theme-wedding .wedding-news__figure a { color: var(--signature); }
+body.theme-wedding .wedding-news__takeaway { border-color: var(--signature); }
+body.theme-wedding .wedding-news__source,
+body.theme-wedding .wedding-news__figure figcaption { color: var(--muted); }
+body.theme-wedding .wedding-news a:focus-visible { outline-color: var(--signature); }
+
+body.theme-wedding .home-faq { background: var(--wedding-blue); color: var(--text); }
+body.theme-wedding .home-faq details { border-color: var(--border); }
+body.theme-wedding .home-faq summary,
+body.theme-wedding .home-faq summary::marker,
+body.theme-wedding .home-faq__answer a { color: var(--signature); }
+body.theme-wedding .home-faq summary:focus-visible,
+body.theme-wedding .home-faq a:focus-visible { outline-color: var(--signature); }
+body.theme-wedding .home-wedding-image__copy { background: var(--accent-soft); color: var(--text); border-color: var(--border); }
+body.theme-wedding .home-wedding-image__copy .eyebrow,
+body.theme-wedding .home-wedding-image__copy a { color: var(--signature); }
+body.theme-wedding .home-wedding-image figcaption { color: var(--muted); }
+body.theme-wedding .home-wedding-image a:focus-visible { outline-color: var(--signature); }
+
+body.theme-wedding .budget-calculator {
+  --ink: #302B32;
+  --muted: #6D626C;
+  --line: #E8DDE3;
+  --surface: #FFFFFF;
+  --soft: #EEF4F8;
+  --accent: #91465F;
+  --accent-dark: #74364C;
+  box-shadow: 0 18px 45px rgba(48, 43, 50, .06);
+}
+body.theme-wedding .budget-calculator .field-group output { background: #FBF4F6; }
+body.theme-wedding .budget-calculator .format-option input:checked + span { background: #FBF4F6; box-shadow: 0 0 0 3px rgba(145, 70, 95, .12); }
+body.theme-wedding .budget-calculator .format-option input:focus-visible + span { outline-color: #91465F; }
+body.theme-wedding .budget-calculator .extra-options label { color: #302B32; }
+body.theme-wedding .budget-calculator__result { background: #EEF4F8; color: #302B32; border: 1px solid #E8DDE3; }
+body.theme-wedding .budget-calculator__result-label,
+body.theme-wedding .budget-calculator__per-guest,
+body.theme-wedding .budget-calculator__hint { color: #6D626C; }
+body.theme-wedding .budget-calculator__total,
+body.theme-wedding .budget-calculator__result summary,
+body.theme-wedding .budget-calculator__result li strong { color: #74364C; }
+body.theme-wedding .budget-calculator__result li { color: #302B32; }
+body.theme-wedding .budget-calculator__divider { background: #E8DDE3; }
+body.theme-wedding .budget-calculator__result ul { border-color: #E8DDE3; }

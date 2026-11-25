@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/wedding-theme.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEOHead from '../components/SEOHead.astro';
@@ -21,13 +22,13 @@ const isHome = Astro.url.pathname === '/';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#526D5C" />
+    <meta name="theme-color" content="#91465F" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {isHome && <meta name="poprise-verification" content="efLaewLKh5txJ8KBhwJMi49GwrRfM1dTKoB5vOaUrBOLzaNb886tVtzDG8rjIH8g" />}
     <SEOHead title={title} description={description} article={article} />
     <script is:inline src="/analytics-consent.js" defer></script>
   </head>
-  <body>
+  <body class="theme-wedding">
     <Header />
     <main><slot /></main>
     <Footer />
