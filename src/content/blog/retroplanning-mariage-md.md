@@ -2,7 +2,7 @@
 title: "Rétroplanning mariage : le calendrier des 12 mois"
 description: "Rétroplanning mariage sur 12 mois : les tâches à planifier, de la réservation du lieu aux derniers détails avant le jour J."
 pubDate: 2026-09-25
-updatedDate: 2026-09-25
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - rétroplanning mariage
@@ -116,6 +116,12 @@ Conservez chaque réponse écrite dans votre planning partagé. Elle sera utile 
 
 Gardez uniquement les options compatibles avec votre format. Vérifiez ensuite que la mairie, le lieu et la restauration peuvent s’accorder sur une même date.
 
+### Lancez tôt la recherche du photographe
+
+Parmi les réservations à anticiper, je place le photographe. Je ne dirais pas qu’il est le prestataire le plus souvent contacté trop tard, mais pour un samedi très demandé, commencer les recherches 12 à 18 mois avant le mariage me semble un repère raisonnable.
+
+Plusieurs photographes recommandent cette anticipation, tout en rappelant que la date et la demande changent beaucoup la situation. Ce n’est pas un délai obligatoire.
+
 ## J-9 à J-7 mois : avancer sur la mairie, les prestataires et les tenues
 
 ### Ouvrez le dossier de mariage en mairie sans attendre
@@ -130,7 +136,7 @@ Ajoutez dans votre planning le nom de votre interlocuteur, les pièces à vérif
 
 ### Réservez les prestataires et lancez les essayages
 
-Une fois le cadre posé, sélectionnez les professionnels qui correspondent à votre réception. Photographe, vidéaste, DJ, groupe, fleuriste, coiffure, maquillage ou officiant ne sont pas tous nécessaires. Gardez ceux qui servent vraiment votre journée.
+Une fois le cadre posé, sélectionnez les professionnels qui correspondent à votre réception. Vidéaste, DJ, groupe, fleuriste, coiffure, maquillage ou officiant ne sont pas tous nécessaires. Gardez ceux qui servent vraiment votre journée. Si le photographe n’est pas encore retenu, placez-le en tête de vos demandes.
 
 Envoyez le même brief à chaque prestataire comparé. Indiquez la date, le lieu, le nombre approximatif de convives, la durée attendue et vos besoins techniques. Les réponses seront plus faciles à lire.
 
