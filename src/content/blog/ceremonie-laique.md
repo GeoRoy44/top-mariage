@@ -2,7 +2,7 @@
 title: "Cérémonie laïque : déroulement, officiant et idées pour votre mariage"
 description: "Une cérémonie laïque dure 20 à 45 minutes et n’a pas de valeur légale. Déroulé type, choix de l’officiant (500 à 1 500 €), rituels, vœux et calendrier."
 pubDate: 2026-11-18
-updatedDate: 2026-11-18
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - cérémonie laïque
@@ -100,7 +100,7 @@ N’importe qui peut officier lors d’une cérémonie laïque, puisqu’elle n�
 
 Un proche raconte des souvenirs qu’il a vécus avec vous, ce qu’aucun professionnel ne peut faire. En contrepartie, il porte une lourde responsabilité, souvent pour la première fois, qui l’empêche de profiter de la cérémonie comme les autres invités. Si vous lui confiez ce rôle, donnez-lui le déroulé tôt, prévoyez une répétition sur place et désignez quelqu’un d’autre pour lancer la musique et gérer les micros.
 
-<!-- TODO ANECDOTE: retour de terrain de Coralie sur une cérémonie laïque officiée par un proche ou par un professionnel, et ce qu’elle en a retenu pour conseiller les couples (question posée au propriétaire, 8c01a06a). -->
+J’ai lu en ligne le témoignage d’un couple dont la cérémonie laïque tenait en un seul moment : les mariés ont simplement lu un passage de *L’Adieu aux armes*, d’Ernest Hemingway, un texte qui comptait beaucoup pour l’un d’eux. Le passage se termine ainsi : « On n’était jamais seuls et jamais effrayés quand on était ensemble. » Après la cérémonie, beaucoup d’invités sont venus leur dire qu’ils avaient adoré.
 
 ### Les questions à poser à un officiant avant de signer
 
