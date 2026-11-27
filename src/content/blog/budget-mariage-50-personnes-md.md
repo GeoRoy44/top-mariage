@@ -2,7 +2,7 @@
 title: "Budget mariage 50 personnes : combien prévoir ?"
 description: "Budget mariage 50 personnes : lieu, repas, boissons et dépenses à anticiper pour organiser une réception intimiste."
 pubDate: 2026-09-25
-updatedDate: 2026-09-25
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - budget mariage 50 personnes
@@ -37,6 +37,17 @@ Une petite réception ne signifie donc pas une réception au rabais. Elle peut v
 
 Il n’existe pas un seul **prix mariage 50 personnes**. La date, la région, le type de lieu, le repas, les boissons et la durée de l’événement modifient rapidement l’enveloppe. Le plus utile consiste à fixer un plafond, puis à demander des devis portant sur le même projet.
 
+Pour vous situer, je reprends les fourchettes que [Mariée.fr](https://www.mariee.fr/budget-mariage/50-personnes/) publie pour 50 invités (page mise à jour le 8 novembre 2023). Le bas de fourchette correspond à un mariage accessible, le haut à un mariage premium. Mariée.fr retient un total moyen de 9 900 € sur sept postes.
+
+| Poste | Accessible | Premium |
+|---|---|---|
+| Lieu de réception | 500 € | 5 000 € |
+| Traiteur, hors boissons | 2 500 € | 7 500 € |
+| Photographe | 500 € | 5 000 € |
+| DJ | 700 € | 2 000 € |
+
+Le lieu et le traiteur coûtent donc ensemble de 3 000 € pour un mariage accessible à 12 500 € pour un mariage premium, hors boissons, tenues et décoration.
+
 Commencez par répartir vos priorités. Vous pouvez décider qu’un repas généreux compte davantage qu’une scénographie complète. Vous pouvez aussi privilégier une réception en journée, une saison moins demandée ou un lieu familial, si cela correspond à votre histoire.
 
 - Définissez le format de la réception avant de comparer les prix
@@ -45,7 +56,7 @@ Commencez par répartir vos priorités. Vous pouvez décider qu’un repas gén�
 - Vérifiez les postes compris dans les devis reçus
 - Gardez une réserve choisie par vous pour les ajustements de dernière minute
 
-Pour une lecture plus large, [préparer le budget moyen de votre mariage](/blog/budget-mariage-moyen/) aide à hiérarchiser les grands postes. L’objectif n’est pas d’atteindre un total parfait. Il s’agit de savoir ce que votre enveloppe couvre réellement.
+Pour une lecture plus large, [préparer le budget moyen de votre mariage](/blog/budget-mariage/) aide à hiérarchiser les grands postes. L’objectif n’est pas d’atteindre un total parfait. Il s’agit de savoir ce que votre enveloppe couvre réellement.
 
 ## Lieu, repas et boissons : les décisions qui donnent le ton
 
@@ -71,7 +82,7 @@ Pour rapprocher les offres sans mélanger leurs périmètres, [comparer les devi
 
 ### Quel budget mariage prévoir pour 50 personnes ?
 
-Un **budget mariage 50 personnes** dépend du lieu, du repas, des boissons, de la date et du niveau de personnalisation. Distinguez les frais fixes des dépenses qui évoluent avec les invités. Demandez ensuite plusieurs devis portant sur le même format de réception.
+Un **budget mariage 50 personnes** dépend du lieu, du repas, des boissons, de la date et du niveau de personnalisation. Selon Mariée.fr, le lieu et le traiteur coûtent ensemble de 3 000 € pour un mariage accessible à 12 500 € pour un mariage premium. Distinguez les frais fixes des dépenses qui évoluent avec les invités. Demandez ensuite plusieurs devis portant sur le même format de réception.
 
 ### Un mariage de 50 personnes coûte-t-il deux fois moins cher qu’un mariage de 100 personnes ?
 
@@ -89,4 +100,4 @@ Ce n’est pas obligatoire. Un repas servi à table demande souvent une organisa
 
 Un **budget mariage 50 personnes** ne se résume pas à cinquante couverts. Le lieu, le repas, les boissons, la photographie et les dépenses fixes forment un ensemble. La meilleure enveloppe est celle qui protège vos priorités et vos marges de manœuvre…
 
-Pour comparer ce format avec une réception plus grande, [prévoir le budget d’un mariage de 100 invités](/blog/budget-mariage-100-personnes/) permet de voir comment les postes évoluent. Petit comité, grandes retrouvailles et décisions bien posées : voilà un programme qui tient la route !!
+Pour comparer ce format avec une réception plus grande, [prévoir le budget d’un mariage de 100 invités](/blog/budget-mariage-100-personnes-md/) permet de voir comment les postes évoluent. Petit comité, grandes retrouvailles et décisions bien posées : voilà un programme qui tient la route !!

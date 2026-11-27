@@ -2,7 +2,7 @@
 title: "Budget mariage 100 personnes : combien prévoir ?"
 description: "Budget mariage 100 personnes : lieu, traiteur, boissons et dépenses à prévoir pour une réception de taille classique."
 pubDate: 2026-09-25
-updatedDate: 2026-09-25
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - budget mariage 100 personnes
@@ -37,6 +37,18 @@ Cent personnes, c’est aussi une question de rythme. Une file qui s’allonge a
 
 Les références publiées divergent. Mariée.fr avance un total moyen de 17 100 € pour un mariage de 100 personnes, avec 3 000 € pour la salle et 7 000 € pour le traiteur. Mariages.net évoque une enveloppe de 5 500 € à 6 500 € pour le lieu, ainsi que des tarifs de repas assis allant de 60 € à 150 € par personne hors boissons. Ces repères ne couvrent pas le même périmètre. Ils servent à poser des questions, pas à fixer votre total. [Mariée.fr](https://www.mariee.fr/budget-mariage/100-personnes/) [Mariages.net](https://www.mariages.net/articles/budget-mariage-100-personnes--c11469).
 
+[Mariée.fr](https://www.mariee.fr/budget-mariage/100-personnes/) donne aussi un bas et un haut de fourchette pour chaque poste (page mise à jour le 29 mars 2024). Le bas de fourchette correspond à un mariage accessible, le haut à un mariage premium.
+
+| Poste | Accessible | Premium |
+|---|---|---|
+| Lieu de réception | 500 € | 8 000 € |
+| Traiteur, hors boissons | 5 000 € | 12 000 € |
+| Boissons | 1 000 € | 2 000 € |
+| Photographe | 500 € | 5 000 € |
+| DJ | 700 € | 2 000 € |
+
+Le lieu et le traiteur coûtent ensemble de 5 500 € pour un mariage accessible à 20 000 € pour un mariage premium, hors boissons, tenues, fleurs et décoration.
+
 Un **prix mariage 100 personnes** varie avec la région, la date, le type de réception, le niveau de personnalisation et les prestations incluses. Un samedi de haute saison dans un lieu très demandé ne raconte pas la même histoire qu’un vendredi hors saison dans une salle communale ou un restaurant privatisé. C’est un peu évident, oui. Mais ce sont souvent ces paramètres qui déplacent l’enveloppe le plus vite !
 
 | Poste | Ce qui fait varier l’enveloppe |
@@ -47,7 +59,7 @@ Un **prix mariage 100 personnes** varie avec la région, la date, le type de ré
 | Animation | DJ, groupe, matériel, cérémonie et horaires de fin |
 | Fleurs et décoration | Nombre de tables, location, installation, saison et scénographie |
 
-Le tableau ne remplace pas un devis. Il permet de voir ce qui doit y figurer. [Prévoir le budget d’un mariage de 50 invités](/blog/budget-mariage-50-personnes/) montre d’ailleurs pourquoi les coûts fixes pèsent davantage dans un petit comité, même si la facture totale y est plus basse.
+Le tableau ne remplace pas un devis. Il permet de voir ce qui doit y figurer. [Prévoir le budget d’un mariage de 50 invités](/blog/budget-mariage-50-personnes-md/) montre d’ailleurs pourquoi les coûts fixes pèsent davantage dans un petit comité, même si la facture totale y est plus basse.
 
 ## Lieu, traiteur et boissons : là où le budget se joue vraiment
 
@@ -57,13 +69,13 @@ Le **budget traiteur 100 personnes** rassemble plus que le menu. Service, boisso
 
 > **À vérifier dans chaque devis :** nombre de couverts minimum, durée de service, boissons incluses, personnel, droit de bouchon, vaisselle, mobilier, nettoyage et conditions de report.
 
-Le devis permet de sécuriser une transaction avant l’engagement mutuel. Il décrit la prestation et estime son prix définitif. Cette fonction mérite toute votre attention lorsque plusieurs offres semblent proches. [Service-Public](https://sites.service-information-publique.fr/vias/guide-professionnels/F31144.html).
+Avant la signature, le prestataire doit vous informer des caractéristiques essentielles du service, de son prix et de la date d’exécution. [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) rappelle que ces informations figurent souvent dans le devis. Relisez-le avec soin lorsque plusieurs offres semblent proches.
 
 ## Questions fréquentes
 
 ### Quel budget mariage prévoir pour 100 personnes ?
 
-Un **budget mariage 100 personnes** dépend du lieu, de la restauration, des boissons et du niveau de réception. Les repères publiés vont d’environ 17 000 € à des enveloppes bien plus élevées selon les inclusions. Les devis comparables restent la meilleure base.
+Un **budget mariage 100 personnes** dépend du lieu, de la restauration, des boissons et du niveau de réception. Mariée.fr publie un total moyen de 17 100 €, mais d’autres repères montent bien plus haut selon les inclusions. Pour le lieu et le traiteur seuls, Mariée.fr donne une fourchette de 5 500 € pour un mariage accessible à 20 000 € pour un mariage premium. Les devis comparables restent la meilleure base.
 
 ### Quel budget traiteur retenir pour 100 personnes ?
 
@@ -77,4 +89,4 @@ Une **réception cohérente** relie le lieu, le repas, le service et le rythme d
 
 Un **budget mariage 100 personnes** se construit autour du lieu, du repas et des boissons, puis de tous les éléments qui permettent à cent personnes de vivre la journée ensemble. Les détails ne disparaissent pas. Ils se multiplient…
 
-Pour observer ce qui se passe lorsque la liste s’étend davantage, [prévoir le budget d’un mariage de 200 invités](/blog/budget-mariage-200-personnes/) prolonge la comparaison. Cent voix dans une même salle, cela demande de l’espace, du rythme et quelques tableaux bien tenus.
+Pour observer ce qui se passe lorsque la liste s’étend davantage, [prévoir le budget d’un mariage de 200 invités](/blog/budget-mariage-200-personnes-md/) prolonge la comparaison. Cent voix dans une même salle, cela demande de l’espace, du rythme et quelques tableaux bien tenus.

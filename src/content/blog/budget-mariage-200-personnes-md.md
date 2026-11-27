@@ -2,7 +2,7 @@
 title: "Budget mariage 200 personnes : combien prévoir ?"
 description: "Budget mariage 200 personnes : réception, traiteur, lieu, logistique et coûts fixes pour construire une enveloppe réaliste."
 pubDate: 2026-09-25
-updatedDate: 2026-09-25
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - budget mariage 200 personnes
@@ -39,6 +39,18 @@ Pour une réception de cette taille, le **budget traiteur 200 personnes** devien
 
 Mariée.fr indique, à titre de repère éditorial, des tarifs de repas assis hors boissons entre 60 € et 150 € par personne, ainsi qu’une enveloppe traiteur moyenne de 10 000 € pour 200 personnes. D’autres sources évoquent des fourchettes beaucoup plus hautes dès que le service, les boissons ou une formule complète entrent dans le périmètre. Ces chiffres ne racontent pas la même prestation. [Mariée.fr](https://www.mariee.fr/budget-mariage/200-personnes/).
 
+[Mariée.fr](https://www.mariee.fr/budget-mariage/200-personnes/) publie aussi un bas et un haut de fourchette pour chaque poste à 200 invités (page mise à jour le 8 novembre 2023). Le bas de fourchette correspond à un mariage accessible, le haut à un mariage premium.
+
+| Poste | Accessible | Premium |
+|---|---|---|
+| Lieu de réception | 500 € | 8 000 € |
+| Traiteur, hors boissons | 5 000 € | 15 000 € |
+| Boissons | 1 000 € | 2 500 € |
+| Photographe | 500 € | 5 000 € |
+| DJ | 700 € | 2 000 € |
+
+Le lieu et le traiteur coûtent ensemble de 5 500 € pour un mariage accessible à 23 000 € pour un mariage premium, hors boissons. Le bas de fourchette du traiteur revient à 25 € par invité, alors que Mariée.fr situe un repas assis entre 60 € et 150 € par personne. Pour un dîner assis de 200 personnes, attendez-vous plutôt au haut de la fourchette, voire au-delà.
+
 Le **prix mariage 200 personnes** dépend alors moins du seul nombre d’assiettes que de l’expérience recherchée : dîner assis, cocktail prolongé, bar, brunch, menu sur mesure, groupe de musique ou réception sur plusieurs jours. [Évaluer le prix d’un traiteur de mariage](/blog/traiteur-mariage-prix-choix/) permet de regarder ces inclusions plus finement.
 
 | Poste | Ce qui fait varier l’enveloppe |
@@ -65,7 +77,7 @@ La comparaison devient plus lisible lorsque chaque prestataire reçoit le même 
 
 ### Quel budget mariage prévoir pour 200 personnes ?
 
-Un **budget mariage 200 personnes** varie fortement selon la région, le lieu, la restauration et le niveau de personnalisation. Une source éditoriale comme Mariée.fr évoque un total moyen de 22 300 €, tandis que d’autres estimations dépassent largement ce montant pour des prestations plus complètes. Ces écarts imposent de comparer les inclusions avant les totaux.
+Un **budget mariage 200 personnes** varie fortement selon la région, le lieu, la restauration et le niveau de personnalisation. Une source éditoriale comme Mariée.fr évoque un total moyen de 22 300 €, tandis que d’autres estimations dépassent largement ce montant pour des prestations plus complètes. Pour le lieu et le traiteur seuls, Mariée.fr donne une fourchette de 5 500 € pour un mariage accessible à 23 000 € pour un mariage premium. Ces écarts imposent de comparer les inclusions avant les totaux.
 
 ### Quel budget traiteur prévoir pour 200 personnes ?
 
@@ -79,4 +91,4 @@ Un **mariage 200 invités** peut prendre des formes très différentes. Le lieu,
 
 Un **budget mariage 200 personnes** ne se décide pas seulement autour d’un prix par convive. Le lieu, le repas, les boissons, le personnel et la logistique forment un ensemble. À cette échelle, chaque détail se répète deux cents fois…
 
-Pour comparer ce format à une réception plus resserrée, [prévoir le budget d’un mariage de 50 invités](/blog/budget-mariage-50-personnes/) montre la place des coûts fixes dans un petit comité. Deux cents voix dans une même salle, cela demande de la méthode. Et beaucoup d’air entre les tables.
+Pour comparer ce format à une réception plus resserrée, [prévoir le budget d’un mariage de 50 invités](/blog/budget-mariage-50-personnes-md/) montre la place des coûts fixes dans un petit comité. Deux cents voix dans une même salle, cela demande de la méthode. Et beaucoup d’air entre les tables.

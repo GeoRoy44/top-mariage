@@ -2,7 +2,7 @@
 title: "Budget mariage : comment prévoir vos dépenses sans mauvaise surprise"
 description: "Budget mariage : méthode, postes de dépenses, devis et suivi pour construire une enveloppe adaptée à votre réception."
 pubDate: 2026-09-26
-updatedDate: 2026-09-26
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - budget mariage
@@ -26,7 +26,7 @@ Un **budget mariage moyen** peut aider à se situer. Il ne raconte pourtant pas 
 
 Alors, **combien coûte un mariage** ? Cela dépend du lieu, de la période, du nombre d’invités, de la durée de la fête et des prestations retenues. Le bon budget mariage ne commence pas par une moyenne. Il commence par ce que vous pouvez réellement engager.
 
-Moi, je ne suis pas wedding planner. Coralie connaît mieux que moi les appels, les délais et les tableaux très sérieux. Moi, j’observe. Et je remarque qu’un mariage devient plus calme dès que les mariés savent ce qu’ils peuvent financer…
+Après plus de dix ans comme wedding planner, je remarque qu’un mariage devient plus calme dès que les mariés savent ce qu’ils peuvent financer…
 
 ### Partir de l’argent réellement mobilisable
 
@@ -40,7 +40,7 @@ Un devis ne se lit pas seulement par son total. Regardez ce qui est inclus, ce q
 
 ### Définir vos priorités avant de comparer les offres
 
-Le **prix du mariage** dépend surtout de vos arbitrages. Vous voulez peut-être un repas généreux, beaucoup d’invités (lLe [budget pour un mariage de 50 personnes](/blog/budget-mariage-50-personnes-md/) sera différent de celui d’une [cérémonie à 200 personnes](/blog/budget-mariage-200-personnes-md/) !), un lieu avec hébergement ou des photos très travaillées. Tout ne peut pas être prioritaire. C’est normal.
+Le **prix du mariage** dépend surtout de vos arbitrages. Vous voulez peut-être un repas généreux, beaucoup d’invités (le [budget pour un mariage de 50 personnes](/blog/budget-mariage-50-personnes-md/) sera différent de celui d’une [cérémonie à 200 personnes](/blog/budget-mariage-200-personnes-md/) !), un lieu avec hébergement ou des photos très travaillées. Tout ne peut pas être prioritaire. C’est normal.
 
 | Niveau | Ce qu’il recouvre |
 |---|---|
@@ -115,9 +115,9 @@ Donc non, je ne vous donnerai pas un coût fixe par personne. Ce serait rassuran
 
 ### Comparer trois scénarios : 50, 100 et 150 personnes
 
-Un [budget mariage 50 personnes](/blog/budget-mariage-50-personnes/) peut permettre une réception plus intime. Attention tout de même : les coûts fixes restent là, bien installés, comme un oncle qui arrive très tôt au vin d’honneur.
+Un [budget mariage 50 personnes](/blog/budget-mariage-50-personnes-md/) peut permettre une réception plus intime. Attention tout de même : les coûts fixes restent là, bien installés, comme un oncle qui arrive très tôt au vin d’honneur.
 
-Un [budget mariage 100 personnes](/blog/budget-mariage-100-personnes/) sert souvent de repère pour organiser les devis de réception. Vous pouvez comparer la capacité du lieu, le repas, les boissons et le nombre de personnes nécessaires au service.
+Un [budget mariage 100 personnes](/blog/budget-mariage-100-personnes-md/) sert souvent de repère pour organiser les devis de réception. Vous pouvez comparer la capacité du lieu, le repas, les boissons et le nombre de personnes nécessaires au service.
 
 Un budget mariage 150 personnes demande souvent une vigilance supplémentaire. Le volume de repas augmente, bien sûr. Mais la circulation, le stationnement, les hébergements et le rythme de la soirée peuvent aussi prendre une autre dimension.
 
@@ -144,7 +144,7 @@ Un **budget mariage à petit prix** demande souvent de simplifier le format avan
 
 Je ne dis pas qu’il faut tout enlever. Ce serait triste de transformer votre mariage en exercice comptable. Mais vous pouvez décider qu’un beau repas partagé vaut davantage qu’une accumulation de petits détails, ou l’inverse. Ce n’est que votre choix.
 
-Pour les tenues, vous pourrez bientôt [prévoir le budget d’une robe de mariée](/blog/budget-robe-de-mariee/), avec les retouches, les accessoires et les alternatives qui peuvent modifier l’enveloppe finale.
+Pour les tenues, vous pourrez bientôt prévoir le budget d’une robe de mariée, avec les retouches, les accessoires et les alternatives qui peuvent modifier l’enveloppe finale.
 
 ### Mariage champêtre : anticiper la logistique derrière le décor
 
@@ -156,7 +156,7 @@ Attention toutefois. Un lieu extérieur ou rural peut demander des vérification
 
 Un **budget mariage luxe** peut inclure une privatisation, plusieurs jours de réception, des hébergements, une gastronomie plus travaillée, une scénographie florale ou une coordination étendue. Ce ne sont pas seulement des objets plus chers. Ce sont parfois des services, du temps et une logistique plus large.
 
-Pour les souvenirs, vous pourrez aussi [choisir un photographe de mariage selon votre budget](/blog/photographe-mariage-tarifs/). Un reportage, une présence longue, une galerie, un album ou un second photographe ne recouvrent pas le même travail.
+Pour les souvenirs, vous pourrez aussi choisir un photographe de mariage selon votre budget. Un reportage, une présence longue, une galerie, un album ou un second photographe ne recouvrent pas le même travail.
 
 > **Alerte devis :** un intitulé identique ne garantit pas une prestation équivalente. Vérifiez les inclusions, les horaires, les plafonds, les frais de déplacement et les conditions de report.
 
@@ -189,6 +189,18 @@ Le Sofinscope, baromètre OpinionWay pour Sofinco, indiquait en 2024 un budget m
 D’autres guides avancent des repères plus élevés, notamment lorsqu’ils partent d’une réception de 100 personnes ou incluent davantage de prestations. Je ne vais pas mélanger ces chiffres pour fabriquer une moyenne encore plus floue. Votre **budget mariage 2026** mérite mieux que cela.
 
 Le bon réflexe consiste à noter la source, l’année, le nombre d’invités et les postes inclus. Les chiffres deviennent alors des repères. Ils ne remplacent pas vos devis.
+
+### Budget lieu et traiteur selon le nombre d’invités, d’accessible à premium
+
+Je vous donne aussi des fourchettes, plus utiles qu’une moyenne pour situer votre propre projet. Mariée.fr publie, poste par poste, un bas et un haut de fourchette pour [50](https://www.mariee.fr/budget-mariage/50-personnes/), [100](https://www.mariee.fr/budget-mariage/100-personnes/) et [200 invités](https://www.mariee.fr/budget-mariage/200-personnes/) (pages mises à jour entre novembre 2023 et mars 2024). J’ai additionné le lieu et le traiteur hors boissons. Le bas de fourchette correspond à un mariage accessible, le haut à un mariage premium.
+
+| Invités | Lieu + traiteur, accessible | Lieu + traiteur, premium | Total moyen publié par Mariée.fr (sept postes) |
+|---|---|---|---|
+| 50 | 3 000 € | 12 500 € | 9 900 € |
+| 100 | 5 500 € | 20 000 € | 17 100 € |
+| 200 | 5 500 € | 23 000 € | 22 300 € |
+
+Le total moyen couvre la salle, le traiteur, les tenues, le photographe, le DJ, la décoration et les alliances. Les boissons, les fleurs, la papeterie et la coordination restent à ajouter. Vous vous situerez entre accessible et premium selon vos priorités. Je détaille poste par poste le [budget d’un mariage de 50 personnes](/blog/budget-mariage-50-personnes-md/), [de 100 personnes](/blog/budget-mariage-100-personnes-md/) et [de 200 personnes](/blog/budget-mariage-200-personnes-md/).
 
 ### Utiliser les plateformes et les devis pour comparer votre propre projet
 
@@ -239,4 +251,4 @@ Un tableau Google Sheets ou Excel peut suivre votre **budget mariage par poste**
 
 Un **budget mariage** n’a pas besoin de ressembler à une moyenne nationale. Il doit surtout ressembler à votre réception, à vos priorités et à ce que vous pouvez financer sereinement. Le nombre d’invités, le lieu, le repas et les prestations choisies dessinent l’enveloppe, petit à petit.
 
-Quand votre budget commence à être clair, vous pourrez [suivre un rétroplanning de mariage mois par mois](/blog/retroplanning-mariage/). Parce qu’après les chiffres, il reste les rendez-vous, les échéances, les proches et cette journée qui approche… avec ses fleurs, ses chaises, ses chansons et sa lumière.
+Quand votre budget commence à être clair, vous pourrez [suivre un rétroplanning de mariage mois par mois](/blog/retroplanning-mariage-md/). Parce qu’après les chiffres, il reste les rendez-vous, les échéances, les proches et cette journée qui approche… avec ses fleurs, ses chaises, ses chansons et sa lumière.
