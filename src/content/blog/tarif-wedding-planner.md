@@ -2,7 +2,7 @@
 title: "Tarif wedding planner : combien coûte un organisateur de mariage ?"
 description: "Comparez les tarifs wedding planner : organisation complète, partielle, coordination jour J et coaching, avec prix sourcés et conseils pour lire les devis."
 pubDate: 2026-10-21
-updatedDate: 2026-10-21
+updatedDate: 2026-11-27
 category: "prestataires-mariage"
 tags:
   - tarif wedding planner
@@ -49,6 +49,8 @@ La qualification HT ou TTC n’étant pas précisée pour ces fourchettes dans l
 <a id="formules"></a>
 
 ## Quels sont les tarifs selon la prestation ?
+
+> Dans les mariages que j’accompagne ou que je vois passer depuis 2015, une prestation de wedding planner coûte à partir de 7 000 €, et parfois jusqu’à 75 000 €, voire plus. Ce sont mes repères de terrain, pas une moyenne nationale. Ils commencent plus haut que les fourchettes publiées par Yllana Vidal. Je ne les détaille pas formule par formule, alors demandez toujours ce que couvre le montant annoncé.
 
 ### Organisation complète du mariage
 
@@ -171,6 +173,15 @@ Vous pouvez commencer votre recherche dans notre rubrique [prestataires de maria
 | Contrat | Quelles sont les conditions de paiement, report, annulation et remplacement ? |
 
 Ajoutez le statut de chaque offre et les exclusions. Une ligne non renseignée reste « à confirmer », pas « inclus ». Examinez également l’identité professionnelle, l’assurance annoncée et la continuité prévue en cas d’indisponibilité.
+
+Au premier rendez-vous, je vous conseille de poser ces questions, telles quelles :
+
+- Ça coûte combien ?
+- Combien de temps ça va nous prendre ?
+- Il faut prévoir quoi ?
+- On a des invités qui viennent de loin, comment on fait ?
+- Payable en plusieurs fois ?
+- Jusqu’où intervenez-vous ?
 
 ### Un brief prêt à adapter
 

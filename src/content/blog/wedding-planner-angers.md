@@ -2,7 +2,7 @@
 title: "Les 10 meilleurs wedding planners à Angers : profils, avis et prestations"
 description: "Comparez 10 wedding planners à Angers et dans les environs : profils, prestations, avis, conseils et questions à poser avant de demander un devis."
 pubDate: 2026-10-24
-updatedDate: 2026-10-24
+updatedDate: 2026-11-27
 category: "prestataires-mariage"
 tags:
   - wedding planner Angers
@@ -231,6 +231,15 @@ Voici un message à adapter :
 > Bonjour, nous préparons notre mariage à Angers ou dans ses environs le [date], pour environ [nombre] personnes. Nous recherchons un accompagnement pour [missions]. Notre budget global est de [montant], honoraires [inclus / à ajouter]. Nous avons déjà réservé [prestataires]. Pourriez-vous préciser votre disponibilité, vos prestations, votre équipe et les frais éventuels ?
 
 Demandez également si le premier rendez-vous et l’établissement du devis sont gratuits. Ne le supposez pas avant l’échange.
+
+Au premier rendez-vous, je vous conseille de poser ces questions, telles quelles :
+
+- Ça coûte combien ?
+- Combien de temps ça va nous prendre ?
+- Il faut prévoir quoi ?
+- On a des invités qui viennent de loin, comment on fait ?
+- Payable en plusieurs fois ?
+- Jusqu’où intervenez-vous ?
 
 ## Peut-on être accompagné avec un petit budget ?
 

@@ -2,7 +2,7 @@
 title: "Les 10 meilleurs wedding planners à Paris : profils, avis et prestations"
 description: "Découvrez 10 wedding planners à Paris : Ceremonize, profils, prestations, avis et conseils pour comparer les devis et choisir votre accompagnement."
 pubDate: 2026-10-25
-updatedDate: 2026-10-25
+updatedDate: 2026-11-27
 category: "prestataires-mariage"
 tags:
   - meilleur wedding planner Paris
@@ -274,6 +274,15 @@ Envoyez le même brief aux professionnels retenus. Vous pourrez rapprocher leurs
 | Contrat | Quelles conditions encadrent paiement, modification, report et annulation ? |
 
 Une réponse encore floue reste un point à clarifier avant de vous engager. Faites notamment préciser les exclusions et les modalités de remplacement en cas d’indisponibilité de votre interlocuteur.
+
+Au premier rendez-vous, je vous conseille de poser ces questions, telles quelles :
+
+- Ça coûte combien ?
+- Combien de temps ça va nous prendre ?
+- Il faut prévoir quoi ?
+- On a des invités qui viennent de loin, comment on fait ?
+- Payable en plusieurs fois ?
+- Jusqu’où intervenez-vous ?
 
 ### Un message de demande de devis à adapter
 
