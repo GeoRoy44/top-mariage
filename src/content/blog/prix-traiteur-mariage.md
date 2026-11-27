@@ -2,7 +2,7 @@
 title: "Prix d’un traiteur de mariage par personne et selon le nombre d’invités"
 description: "Un traiteur de mariage coûte 60 à 120 € par personne en 2026 selon Traiteur Gallot. Je chiffre aussi les budgets de 30 à 200 invités et les frais à vérifier."
 pubDate: 2026-11-15
-updatedDate: 2026-11-15
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - prix traiteur mariage par personne
@@ -165,7 +165,7 @@ Envoyez le même brief à chaque traiteur : la date, l’adresse du lieu, le nom
 
 Ramenez ensuite chaque proposition au même périmètre. Une offre à 70 € par personne sans service ni vaisselle peut dépasser une offre à 90 € qui comprend tout, une fois les lignes manquantes ajoutées. Un poste absent du devis reste à confirmer avec le traiteur, même s’il vous semble aller de soi.
 
-<!-- TODO ANECDOTE: retour de terrain de Coralie sur un écart entre le prix par personne annoncé et le total TTC final, et les lignes qui l’expliquaient (question posée au propriétaire, backlog c1a074e2). -->
+Dans les mariages que j’ai organisés, ce sont surtout les heures en plus et les imprévus qui ont creusé l’écart entre le prix par personne annoncé et le total TTC final. C’est pour cela que je tiens autant au [rétroplanning](/blog/retroplanning-mariage-md/) et à l’accompagnement : les horaires du traiteur sont calés à l’avance, et quelqu’un gère les imprévus le jour J.
 
 Je regarde toujours ces points avant de comparer deux devis :
 
