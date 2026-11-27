@@ -2,7 +2,7 @@
 title: "Se marier à la mairie sans cérémonie : le cadre d’un mariage simple"
 description: "Se marier à la mairie sans cérémonie : témoins, démarches et choix facultatifs. Préparez votre passage à la mairie, sans fête ni réception imposée."
 pubDate: 2026-10-01
-updatedDate: 2026-10-01
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - mariage mairie
@@ -185,6 +185,8 @@ Rentrer chez vous, déjeuner ensemble ou garder une fête pour plus tard : voici
 
 Pour se marier à la mairie sans faire de fête, inutile de reproduire un programme de réception miniature. Demandez-vous plutôt ce que vous souhaitez vivre ensemble après ce passage.
 
+Je vous conseille de soigner la préparation pratique tout en prenant le temps de parler à deux de ce que cette journée signifie pour vous. Vous pouvez faire simple et quand même vouloir profiter de ce moment. Je vous suggère aussi de vous demander si vous souhaitez garder quelques photos de ce passage, si vous avez envie d’un moment à deux, même très simple, après la mairie, et comment vous annoncerez votre mariage aux proches absents.
+
 Si vous proposez un déjeuner, annoncez clairement son format. Prévoyez aussi le retour de chacun, sans transformer cette attention en réception improvisée.
 
 ### Prévoir seulement les dépenses de votre format
@@ -278,9 +280,11 @@ Demandez ce qui reste à fournir, quand la date sera confirmée et comment prép
   "inLanguage": "fr-FR",
   "url": "https://top-mariage.fr/blog/mariage-mairie-sans-ceremonie/",
   "mainEntityOfPage": "https://top-mariage.fr/blog/mariage-mairie-sans-ceremonie/",
+  "image": "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/f7707e71-937b-5e84-b0a2-9d3f3b8f1e86/ff65e6a8-7fa7-5800-a68d-40c87b06ce82.jpg",
   "author": {
-    "@type": "Organization",
-    "name": "Rédaction Top-Mariage"
+    "@type": "Person",
+    "name": "Coralie Foussard",
+    "url": "https://top-mariage.fr/a-propos/"
   },
   "publisher": {
     "@type": "Organization",
@@ -288,7 +292,7 @@ Demandez ce qui reste à fournir, quand la date sera confirmée et comment prép
     "url": "https://top-mariage.fr/"
   },
   "datePublished": "2026-10-01",
-  "dateModified": "2026-10-01"
+  "dateModified": "2026-11-27"
 }
 </script>
 <script type="application/ld+json">
