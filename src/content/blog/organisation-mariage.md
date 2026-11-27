@@ -2,6 +2,7 @@
 title: "Organisation mariage : étapes, budget et conseils pour tout préparer"
 description: "Organisez votre mariage étape par étape : budget, invités, lieu, prestataires et planning pour préparer sereinement votre journée."
 pubDate: 2026-09-25
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 draft: false
 ---
@@ -62,6 +63,16 @@ L’objectif n’est pas de tout planifier à la minute près, mais de vous assu
 
 Un document simple avec les horaires, les coordonnées des prestataires et les responsabilités de chacun peut vous faire gagner beaucoup de sérénité le jour J. <!-- 7c6345ddc52f9843bb57927e4c5974ee -->
 
+L’erreur que je retiendrais, c’est de préparer chaque détail sans organiser le passage de relais. Tout est prévu, mais personne ne sait qui accueille le traiteur. Pour l’éviter, je vous conseille de faire de ce document une feuille de route, avec :
+
+- Les horaires confirmés et les adresses
+- Les coordonnées des prestataires
+- Une personne volontaire pour chaque mission
+- Les décisions prévues en cas de pluie ou de retard
+- Les récupérations et les retours de matériel du lendemain
+
+Faites ensuite valider chaque mission par la personne concernée, car un nom inscrit sur la feuille de route ne vaut pas un accord ! Envoyez-la à ces personnes avant le mariage, plutôt que de tout garder sur votre téléphone.
+
 ## À retenir
 
-L’organisation d’un mariage avance plus facilement lorsque vous fixez d’abord le format, le budget et le nombre d’invités. Ensuite, le lieu, la date et les prestataires deviennent des décisions plus simples à prendre.
+L’organisation d’un mariage avance plus facilement lorsque vous fixez d’abord le format, le budget et le nombre d’invités. Ensuite, le lieu, la date et les prestataires deviennent des décisions plus simples à prendre. Pour le jour J, organisez aussi le passage de relais : envoyez une feuille de route à l’avance et faites valider chaque mission par la personne qui s’en charge.
