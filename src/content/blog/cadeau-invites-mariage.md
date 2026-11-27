@@ -2,7 +2,7 @@
 title: "Cadeau invité mariage : faut-il en offrir, quel budget et combien de dragées"
 description: "Faut-il offrir un petit cadeau à vos invités ? Comptez 2 à 10 € par personne. Je vous donne des idées pas chères et la quantité de dragées à commander."
 pubDate: 2026-11-24
-updatedDate: 2026-11-24
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - cadeau invité mariage
@@ -149,7 +149,7 @@ Les dragées se conservent plusieurs mois dans un endroit sec et frais. Vous pou
 
 Un cadeau posé près de l’assiette au début du dîner reste souvent plusieurs heures sur la table. Vos invités partent tard, parfois pressés, et l’oublient. Les cadeaux oubliés restent dans la salle, puis vous les récupérez le lendemain avec le reste du matériel.
 
-<!-- TODO ANECDOTE: retour de terrain de Coralie sur les cadeaux d’invités qu’elle voit le plus souvent rester sur les tables en fin de soirée, et ceux qui repartent (question posée au propriétaire, f8328495). -->
+Aucune catégorie de cadeau ne repart à coup sûr. Je vous propose donc de comparer vos idées, gourmandes, utiles ou personnalisées, avec quatre critères : le cadeau se transporte facilement, il convient à vos invités, il respecte leurs éventuelles contraintes alimentaires et chacun comprend qu’il est à emporter. Pour ce dernier point, un mot sur l’étiquette ou sur le menu suffit.
 
 Quelques précautions limitent ces oublis :
 
