@@ -2,7 +2,7 @@
 title: "Tarif traiteur mariage 50 personnes : budget et devis 2026"
 description: "Quel tarif traiteur pour un mariage de 50 personnes en 2026 ? Prix par formule, trois budgets détaillés et conseils pour comparer les devis sans oubli."
 pubDate: 2026-10-15
-updatedDate: 2026-10-15
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - tarif traiteur mariage 50 personnes
@@ -139,6 +139,8 @@ Un buffet n’est pas nécessairement sans personnel, et un cocktail avec de nom
 ### Le minimum de facturation pour un petit mariage
 
 Posez la question d’un minimum de commande ou de facturation. Pour 50 personnes, les frais fixes se répartissent sur moins de convives que pour une grande réception : diviser par deux un devis de 100 personnes ne fournit donc pas une estimation fiable. Notre guide du [budget mariage pour 100 personnes](https://top-mariage.fr/blog/budget-mariage-100-personnes-md/) aide à comparer les formats, sans supposer une proportionnalité parfaite.
+
+Je n’ai pas de cas vérifié qui me permette de vous dire à partir de combien d’invités un traiteur refuse une petite réception ou applique un minimum, ni si c’est fréquent. Je vous conseille donc de comparer le total TTC de chaque devis, minimum éventuel compris, plutôt que le prix affiché par personne.
 
 <a id="comparer"></a>
 
