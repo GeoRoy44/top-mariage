@@ -2,7 +2,7 @@
 title: "Organiser un mariage pas cher : le guide complet pour un petit budget"
 description: "Organiser un mariage pas cher : budgets de 3 000 et 5 000 €, astuces par poste, grille de suivi et checklist pour maîtriser vos dépenses sans oubli."
 pubDate: 2026-10-16
-updatedDate: 2026-10-16
+updatedDate: 2026-11-27
 category: "organisation-mariage"
 tags:
   - organiser mariage pas cher
@@ -135,6 +135,8 @@ Le transport et le stockage doivent respecter les températures de conservation.
 
 Choisissez une palette courte et quelques zones à décorer : accueil, tables et bouquet si vous en souhaitez un. Une salle cohérente ne demande pas d’orner chaque recoin.
 
+Je vous proposerais aussi moins d’objets différents : quelques compositions regroupées, une papeterie sobre et aucun achat destiné uniquement à remplir un coin vide. Vos invités ne connaissent pas votre tableau d’inspiration. Vous pouvez donc renoncer à certaines idées sans avoir l’impression de leur retirer quelque chose.
+
 - Empruntez les objets avant d’envisager l’achat, avec une liste de restitution.
 - Comparez achat d’occasion et location, transport et nettoyage compris.
 - Demandez au fleuriste une proposition dans votre enveloppe, sans présumer que les fleurs séchées coûtent moins cher.
@@ -165,6 +167,8 @@ Comparez matériau, dimensions, mise à taille, gravure et entretien. Une transf
 Si les photos sont prioritaires, demandez une proposition courte centrée sur la cérémonie, les proches et les portraits. Vérifiez le portfolio, les livrables, les délais et les conditions du contrat. Une couverture courte n’équivaut pas à un reportage complet, et un tarif bas ne garantit ni n’exclut la qualité.
 
 Les photos des invités peuvent compléter les souvenirs, sans promettre le même résultat qu’un professionnel. Demandez leur accord avant un partage public.
+
+Si les souvenirs visuels comptent pour vous, je serais plus vigilante sur les photos, parce que vous pourriez regretter une économie sur ce poste. Sur le blog La Mariée en Colère, Flora raconte que son couple a voulu économiser en [confiant les photos à des proches amateurs](https://lamarieeencolere.com/regrets-mariage/). Elle écrit : « Grave erreur, nous avons de très belles photos, mais toutes “amateur” ». Si c’était à refaire, elle prévoirait un budget pour un photographe professionnel. Son témoignage montre ce risque, sans prouver que les photos sont l’économie la plus regrettée.
 
 ### Garder une musique simple et bien préparée
 
