@@ -39,7 +39,7 @@ Définissez ensuite le périmètre : couple compris dans le nombre de personnes,
 
 ### Choisir trois priorités et trois renoncements
 
-Chacun peut lister ce qui compte le plus : repas, photos, présence des proches, musique ou tenue. Retenez ensemble trois priorités, puis trois dépenses que vous acceptez de supprimer. Un photobooth, un véhicule spécial ou des cadeaux invités ne sont pas des passages obligés.
+Chacun peut lister ce qui compte le plus : repas, photos, présence des proches, musique ou tenue. Retenez ensemble trois priorités, puis trois dépenses que vous acceptez de supprimer. Un photobooth, un véhicule spécial ou des cadeaux invités ne sont pas des passages obligés. Si vous tenez quand même à remercier vos invités par un cadeau, des dragées en sachet ou des graines à semer reviennent à [moins de 2 € par invité](/blog/cadeau-invites-mariage/#budget).
 
 Protégez aussi les éléments pratiques : repas en quantité adaptée, accès, sanitaires, conservation des aliments et solution en cas de pluie. Le confort des invités ne se résume pas à la décoration.
 

@@ -149,7 +149,7 @@ Pour un effet gold, choisissez le lettrage ou un petit support plutôt que toute
 
 ### 18. Des contenants à dragées facultatifs
 
-Si vous souhaitez offrir des dragées, calculez le contenant, le contenu et l’étiquette. Un cadeau invité n’est pas indispensable pour que la table soit soignée : vous pouvez supprimer ce poste.
+Si vous souhaitez offrir des dragées, calculez le contenant, le contenu et l’étiquette. Pour le contenu, comptez environ [2 kg de dragées pour 100 invités](/blog/cadeau-invites-mariage/#dragees), à raison de cinq par personne. Un cadeau invité n’est pas indispensable pour que la table soit soignée : vous pouvez supprimer ce poste.
 
 ### 19. Une photo différente par table
 

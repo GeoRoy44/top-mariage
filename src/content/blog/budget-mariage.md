@@ -105,7 +105,7 @@ Chaque invité ajoute souvent un couvert, des boissons, une place à table, parf
 
 ### Pourquoi chaque invité ne coûte pas la même chose
 
-Le nombre d’invités agit surtout sur la réception. Le **traiteur**, les boissons, le personnel, le mobilier, la papeterie et les cadeaux invités suivent généralement la liste des convives. À partir d’un certain seuil, il peut aussi falloir un lieu plus grand, davantage de service ou une logistique différente.
+Le nombre d’invités agit surtout sur la réception. Le **traiteur**, les boissons, le personnel, le mobilier, la papeterie et les cadeaux invités suivent généralement la liste des convives. Un cadeau d’invité simple coûte en général [2 à 5 € par personne](/blog/cadeau-invites-mariage/#budget). À partir d’un certain seuil, il peut aussi falloir un lieu plus grand, davantage de service ou une logistique différente.
 
 Mais tout n’évolue pas au même rythme. Un photographe peut proposer une même durée de présence pour 50 ou 100 personnes. Un DJ aussi. La location de salle peut rester stable tant que sa capacité suffit. À l’inverse, passer de 100 à 150 invités peut obliger à repenser le lieu, le plan de table ou même le déroulé de la soirée.
 
