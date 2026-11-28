@@ -157,7 +157,7 @@ Utilisez des images qui racontent votre histoire, avec l’accord des personnes 
 
 ### 20. Une décoration modulable entre les espaces
 
-Réutilisez certaines compositions après la cérémonie si les horaires et le déplacement le permettent. Désignez une personne volontaire et évitez de compter sur une installation simultanée à deux endroits.
+Réutilisez certaines compositions après la cérémonie si les horaires et le déplacement le permettent. Désignez une personne volontaire et évitez de compter sur une installation simultanée à deux endroits. Vous pouvez aussi reprendre la palette des tables pour la [décoration de la voiture des mariés](/blog/decoration-voiture-mariage/).
 
 <a id="styles"></a>
 

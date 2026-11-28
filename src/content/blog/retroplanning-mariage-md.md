@@ -234,7 +234,7 @@ Indiquez les moments utiles : arrivée des prestataires, cérémonie, photos de 
 
 Finalisez le plan de table si vous en avez choisi un. Corrigez les derniers changements sans refaire toute la réception pour un seul désistement. Une solution claire vaut souvent mieux qu’une perfection introuvable.
 
-Répartissez les petites missions : installer les panneaux, surveiller l’urne, apporter le livre d’or, accueillir une livraison ou récupérer les fleurs. Demandez toujours l’accord des proches avant de leur confier une responsabilité.
+Répartissez les petites missions : installer les panneaux, surveiller l’urne, apporter le livre d’or, accueillir une livraison ou récupérer les fleurs. Demandez toujours l’accord des proches avant de leur confier une responsabilité. Si une voiture décorée vous attend à la sortie de la cérémonie, nommez aussi la personne qui pose la [décoration de la voiture de mariage](/blog/decoration-voiture-mariage/) et celle qui la retire.
 
 Un témoin peut avoir un rôle officiel sans devenir régisseur de soirée. Une autre personne peut gérer les appels pratiques. Cette séparation protège vos proches et vous laisse davantage de place pour vivre la journée !
 
